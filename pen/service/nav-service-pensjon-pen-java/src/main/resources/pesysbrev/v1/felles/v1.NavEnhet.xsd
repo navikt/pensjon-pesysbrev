@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema	attributeFormDefault="unqualified"
-			elementFormDefault="qualified"
-			xmlns:xs="http://www.w3.org/2001/XMLSchema"
-		    xmlns:st="http://nav.no/dok/pesysbrev/v1/SimpleTypes"
-			targetNamespace="http://nav.no/dok/pesysbrev/v1/NavEnhet"
-			xmlns="http://nav.no/dok/pesysbrev/v1/NavEnhet"
-			xmlns:norskPostadresse="http://nav.no/dok/pesysbrev/v1/NorskPostadresse">
+			  elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			  targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/NavEnhet"
+			  xmlns="http://nav.no/dok/pesysbrev/felles/v1/NavEnhet"
+			  xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+			  xmlns:norskPostadresse="http://nav.no/dok/pesysbrev/felles/v1/NorskPostadresse">
 
-	<xs:import schemaLocation="v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/v1/SimpleTypes"/>
-	<xs:import schemaLocation="v1.NorskPostadresse.xsd" namespace="http://nav.no/dok/pesysbrev/v1/NorskPostadresse"/>
-				
+	<xs:import schemaLocation="v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+	<xs:import schemaLocation="v1.NorskPostadresse.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/NorskPostadresse"/>
+
+
 	<xs:complexType name="NavEnhet">
 		<xs:annotation>
 			<xs:documentation>En komplett adresse til en NAV enhet</xs:documentation>
@@ -32,5 +33,5 @@
 			</xs:element>
 		</xs:all>
 	</xs:complexType>
-	
+
 </xs:schema>

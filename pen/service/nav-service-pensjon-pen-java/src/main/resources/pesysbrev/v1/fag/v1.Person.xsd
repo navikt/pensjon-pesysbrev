@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema	attributeFormDefault="unqualified"
+			  elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			  xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+			  targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Person"
+			  xmlns="http://nav.no/dok/pesysbrev/fag/v1/Person">
+
+	<xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+	<xs:complexType name="Person">
+		<xs:annotation>
+			<xs:documentation>Informasjon om person/bruker</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="fodselsdato" type="st:FormatertDato" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Fødselsdato til bruker i saken</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="borINorge" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Viser hvis bruker bor i Norge</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="borIAvtaleland" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Viser hvis bruker bor i et land Norge har trygdeavtale med</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+
+</xs:schema>

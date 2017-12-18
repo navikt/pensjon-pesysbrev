@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManed"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManed">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="AlderspensjonPerManed">
+        <xs:annotation>
+            <xs:documentation>Informasjon om alderspensjon</xs:documentation>
+        </xs:annotation>
+        <xs:all>
+            <xs:element name="virkDatoFom" type="st:FormatertDato" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Dato alderspensjon iverksettes</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="virkDatoTom" type="st:EmptyFormatertDato" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Tom dersom dette er løpende pensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="grunnpensjon" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Grunnpensjon. Tom dersom grunnpensjon ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="tilleggspensjon" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Tilleggspensjon. Tom dersom tilleggspensjon ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sartillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Særtillegg. Tom dersom særtillegg ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="pensjonstillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Pensjonstillegg. Tom dersom pensjonstillegg ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fasteUtgifter" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Tillegg faste utgifter. Tom dersom faste utgifter ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="familieTillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Familietillegg. Tom dersom familietillegg ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="skjermingstillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Skjermingstillegg. Tom dersom skjermingstillegg ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="minstenivaIndividuell" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Minstenivåtillegg individuelt. Tom dersom minstenivå for individuell ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="minstenivaPensjonistPar" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Minstenivåtillegg for pensjonist par. Tom dersom minstenivå for pensjonistpar ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="inntekstpensjon" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Inntektspensjon beregnet etter kapittel 20. Tom dersom inntetekspensjon ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="garantipensjon" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Garantipensjon beregnet etter kapittel 20. Tom dersom garantipensjon ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="garantitillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Garantitillegg beregnet etter kapittel 20. Tom dersom garantitillegg ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="gjenlevendetillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Gjenlevendetillegg beregnet etter kapittel 20. Tom dersom gjenlevendetillegg ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="beregnetEtter" type="BeregnetEtterTypeKode" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Kan ha enten "egen", eller "avdod" avhengig om egne, eller avdod sin trygdetid, eller flyktningestatus er brukt i beregningen. Tom dersom AP1967</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fullTrygdetid" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Hviser hvis egen, eller avdod hadde full trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="flyktningstatusErBrukt" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Hviser hvis egen eller avdod sin flykningestatus er brukt. Tom dersom hverken bruker, eller avdod er flyktning, eller dersom AP1967</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="grunnbelop" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Grunnbeløp (G) som er benyttet i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="totalPensjon" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Total pensjon før skatt som sum av alle tilleggene</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="BeregnetEtterTypeKode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="EGEN">
+                <xs:annotation>
+                    <xs:documentation>Beregnet etter bruker</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AVDOD">
+                <xs:annotation>
+                    <xs:documentation>Beregnet etter avdod</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+                <xs:annotation>
+                    <xs:documentation>Tom verdi hvis AP1967</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
