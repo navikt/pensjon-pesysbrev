@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/BeregningKap20"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/BeregningKap20">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="BeregningKap20">
+        <xs:all>
+            <xs:element name="andel" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Del av pensjon beregnet etter nye regler i kap 20</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="trygdetid" type="st:NonEmptyString">
+                <xs:annotation>
+                    <xs:documentation>Trygdetid beregnet etter kapittel 20</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="redusertTrygdetid" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Viser hvis bruker har redusert trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="beholdning" type="st:NonEmptyString">
+                <xs:annotation>
+                    <xs:documentation>Pensjonsbeholdning</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="delingstallLevealder" type="st:NonEmptyString">
+                <xs:annotation>
+                    <xs:documentation>Delingstall ved levealdersjustering. Benyttes for beregning av Kap20 pensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>

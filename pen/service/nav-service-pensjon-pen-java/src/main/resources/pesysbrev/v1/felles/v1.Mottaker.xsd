@@ -2,17 +2,17 @@
 <xs:schema	attributeFormDefault="unqualified"
 			elementFormDefault="qualified"
 			xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			xmlns:st="http://nav.no/dok/pesysbrev/v1/SimpleTypes"
-			targetNamespace="http://nav.no/dok/pesysbrev/v1/Mottaker"
-			xmlns="http://nav.no/dok/pesysbrev/v1/Mottaker"
-			xmlns:aktoer="http://nav.no/dok/pesysbrev/v1/Aktoer"
-			xmlns:adresse="http://nav.no/dok/pesysbrev/v1/Adresse">
+			targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/Mottaker"
+			xmlns="http://nav.no/dok/pesysbrev/felles/v1/Mottaker"
+            xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+			xmlns:aktoer="http://nav.no/dok/pesysbrev/felles/v1/Aktoer"
+            xmlns:adresse="http://nav.no/dok/pesysbrev/felles/v1/Adresse">
 
-	<xs:import schemaLocation="v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/v1/SimpleTypes"/>	
-	<xs:import schemaLocation="v1.Aktoer.xsd" namespace="http://nav.no/dok/pesysbrev/v1/Aktoer"/>	
-	<xs:import schemaLocation="v1.Adresse.xsd" namespace="http://nav.no/dok/pesysbrev/v1/Adresse"/>
-	
-				
+    <xs:import schemaLocation="v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:import schemaLocation="v1.Aktoer.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/Aktoer"/>
+    <xs:import schemaLocation="v1.Adresse.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/Adresse"/>
+
+
 	<xs:complexType name="Mottaker">
 		<xs:annotation>
 				<xs:documentation>Mottaker viser til personen/organisasjonen som vedtaket skal sendes til</xs:documentation>
