@@ -2,8 +2,8 @@
 <xs:schema	attributeFormDefault="unqualified"
 			elementFormDefault="qualified"
 			xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			targetNamespace="http://nav.no/dok/pesysbrev/v1/SimpleTypes"
-			xmlns="http://nav.no/dok/pesysbrev/v1/SimpleTypes">
+			targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+			xmlns="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes">
 
 	<xs:simpleType name="AktoerType">
 		<xs:annotation>
@@ -44,8 +44,8 @@
 			<xs:minLength value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
-	<xs:simpleType name="NonEmptyString">
+
+    <xs:simpleType name="NonEmptyString">
 		<xs:annotation>
 			<xs:documentation>Obligatorisk streng</xs:documentation>
 		</xs:annotation>
@@ -62,8 +62,7 @@
 			<xs:pattern value="([0-9]{4})"/>		
 		</xs:restriction>
 	</xs:simpleType>
-	
-	
+
 	<xs:simpleType name="Spraakkode">
 		<xs:annotation>
 			<xs:documentation>Kode som angir hvilket språk dokumentet skal produserer på. Mulige verdier: NB, NN, EN</xs:documentation>
@@ -74,5 +73,5 @@
 			<xs:enumeration value="EN"/>
 		</xs:restriction>
 	</xs:simpleType>
-		
+
 </xs:schema>
