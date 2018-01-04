@@ -15,7 +15,7 @@
                     <xs:documentation>Viser antall beregningsperioder som ligger på vedtaket</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="tidligerePeriodeMedUttaksgradOverNull" type="xs:boolean">
+            <xs:element name="erPerioderMedUttak" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Sann hvis uttaksgraden i tidligere beregningsperioder har vært over 0</xs:documentation>
                 </xs:annotation>

@@ -7,32 +7,32 @@
 
     <xs:complexType name="Tilleggspensjon">
         <xs:all>
-            <xs:element name="erRedusert" type="xs:boolean" minOccurs="0">
+            <xs:element name="erRedusert" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom bruker ikke har full tilleggspensjon</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="kombinertMedAvdod" type="xs:boolean" minOccurs="0">
+            <xs:element name="kombinertMedAvdod" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom den avdødes grunnlagsinformasjon er benyttet i vinnende beregning av tilleggspensjon på bruker</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="pgaYrkesskade" type="xs:boolean" minOccurs="0">
+            <xs:element name="pgaYrkesskade" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom yrkesskade er benyttet i beregningen av regelmotoren for vinnende beregning.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="pgaYrkesskadeAvdod" type="xs:boolean" minOccurs="0">
+            <xs:element name="pgaYrkesskadeAvdod" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom yrkesskade er anvendt i beregningen av tilleggspensjon for avdød av regelmotoren</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="pgaUngeUfore" type="xs:boolean" minOccurs="0">
+            <xs:element name="pgaUngeUfore" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom  ung ufør er tatt med i beregningen av regelmotoren</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="pgaUngeUforeAvdod" type="xs:boolean" minOccurs="0">
+            <xs:element name="pgaUngeUforeAvdod" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom  ung ufør er tatt med i beregningen av tilleggspensjon for avdød av regelmotoren</xs:documentation>
                 </xs:annotation>
