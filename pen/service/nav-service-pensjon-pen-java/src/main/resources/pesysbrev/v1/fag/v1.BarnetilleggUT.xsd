@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/BarnetilleggUT"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/BarnetilleggUT">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="BarnetilleggUT">
+        <xs:all>
+            <xs:element name="erRedusertMotInntekt" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom barnetillegget er redusert på grunn av inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="belop" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Beløp gitt som barnetillegg pr måned</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="belopAr" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Årlig beløp barnetillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="belopArForAvkort" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Årlig barnetillegg før reduksjon ut fra inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="antallBarn" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall barn som barnetillegget er gitt for</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="inntektBruktIAvkortning" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Inntekt brukt i avkortning</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="inntektOverFribelop" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Inntekt over fribeløp</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fribelop" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Fribeløp</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fribelopEllerInntektErPeriodisert" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom fribeløp eller inntekten er periodisert</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="justeringsbelopAr" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Årlig justeringsbeløp i perioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="avkortingsbelopAr" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Årlig avkortingsbeløp i perioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="inntektstak" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Inntektstak for barnetillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="btEtterReduksjon" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Barnetillegg for særkullsbarn etter reduksjon mot gradert OIFU-taket. Vises kun når bruker har både felles- og særkullsbarn.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>

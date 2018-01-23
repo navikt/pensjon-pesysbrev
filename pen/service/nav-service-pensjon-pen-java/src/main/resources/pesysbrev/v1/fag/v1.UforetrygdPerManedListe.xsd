@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:utpm="http://nav.no/dok/pesysbrev/fag/v1/UforetrygdPerManed"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/UforetrygdPerManedListe"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/UforetrygdPerManedListe">
+
+    <xs:import schemaLocation="v1.UforetrygdPerManed.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/UforetrygdPerManed"/>
+
+    <xs:complexType name="UforetrygdPerManedListe">
+        <xs:sequence>
+            <xs:element name="uforetrygdPerManed" type="utpm:UforetrygdPerManed" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>En liste over element av typen UforetrygdPerManed</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

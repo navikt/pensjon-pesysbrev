@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/BarnetilleggUTGrunnlag"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/BarnetilleggUTGrunnlag">
+
+    <xs:complexType name="BarnetilleggUTGrunnlag">
+        <xs:all>
+            <xs:element name="erRedusertMotTak" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom barnetillegget er redusert på grunn av at ordinær UT + barnetillegg er > gradert OIFU</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sumUTBT" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Sum av uføretrygd, barnetillegg og gjenlevendetillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="andelYtelseAvOIFU" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Andel som innvilgede ytelser utgjør av Oppjustert Inntekt Før Uføre.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="gradertOIFU" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Gradert Oppjustert Inntekt For Uføre (OIFU)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="prosentsatsGradertOIFU" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Angir prosentsatsen som brukes til å beregne taket for hvor stor samlet ugradert uføretrygd og brutto barnetillegg brukeren kan ha i forhold til oppjustert IFU før brutto barnetillegg blir redusert</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="belopForReduksjon" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Barnetillegg før reduksjon mot TAK</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="belopEtterReduksjon" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Barnetillegg etter reduksjon mot TAK</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="erIkkeUtbetPgaTak" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom barnetillegg er innvilget, men ikke utbetalt siden det overstiger tak (gradert OIFU)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="totaltAntallBarn" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Viser antall av alle barn det gis stønad for, dvs både felles- og særkullsbarn.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v2/Alderspensjon"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v2/Alderspensjon">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="Alderspensjon">
+        <xs:annotation>
+            <xs:documentation>Informasjon om alderspensjon</xs:documentation>
+        </xs:annotation>
+        <xs:all>
+            <xs:element name="regelverkType" type="regelverkTypeKode">
+                <xs:annotation>
+                    <xs:documentation>Viser hvilket regelverk alderspensjon beregnes etter</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="harEndretPensjon" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Viser hvis pensjon er økt eller redusert i forhold til forrige beregning. Dette er uavhengig av om bruker tar ut pensjon eller ikke</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="andelKap19" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Viser hvor stor del av AP2016 som er beregnet etter kapittel 19. Vil være konstant 10 for AP2011 og ikke ha noen verdi for AP1967 og AP2025. Brev vil kun bruke verdien for AP2016</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="andelKap20" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Viser hvor stor del av AP2016 som er beregnet etter kapittel 20. Vil være konstant 10 for AP2025 og ikke ha noen verdi for AP1967 og AP2011. Brev vil kun bruke verdien for AP2016</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="uttaksgrad" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Brukers valgte uttaksgrad på EPS sitt dødstidpunkt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="minstenivaIndividuellInnvilget" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Minstenivåtillegg individuelt for første beregningsperiode etter virkningsdato for vedtak</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="totalPensjon" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Total pensjon før skatt som sum av alle tilleggene for første beregningsperiode etter virkningsdato for vedtak</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="regelverkTypeKode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="AP1967">
+                <xs:annotation>
+                    <xs:documentation>Årskull før </xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AP2011">
+                <xs:annotation>
+                    <xs:documentation>Årskull før 1954, relevant fram til 2020</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AP2016">
+                <xs:annotation>
+                    <xs:documentation>Årskull 1954-1962, relevant fram til 2030</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AP2025">
+                <xs:annotation>
+                    <xs:documentation>Årskull fra 1963. Ennå ikke relevant. Første søknad kan tidligst behandles oktober 2024 med dagens sperre i fagsystem.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

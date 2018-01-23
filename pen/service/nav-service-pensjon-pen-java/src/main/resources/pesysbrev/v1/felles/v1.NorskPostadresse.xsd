@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema	attributeFormDefault="unqualified"
-			elementFormDefault="qualified"
-			xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/NorskPostadresse"
-			xmlns="http://nav.no/dok/pesysbrev/felles/v1/NorskPostadresse"
-			xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
-			xmlns:adresse="http://nav.no/dok/pesysbrev/felles/v1/Adresse">
+			  elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			  targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/NorskPostadresse"
+			  xmlns="http://nav.no/dok/pesysbrev/felles/v1/NorskPostadresse"
+			  xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+			  xmlns:adresse="http://nav.no/dok/pesysbrev/felles/v1/Adresse">
 
 	<xs:import schemaLocation="v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
 	<xs:import schemaLocation="v1.Adresse.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/Adresse"/>
@@ -13,7 +13,7 @@
 
 	<xs:complexType name="NorskPostadresse">
 		<xs:annotation>
-				<xs:documentation>Gyldig adressefelt som representerer en norsk adresse</xs:documentation>
+			<xs:documentation>Gyldig adressefelt som representerer en norsk adresse</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="adresse:Adresse">
@@ -52,5 +52,5 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	
+
 </xs:schema>

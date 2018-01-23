@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema	attributeFormDefault="unqualified"
-			elementFormDefault="qualified"
-			xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/Kontaktinformasjon"
-			xmlns="http://nav.no/dok/pesysbrev/felles/v1/Kontaktinformasjon"
-			xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
-            xmlns:navEnhet="http://nav.no/dok/pesysbrev/felles/v1/NavEnhet">
+			  elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			  targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/Kontaktinformasjon"
+			  xmlns="http://nav.no/dok/pesysbrev/felles/v1/Kontaktinformasjon"
+			  xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+			  xmlns:navEnhet="http://nav.no/dok/pesysbrev/felles/v1/NavEnhet">
 
 	<xs:import schemaLocation="v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
-    <xs:import schemaLocation="v1.NavEnhet.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/NavEnhet"/>
+	<xs:import schemaLocation="v1.NavEnhet.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/NavEnhet"/>
 
 
 	<xs:complexType name="Kontaktinformasjon">
@@ -32,6 +32,6 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:all>
-	</xs:complexType>	
-	
+	</xs:complexType>
+
 </xs:schema>
