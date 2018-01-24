@@ -77,6 +77,15 @@
 		</xs:restriction>
 	</xs:simpleType>
 
+    <xs:simpleType name="OnlyEmptyString">
+        <xs:annotation>
+            <xs:documentation>En gyldig tom streng som referes til ved oppbygging av andre simpleTypes</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:length value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
 	<xs:simpleType name="PostNr">
 		<xs:annotation>
 			<xs:documentation>Obligatorisk postnummer</xs:documentation>
@@ -147,13 +156,14 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="OnlyEmptyString">
-		<xs:annotation>
-			<xs:documentation>En gyldig tom streng som referes til ved oppbygging av andre simpleTypes</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:length value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
+    <xs:simpleType name="ToDesimaler">
+        <xs:annotation>
+            <xs:documentation>Et tall med maksimalt to desimaler</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
 
 </xs:schema>
