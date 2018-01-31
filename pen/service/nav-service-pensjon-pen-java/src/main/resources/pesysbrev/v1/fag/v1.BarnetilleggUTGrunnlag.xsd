@@ -2,8 +2,11 @@
 <xs:schema attributeFormDefault="unqualified"
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/BarnetilleggUTGrunnlag"
            xmlns="http://nav.no/dok/pesysbrev/fag/v1/BarnetilleggUTGrunnlag">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
 
     <xs:complexType name="BarnetilleggUTGrunnlag">
         <xs:all>
@@ -17,7 +20,7 @@
                     <xs:documentation>Sum av uføretrygd, barnetillegg og gjenlevendetillegg</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="andelYtelseAvOIFU" type="xs:int" minOccurs="0">
+            <xs:element name="andelYtelseAvOIFU" type="st:ToDesimaler" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Andel som innvilgede ytelser utgjør av Oppjustert Inntekt Før Uføre.</xs:documentation>
                 </xs:annotation>
