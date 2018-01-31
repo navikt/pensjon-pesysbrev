@@ -35,7 +35,7 @@
                     <xs:documentation>Angir prosentandel av 100% uføretrygd som utbetales</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="kompensasjonsgrad" type="xs:int">
+            <xs:element name="kompensasjonsgrad" type="st:ToDesimaler">
                 <xs:annotation>
                     <xs:documentation>Angir dekningsgrad av tapt arbeidsevne. </xs:documentation>
                 </xs:annotation>
