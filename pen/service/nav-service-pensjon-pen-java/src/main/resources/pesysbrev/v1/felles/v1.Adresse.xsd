@@ -5,6 +5,9 @@
 			  targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/Adresse"
 			  xmlns="http://nav.no/dok/pesysbrev/felles/v1/Adresse">
 
+	<xs:import schemaLocation="v1.NorskPostadresse.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/NorskPostadresse"/>
+	<xs:import schemaLocation="v1.UtenlandskPostadresse.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/UtenlandskPostadresse"/>
+
 	<xs:complexType abstract="true" name="Adresse"/>
 
 </xs:schema>

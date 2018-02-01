@@ -25,7 +25,7 @@
                     <xs:documentation>Årlig beløp barnetillegg</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="belopArForAvkort" type="st:ToDesimaler">
+            <xs:element name="belopArForAvkort" type="xs:int">
                 <xs:annotation>
                     <xs:documentation>Årlig barnetillegg før reduksjon ut fra inntekt</xs:documentation>
                 </xs:annotation>
@@ -40,12 +40,12 @@
                     <xs:documentation>Inntekt brukt i avkortning</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="inntektOverFribelop" type="st:ToDesimaler" minOccurs="0">
+            <xs:element name="inntektOverFribelop" type="xs:int" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Inntekt over fribeløp</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="fribelop" type="st:ToDesimaler">
+            <xs:element name="fribelop" type="xs:int">
                 <xs:annotation>
                     <xs:documentation>Fribeløp</xs:documentation>
                 </xs:annotation>

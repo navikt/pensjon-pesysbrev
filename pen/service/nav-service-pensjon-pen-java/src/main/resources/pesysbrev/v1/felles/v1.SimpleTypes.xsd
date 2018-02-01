@@ -24,18 +24,18 @@
 		<xs:union memberTypes="xs:boolean OnlyEmptyString"/>
 	</xs:simpleType>
 
+    <xs:simpleType name="EmptyFormatertDato">
+        <xs:annotation>
+            <xs:documentation>Ikke obligatorisk formatert dato</xs:documentation>
+        </xs:annotation>
+        <xs:union memberTypes="FormatertDato OnlyEmptyString"/>
+    </xs:simpleType>
+
 	<xs:simpleType name="EmptyPostNr">
 		<xs:annotation>
 			<xs:documentation>Ikke obligatorisk postnummer</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="PostNr OnlyEmptyString"/>
-	</xs:simpleType>
-
-	<xs:simpleType name="EmptyFormatertDato">
-		<xs:annotation>
-			<xs:documentation>Ikke obligatorisk formatert dato</xs:documentation>
-		</xs:annotation>
-		<xs:union memberTypes="FormatertDato OnlyEmptyString"/>
 	</xs:simpleType>
 
 	<xs:simpleType name="EmptyInteger">
