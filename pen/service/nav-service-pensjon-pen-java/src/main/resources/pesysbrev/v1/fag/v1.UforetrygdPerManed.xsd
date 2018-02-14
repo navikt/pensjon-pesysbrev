@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/UforetrygdPerManed"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/UforetrygdPerManed">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="UforetrygdPerManed">
+        <xs:all>
+            <xs:element name="virkDatoFom" type="st:FormatertDato">
+                <xs:annotation>
+                    <xs:documentation>Første virk dato for beregningsperioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="virkDatoTom" type="st:EmptyFormatertDato" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Siste dato beregningsperioden er gyldig.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="brukersSivilstand" type="st:EmptySivilstandTypeKode">
+                <xs:annotation>
+                    <xs:documentation>Brukes sivilstand i beregningsperioden. Kan være GIFT, PARTNER, SAMBOER1_5, SAMBOER3_2, ENKE, ENSLIG. Kan også være tom</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="brukerErFlyktning" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom bruker er flyktning og dette er brukt i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="erInntektsAvkortet" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom UT er inntektsavkortet i perioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="grunnbelop" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Grunnbelop (G) benyttet i beregningsperioden.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ordinarUTbelop" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Ordinært UT beløp per måned uten ET, BT, eller GT etter avkorting</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ordinarUTbelopForAvkort" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Ordinært UT beløp per måned uten ET, BT, eller GT før inntektsavkorting</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="barnetillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Innvilget barnetillegg (BT SB) per måned etter avkorting</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="barnetilleggForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Innvilget barnetillegg (BT SB) per måned før avkorting</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="gjenlevendetillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Innvilget gjenlevendetillegg (GT) per måned etter avkorting</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="gjenlevendetilleggForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Innvilget gjenlevendetillegg (GT) per måned før inntektsavkorting</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ektefelletillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Innvilget ektefelletillegg (ET) per måned etter avkorting mot inntekt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ektefelletilleggForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Innvilget ektefelletillegg (ET) per måned før inntektsavkorting.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="garantitilleggNordisk27" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Nordisk garantitillegg art. 27</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="garantitilleggNordisk27ForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Nordisk garantitillegg art. 27 før avkorting</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="deknFasteUtgifter" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Tillegg for dekning av faste utgifter (ved institusjonsopphod)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="deknFasteUtgifterForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Tillegg for dekning av faste utgifter (ved institusjonsopphod) før avkortning.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="annetBelop" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Fratrukket faste og nødvendige utgifter i forbindelse med institusjonsopphold.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="totalUTbelop" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Total UT per måned inkluderte innvilgede tillegg som BT, GT, ET etter inntektsavkorting</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="totalUTbelopForAvkort" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Total UT per måned inkluderte innvilgede tillegg som BT, GT, ET før inntektsavkorting</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/UngUfor"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/UngUfor">
+
+    <xs:complexType name="UngUfor">
+        <xs:all>
+            <xs:element name="erUnder20Ar" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom bruker er under 20 år i gjeldende beregningsperiode.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>
