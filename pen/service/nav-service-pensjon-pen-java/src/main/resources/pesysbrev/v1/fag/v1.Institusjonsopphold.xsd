@@ -17,11 +17,6 @@
                     <xs:documentation>Er SANN dersom bruker har hatt opphold i fengsel i beregningsperioden</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="isAldersEllerSykehjem" type="xs:boolean" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>Er SANN dersom bruker har hatt opphold i alders eller sykehjem i beregningsperioden</xs:documentation>
-                </xs:annotation>
-            </xs:element>
         </xs:all>
     </xs:complexType>
 </xs:schema>
