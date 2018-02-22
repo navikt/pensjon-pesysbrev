@@ -18,7 +18,7 @@
                     <xs:documentation>Dato alderspensjon iverksettes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="virkDatoTom" type="st:EmptyFormatertDato" minOccurs="0">
+            <xs:element name="virkDatoTom" type="st:EmptyFormatertDato">
                 <xs:annotation>
                     <xs:documentation>Tom dersom dette er løpende pensjon</xs:documentation>
                 </xs:annotation>
@@ -93,14 +93,19 @@
                     <xs:documentation>Kan ha enten "egen", eller "avdod" avhengig om egne, eller avdod sin trygdetid, eller flyktningestatus er brukt i beregningen. Tom dersom AP1967</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="fullTrygdetid" type="xs:boolean">
+            <xs:element name="fullTrygdetid" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Hviser hvis egen, eller avdod hadde full trygdetid</xs:documentation>
+                    <xs:documentation>Viser hvis egen, eller avdod hadde full trygdetid</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="flyktningstatusErBrukt" type="st:EmptyBoolean" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Hviser hvis egen eller avdod sin flykningestatus er brukt. Tom dersom hverken bruker, eller avdod er flyktning, eller dersom AP1967</xs:documentation>
+                    <xs:documentation>Viser hvis egen eller avdod sin flykningestatus er brukt. Tom dersom hverken bruker, eller avdod er flyktning, eller dersom AP1967</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="brukersSivilstand" type="st:EmptySivilstandTypeKode" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Brukes sivilstand benyttet i beregningen. Kan være GIFT, PARTNER, SAMBOER1_5, SAMBOER3_2, ENKE, ENSLIG. Kan også være tom</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="grunnbelop" type="xs:int">
