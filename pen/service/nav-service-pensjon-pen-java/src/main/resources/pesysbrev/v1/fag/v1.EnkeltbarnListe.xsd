@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:eb="http://nav.no/dok/pesysbrev/fag/v1/Enkeltbarn"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/EnkeltbarnListe"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/EnkeltbarnListe">
+
+    <xs:import schemaLocation="v1.Enkeltbarn.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/Enkeltbarn"/>
+
+    <xs:complexType name="EnkeltbarnListe">
+        <xs:sequence>
+            <xs:element name="enkeltbarn" type="eb:Enkeltbarn" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>En liste over elementer av typen Enkeltbarn</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

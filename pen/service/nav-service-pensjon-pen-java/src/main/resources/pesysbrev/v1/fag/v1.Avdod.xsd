@@ -30,6 +30,11 @@
                     <xs:documentation>Gjenlevendes alder siste dag i måneden for dødsfallet</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="gjenlevendeHarFellesbarnUtenBT" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom bruker hadde barn med avdøde, men ikke var innvilget barnetillegg for dem. Dette gjelder kun barn under 18 år. I tilfeller hvor barnet fyller 18 på virkningsdato (1. i måned etter dødsfallet) skal dette regnes som at barnet er under 18.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:all>
     </xs:complexType>
 </xs:schema>

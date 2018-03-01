@@ -10,7 +10,7 @@
 
     <xs:complexType name="AlderspensjonPerManedListe">
         <xs:sequence>
-            <xs:element name="alderspensjonPerManed" type="apm:AlderspensjonPerManed" maxOccurs="unbounded">
+            <xs:element name="alderspensjonPerManed" type="apm:AlderspensjonPerManed" maxOccurs="unbounded" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>En liste over elementer av typen AlderspensjonPerManed</xs:documentation>
                 </xs:annotation>
