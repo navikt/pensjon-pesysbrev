@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:apm="http://nav.no/dok/pesysbrev/fag/v1/AFPStatPerManed"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AFPStatPerManedListe"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AFPStatPerManedListe">
+
+    <xs:import schemaLocation="v1.AFPStatPerManed.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/AFPStatPerManed"/>
+
+    <xs:complexType name="AFPStatPerManedListe">
+        <xs:annotation>
+            <xs:documentation>En liste over elementer av typen AFPStatPerManed</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="afpStatPerManed" type="apm:AFPStatPerManed" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
