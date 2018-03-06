@@ -18,7 +18,7 @@
                     <xs:documentation>Viser hvilket regelverk alderspensjon beregnes etter</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="harEndretPensjon" type="xs:boolean" minOccurs="0">
+            <xs:element name="harEndretPensjon" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Viser hvis pensjon er økt eller redusert i forhold til forrige beregning. Dette er uavhengig av om bruker tar ut pensjon eller ikke</xs:documentation>
                 </xs:annotation>
@@ -33,12 +33,12 @@
                     <xs:documentation>Viser hvor stor del av AP2016 som er beregnet etter kapittel 20. Vil være konstant 10 for AP2025 og ikke ha noen verdi for AP1967 og AP2011. Brev vil kun bruke verdien for AP2016</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="uttaksgrad" type="st:EmptyInteger" minOccurs="0">
+            <xs:element name="uttaksgrad" type="st:EmptyInteger">
                 <xs:annotation>
                     <xs:documentation>Brukers valgte uttaksgrad på EPS sitt dødstidpunkt</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="minstenivaIndividuellInnvilget" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="minstenivaIndividuellInnvilget" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Minstenivåtillegg individuelt for første beregningsperiode etter virkningsdato for vedtak</xs:documentation>
                 </xs:annotation>
