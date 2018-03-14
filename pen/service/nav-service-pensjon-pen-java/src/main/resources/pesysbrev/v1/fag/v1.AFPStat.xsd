@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AFPStat"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AFPStat">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="AFPStat">
+        <xs:annotation>
+            <xs:documentation>Informasjon om statlig AFP</xs:documentation>
+        </xs:annotation>
+        <xs:all>
+            <xs:element name="erEndret" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom pensjon er økt, eller redusert i forhold til siste beregningsperiode på forrige vedtak. Dette er uavhengig av om bruker tar ut pensjon, eller ikke. Dette gjelder kun dersom dette er gjeldende (siste) beregningsperiode på vedtaket.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="erInntektsavkortet" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom den avtalefestede pensjonen (AFP) er avkortet mot inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="er70ProsentRegelAvkortet" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom AFP er avkortet mot regelen som sier at totalpensjonen ikke kan overstige 70% av tidligere pensjonsgivende inntekt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="regFaktorSats" type="st:ToDesimaler">
+                <xs:annotation>
+                    <xs:documentation>Reguleringsfaktorsats som er benyttet i beregningen, angitt i prosent.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>
