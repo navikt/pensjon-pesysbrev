@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AFPStatPerManed"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AFPStatPerManed">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="AFPStatPerManed">
+        <xs:annotation>
+            <xs:documentation>Månedlig informasjon om statlig AFP</xs:documentation>
+        </xs:annotation>
+        <xs:all>
+            <xs:element name="virkDatoFom" type="st:FormatertDato">
+                <xs:annotation>
+                    <xs:documentation>Første virk dato for beregningsperioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="virkDatoTom" type="st:EmptyFormatertDato">
+                <xs:annotation>
+                    <xs:documentation>Siste dato beregningsperioden er gyldig</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="brukersSivilstand" type="st:EmptySivilstandTypeKode" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Brukes sivilstand i beregningsperioden. Kan være GIFT, PARTNER, SAMBOER1_5, SAMBOER3_2, ENKE, ENSLIG. Kan også være tom</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="brukerErFlyktning" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom bruker er markert som flyktning i persongrunnlaget for perioden.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="erInntektsAvkortet" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom AFP er inntektsavkortet i perioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="grunnpensjon" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Grunnpensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="grunnpensjonForAvkort" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Grunnpensjon før avkortning mot inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="tilleggspensjon" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Tilleggspensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="tilleggspensjonForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Tilleggspensjon før avkortning mot inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sartillegg" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Særtillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sartilleggForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Særtillegg før avkortning mot inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="afpTillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>AFP tillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="afpTilleggForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>AFP tillegg før avkortning mot inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fasteUtgifter" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Tillegg faste utgifter</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fasteUtgifterForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Tillegg faste utgifter før avkortning mot inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="familietillegg" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Familietillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="familietilleggForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Familietillegg før avkortning</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="minstenivaIndividuell" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Minstenivåtillegg individuelt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="minstenivaIndividuellForAvkort" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Minstenivåtillegg individuelt før avkortning mot inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fullTrygdetid" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom bruker har full trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="grunnbelop" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Grunnbeløp (G) som er benyttet i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fremtidigInntekt" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Viser fremtidig inntekt (FPI) som er benyttet i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="totalPensjon" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Total pensjon før skatt som sum av alle tilleggene</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="totalPensjonForAvkort" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Total pensjon før skatt før avkortning mot inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>
