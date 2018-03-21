@@ -52,6 +52,13 @@
 		<xs:union memberTypes="SivilstandTypeKode OnlyEmptyString"/>
 	</xs:simpleType>
 
+    <xs:simpleType name="EmptyToDesimaler">
+        <xs:annotation>
+            <xs:documentation>Ikke obligatorisk to desimaltall</xs:documentation>
+        </xs:annotation>
+        <xs:union memberTypes="ToDesimaler OnlyEmptyString"/>
+    </xs:simpleType>
+
 	<xs:simpleType name="FormatertDato">
 		<xs:annotation>
 			<xs:documentation>Dato på formatet YYYY-MM-DD</xs:documentation>
@@ -162,6 +169,15 @@
         </xs:annotation>
         <xs:restriction base="xs:decimal">
             <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TreDesimaler">
+        <xs:annotation>
+            <xs:documentation>Et tall med maksimalt tre desimaler</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="3"/>
         </xs:restriction>
     </xs:simpleType>
 

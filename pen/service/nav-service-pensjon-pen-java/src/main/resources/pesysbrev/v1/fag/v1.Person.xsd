@@ -28,6 +28,11 @@
 					<xs:documentation>Viser hvis bruker bor i et land Norge har trygdeavtale med</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="sivilstand" type="st:EmptySivilstandTypeKode" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Brukers sivilstand benyttet i beregningen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:all>
 	</xs:complexType>
 
