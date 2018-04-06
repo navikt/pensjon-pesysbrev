@@ -10,9 +10,9 @@
 
     <xs:complexType name="EPS">
         <xs:all>
-            <xs:element name="sivilstand" type="st:SivilstandTypeKode">
+            <xs:element name="sivilstand" type="SivilstandTypeKodeEPS">
                 <xs:annotation>
-                    <xs:documentation>Sivilstand til EPS.  Kan være EKTEFELLE, PARTNER, SAMBOER1-5, SAMBOER3-2, SAMBOER.</xs:documentation>
+                    <xs:documentation>Sivilstand til EPS.  Kan være EKTEFELLE, PARTNER, SAMBOER1-5, SAMBOER3-2, SAMBOER og UKJENT.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="borSammenMedBruker" type="xs:boolean">
@@ -32,5 +32,16 @@
             </xs:element>
         </xs:all>
     </xs:complexType>
+    
+    <xs:simpleType name="SivilstandTypeKodeEPS">
+        <xs:restriction base="st:SivilstandTypeKode">
+            <xs:enumeration value="EKTEFELLE"/>
+            <xs:enumeration value="PARTNER"/>
+            <xs:enumeration value="SAMBOER"/>
+            <xs:enumeration value="SAMBOER1-5"/>
+            <xs:enumeration value="SAMBOER3-2"/>
+            <xs:enumeration value="UKJENT"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>

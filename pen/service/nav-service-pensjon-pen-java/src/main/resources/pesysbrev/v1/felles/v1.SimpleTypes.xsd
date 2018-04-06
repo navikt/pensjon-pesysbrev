@@ -139,14 +139,24 @@
 					<xs:documentation>Partner</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="SAMBOER">
+				<xs:annotation>
+					<xs:documentation>Samboer</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="SAMBOER1-5">
 				<xs:annotation>
 					<xs:documentation>Samboer</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="SAMBOER3-2">
+            <xs:enumeration value="SAMBOER3-2">
+                <xs:annotation>
+                    <xs:documentation>Samboer</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+			<xs:enumeration value="UKJENT">
 				<xs:annotation>
-					<xs:documentation>Samboer</xs:documentation>
+					<xs:documentation>Ukjent</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>

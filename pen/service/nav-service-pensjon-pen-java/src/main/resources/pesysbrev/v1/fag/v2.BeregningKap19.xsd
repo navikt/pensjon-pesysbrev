@@ -50,6 +50,16 @@
                     <xs:documentation>Antall år med pensjonsprosent 42 (Poengare91)</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="poengArTeller" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Proratabrøk tilleggspensjon for EØS- eller utenlands trygdeavtalerberegning. Teller</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengArNevner" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Proratabrøk tilleggspensjon for EØS- eller utenlands trygdeavtalerberegning. Nevner</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="forholdstallLevealder" type="st:TreDesimaler">
                 <xs:annotation>
                     <xs:documentation>Forholdstall ved levealdersjustering. Benyttes for beregning av Kap19 pensjon</xs:documentation>
