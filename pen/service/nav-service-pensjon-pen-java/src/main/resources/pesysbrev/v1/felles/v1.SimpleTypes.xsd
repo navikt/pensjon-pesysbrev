@@ -24,18 +24,18 @@
 		<xs:union memberTypes="xs:boolean OnlyEmptyString"/>
 	</xs:simpleType>
 
+    <xs:simpleType name="EmptyFormatertDato">
+        <xs:annotation>
+            <xs:documentation>Ikke obligatorisk formatert dato</xs:documentation>
+        </xs:annotation>
+        <xs:union memberTypes="FormatertDato OnlyEmptyString"/>
+    </xs:simpleType>
+
 	<xs:simpleType name="EmptyPostNr">
 		<xs:annotation>
 			<xs:documentation>Ikke obligatorisk postnummer</xs:documentation>
 		</xs:annotation>
 		<xs:union memberTypes="PostNr OnlyEmptyString"/>
-	</xs:simpleType>
-
-	<xs:simpleType name="EmptyFormatertDato">
-		<xs:annotation>
-			<xs:documentation>Ikke obligatorisk formatert dato</xs:documentation>
-		</xs:annotation>
-		<xs:union memberTypes="FormatertDato OnlyEmptyString"/>
 	</xs:simpleType>
 
 	<xs:simpleType name="EmptyInteger">
@@ -77,6 +77,15 @@
 		</xs:restriction>
 	</xs:simpleType>
 
+    <xs:simpleType name="OnlyEmptyString">
+        <xs:annotation>
+            <xs:documentation>En gyldig tom streng som referes til ved oppbygging av andre simpleTypes</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:length value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
 	<xs:simpleType name="PostNr">
 		<xs:annotation>
 			<xs:documentation>Obligatorisk postnummer</xs:documentation>
@@ -93,6 +102,31 @@
 					<xs:documentation>Ektefelle</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+            <xs:enumeration value="ENKE">
+                <xs:annotation>
+                    <xs:documentation>Enke</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ENSLIG">
+                <xs:annotation>
+                    <xs:documentation>Enslig</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+			<xs:enumeration value="FELLES-BARN">
+				<xs:annotation>
+					<xs:documentation>Felles barn</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+            <xs:enumeration value="FORELDER">
+                <xs:annotation>
+                    <xs:documentation>Forelder</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GIFT">
+                <xs:annotation>
+                    <xs:documentation>Gift</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
 			<xs:enumeration value="PARTNER">
 				<xs:annotation>
 					<xs:documentation>Partner</xs:documentation>
@@ -106,16 +140,6 @@
 			<xs:enumeration value="SAMBOER3-2">
 				<xs:annotation>
 					<xs:documentation>Samboer</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="FELLES-BARN">
-				<xs:annotation>
-					<xs:documentation>Felles barn</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="FORELDER">
-				<xs:annotation>
-					<xs:documentation>Forelder</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -132,13 +156,14 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="OnlyEmptyString">
-		<xs:annotation>
-			<xs:documentation>En gyldig tom streng som referes til ved oppbygging av andre simpleTypes</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:length value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
+    <xs:simpleType name="ToDesimaler">
+        <xs:annotation>
+            <xs:documentation>Et tall med maksimalt to desimaler</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
 
 </xs:schema>

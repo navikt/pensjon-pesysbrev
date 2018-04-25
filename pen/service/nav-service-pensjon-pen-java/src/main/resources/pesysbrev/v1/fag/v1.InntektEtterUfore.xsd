@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/InntektEtterUfore"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/InntektEtterUfore">
+
+    <xs:complexType name="InntektEtterUfore">
+        <xs:all>
+            <xs:element name="belopIEU" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>IEU fastsatt i perioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>

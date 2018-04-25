@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Trygdetidsdetaljer"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Trygdetidsdetaljer">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="Trygdetidsdetaljer">
+        <xs:all>
+            <xs:element name="anvendtTT" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Trygdetid anvendt i beregningen angitt i år.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="redusertFramtidigTT" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom framtidig trygdetid er redusert</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="beregningsMetode" type="beregningsMetodeTrygdetidKode">
+                <xs:annotation>
+                    <xs:documentation>Benyttet metode for å regne ut trygdetid. Dersom et land indikerer det at pro-rata avtalen for landet er brukt.(EOS, nordisk, folketrygd)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="faktiskTTNorge" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Faktisk trygdetid i Norge i måneder.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="faktiskTTEOS" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Faktisk trygdetid opptjent i ett, eller flere EØS land oppgitt i måneder.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="faktiskTTNordiskKonv" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Faktisk trygdetid i et Nordisk land som brukes i beregning av framtidig trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="faktiskTTBilateral" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Faktisk trygdetid i et annet avtaleland.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="tellerTTEOS" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Teller i forholdstall brukt i beregning av trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="nevnerTTEOS" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Nevner i forholdstall brukt i beregning av trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="tellerTTNordiskKonv" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Teller i forholdstall brukt i reduksjon av norsk framtidig trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="nevnerTTNordiskKonv" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Nevner i forholdstall brukt i reduksjon av norsk framtidig trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="framtidigTTNorsk" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Framtidig norsk trygdetid gitt i antall måneder.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="framtidigTTNordiskKonv" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Framtidig trygdetid etter artikkel 10 i måneder, brukes ved nordisk konvensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="samletTTNordiskKonv" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Samlet trygdetid brukt i beregning av uføretrygd etter reduksjon av framtidig trygdetid. Gitt i måneder.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="tellerProRata" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Pro-rata teller. I antall måneder.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="nevnerProRata" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Pro-rata nevner. I antall måneder.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+
+    <xs:simpleType name="beregningsMetodeTrygdetidKode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="FOLKETRYGD">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EOS">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="NORDISK">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="PRORATA">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AUSTRALIA">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CANADA">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="CHILE">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="INDIA">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ISRAEL">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SOR_KOREA">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SVEITS">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="USA">
+                <xs:annotation>
+                    <xs:documentation/>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
