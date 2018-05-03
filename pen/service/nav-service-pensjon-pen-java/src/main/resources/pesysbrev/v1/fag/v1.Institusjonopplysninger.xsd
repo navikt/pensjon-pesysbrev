@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema	attributeFormDefault="unqualified"
+			  elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			  xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+              xmlns:adresseMedLandskode="http://nav.no/dok/pesysbrev/fag/v1/AdresseMedLandskode"
+			  targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Institusjonopplysninger"
+			  xmlns="http://nav.no/dok/pesysbrev/fag/v1/Institusjonopplysninger">
+
+	<xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:import schemaLocation="../fag/v1.AdresseMedLandskode.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/AdresseMedLandskode"/>
+
+	<xs:complexType name="Institusjonopplysninger">
+		<xs:annotation>
+			<xs:documentation>Institusjonopplysninger som kortfattet sammenfatter en institusjons navn, adresse og kontaktinformasjon.</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+            <xs:element name="id" type="st:Identifikator">
+                <xs:annotation>
+                    <xs:documentation>Institusjonens ID-nummer</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+			<xs:element name="navn" type="st:NonEmptyString">
+				<xs:annotation>
+					<xs:documentation>Institusjonens navn</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+            <xs:element name="faksnummer" type="st:NonEmptyString">
+                <xs:annotation>
+                    <xs:documentation>Faksnummer til institusjonen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="telefonnummer" type="st:NonEmptyString">
+                <xs:annotation>
+                    <xs:documentation>Telefonnummer til institusjonen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="epost" type="st:NonEmptyString">
+                <xs:annotation>
+                    <xs:documentation>Epost til institusjonen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+           	<xs:element name="adresse" type="adresseMedLandskode:AdresseMedLandskode">
+				<xs:annotation>
+					<xs:documentation>Institusjonens kontaktadresse.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>
