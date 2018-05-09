@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:pp="http://nav.no/dok/pesysbrev/fag/v1/Pensjonspoeng"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/PensjonspoengListe"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/PensjonspoengListe">
+
+    <xs:import schemaLocation="v1.Pensjonspoeng.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/Pensjonspoeng"/>
+
+
+    <xs:complexType name="PensjonspoengListe">
+        <xs:sequence>
+            <xs:element name="pensjonspoeng" type="pp:Pensjonspoeng" maxOccurs="unbounded" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>En liste over elementer av typen Pensjonspoeng</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
