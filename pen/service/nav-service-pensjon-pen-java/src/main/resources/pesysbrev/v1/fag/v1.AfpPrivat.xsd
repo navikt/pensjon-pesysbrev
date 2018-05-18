@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AfpPrivat"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AfpPrivat">
+
+
+    <xs:complexType name="AfpPrivat">
+        <xs:annotation>
+            <xs:documentation></xs:documentation>
+        </xs:annotation>
+        <xs:all>
+            <xs:element name="AFPPrivatResultatfellesKontoret" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Hvis resultat fra Felleskontoret ikke er satt så settes verdien til SANN.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>

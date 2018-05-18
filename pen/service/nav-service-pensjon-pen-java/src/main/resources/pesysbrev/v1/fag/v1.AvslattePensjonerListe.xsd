@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:avslattePensjonerGruppe="http://nav.no/dok/pesysbrev/fag/v1/AvslattePensjonerGruppe"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AvslattePensjonerListe"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AvslattePensjonerListe">
+
+    <xs:import schemaLocation="v1.AvslattePensjonerGruppe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/AvslattePensjonerGruppe"/>
+
+    <xs:complexType name="AvslattePensjonerListe">
+        <xs:sequence>
+            <xs:element name="avslattePensjonerGruppe" type="avslattePensjonerGruppe:AvslattePensjonerGruppe" maxOccurs="unbounded" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>En liste over elementer av typen AvslattePensjonerGruppe</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

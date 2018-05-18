@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema	attributeFormDefault="unqualified"
+			  elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			  xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+              xmlns:eessiEnhet="http://nav.no/dok/pesysbrev/felles/v1/EessiEnhet"
+			  targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/EessiPensjon"
+			  xmlns="http://nav.no/dok/pesysbrev/felles/v1/EessiPensjon">
+
+	<xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:import schemaLocation="v1.EessiEnhet.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/EessiEnhet"/>
+
+	<xs:complexType abstract="true" name="EessiPensjon">
+		<xs:annotation>
+			<xs:documentation>Abstrakt type for fellesdelen av EessiPensjon</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+            <xs:element name="institusjonsNavn" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Institusjon som gir pensjonen (P1 felt 3.1). Fylles ut automatisk med navn på kontor som er avsender av dokumentet</xs:documentation>
+                    <xs:documentation>BETINGELSE: Tom dersom ikke første element i listen eller om bruker ikke her innvilget pensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="vedtaksdato" type="st:EmptyFormatertDato">
+                <xs:annotation>
+                    <xs:documentation>Dato for vedtaket (P1 felt 3.1)</xs:documentation>
+                    <xs:documentation>BETINGELSE: Tom dersom ikke første element i listen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="saksnummer" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Saksnummer (P1 felt 3.1)</xs:documentation>
+                    <xs:documentation>BETINGELSE: Tom dersom ikke første element i listen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="personPIN" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Personlig identifikasjonsnummer (PIN) for bruker av pensjon (P1 felt 3.1).</xs:documentation>
+                    <xs:documentation>BETINGELSE: Tom dersom ikke første element i listen eller om bruker ikke er innvilget pensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="pensjonstype">
+                <xs:annotation>
+                    <xs:documentation>Pensjonstype (1), (2), (3). (P1 felt 3.2). Mappes automatisk fra Pesys interne sakstyper til tallverdiene 1, 2, eller 3</xs:documentation>
+                    <xs:documentation>BETINGELSE: Tom dersom ikke første element i listen eller om bruker ikke er innvilget pensjon</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="1"/>
+                        <xs:enumeration value="2"/>
+                        <xs:enumeration value="3"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="vurderingsperiode">
+                <xs:annotation>
+                    <xs:documentation>Vurderingsperiode (starter den datoen samlet melding ble mottatt) (P1 felt 3.7). Preutfylles med standard tekst for NAV pensjoner.</xs:documentation>
+                    <xs:documentation>BETINGELSE: Tom dersom ikke første element i listen eller om bruker ikke er innvilget pensjon</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:token">
+                        <xs:enumeration value="6UkerFraMottatP1"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="adresseNyVurdering" type="eessiEnhet:EessiEnhet">
+                <xs:annotation>
+                    <xs:documentation>Hvor kravet om ny vurdering skal sendes (P1 felt 3.8). Preutfylles med navn på pålogget enhet og standard returadresse for NAV, basert på om det er AP, eller UT.</xs:documentation>
+                    <xs:documentation>BETINGELSE: Tom dersom ikke første element i listen eller om bruker ikke er innvilget pensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+</xs:schema>
