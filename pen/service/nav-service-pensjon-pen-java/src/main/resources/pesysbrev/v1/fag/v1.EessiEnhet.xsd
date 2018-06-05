@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema	attributeFormDefault="unqualified"
+			  elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+			  targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/EessiEnhet"
+			  xmlns="http://nav.no/dok/pesysbrev/felles/v1/EessiEnhet"
+			  xmlns:adresse="http://nav.no/dok/pesysbrev/felles/v1/Adresse">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:import schemaLocation="../felles/v1.Adresse.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/Adresse"/>
+
+	<xs:complexType name="EessiEnhet">
+		<xs:annotation>
+			<xs:documentation>En komplett adresse til en EESSIenhet</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="enhetsNavn" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Navn på enhet som skal motta krav om ny vurdering</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="adresse" type="adresse:Adresse" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Postadresse for hvor krav om ny vurdering skal sendes.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

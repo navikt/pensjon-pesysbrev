@@ -3,10 +3,12 @@
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           xmlns:kravArsaksKode="http://nav.no/dok/pesysbrev/fag/v1/KravArsaksKode"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v2/Krav"
            xmlns="http://nav.no/dok/pesysbrev/fag/v2/Krav">
 
     <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:import schemaLocation="v1.KravArsaksKode.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/KravArsaksKode"/>
 
     <xs:complexType name="Krav">
         <xs:all>
@@ -20,7 +22,7 @@
                     <xs:documentation>Dato vedtaket iverksettes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="arsak" type="kravArsaksKode">
+            <xs:element name="arsak" type="kravArsaksKode:KravArsaksKode">
                 <xs:annotation>
                     <xs:documentation>Viser for hvilken årsak bruker har søkt</xs:documentation>
                 </xs:annotation>
@@ -33,18 +35,4 @@
         </xs:all>
     </xs:complexType>
 
-    <xs:simpleType name="kravArsaksKode">
-        <xs:restriction base="xs:token">
-            <xs:enumeration value="UTTAKSGRAD">
-                <xs:annotation>
-                    <xs:documentation>Bruker søker om å endre uttaksgrad av alderspensjon</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="">
-                <xs:annotation>
-                    <xs:documentation>Tomt verdi er også gyldig</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-        </xs:restriction>
-    </xs:simpleType>
 </xs:schema>
