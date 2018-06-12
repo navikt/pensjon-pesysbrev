@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:innvilgedePensjonerGruppe="http://nav.no/dok/pesysbrev/fag/v1/InnvilgedePensjonerGruppe"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/InnvilgedePensjonerListe"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/InnvilgedePensjonerListe">
+
+    <xs:import schemaLocation="v1.InnvilgedePensjonerGruppe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/InnvilgedePensjonerGruppe"/>
+
+    <xs:complexType name="InnvilgedePensjonerListe">
+        <xs:sequence>
+            <xs:element name="innvilgedePensjonerGruppe" type="innvilgedePensjonerGruppe:InnvilgedePensjonerGruppe" maxOccurs="unbounded" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>En liste over elementer av typen InnvilgedePensjonerGruppe</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
