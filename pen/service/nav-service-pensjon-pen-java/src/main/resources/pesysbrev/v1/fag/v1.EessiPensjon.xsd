@@ -60,7 +60,7 @@
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:token">
-                        <xs:enumeration value="6UkerFraMottatP1"/>
+                        <xs:enumeration value="6UkerFraMottattP1"/>
                         <xs:enumeration value=""/>
                     </xs:restriction>
                 </xs:simpleType>
