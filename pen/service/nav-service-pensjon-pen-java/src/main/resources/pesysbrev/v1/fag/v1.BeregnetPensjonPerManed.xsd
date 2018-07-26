@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:apml="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManedListe"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/BeregnetPensjonPerManed"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/BeregnetPensjonPerManed">
+
+    <xs:import schemaLocation="v1.AlderspensjonPerManedListe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManedListe"/>
+
+    <xs:complexType name="BeregnetPensjonPerManed">
+        <xs:sequence>
+            <xs:element name="antallBeregningsperioderPensjon" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Viser antall beregningsperioder som ligger på vedtaket</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="erPerioderMedUttak" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Sann hvis uttaksgraden i tidligere beregningsperioder har vært over 0</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="alderspensjonPerManedListe" type="apml:AlderspensjonPerManedListe">
+                <xs:annotation>
+                    <xs:documentation>En liste over elementer av typen AlderspensjonPerManed</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

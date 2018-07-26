@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/BeregningKap19"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/BeregningKap19">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="BeregningKap19">
+        <xs:all>
+            <xs:element name="andel" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Del av pensjon beregnet etter gamle regler i kap 19</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="trygdetid" type="st:NonEmptyString">
+                <xs:annotation>
+                    <xs:documentation>Trygdetid etter kap 19 (brukt i beregning)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="innvilgetTilleggspensjon" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Viser hvis bruker har tilleggspensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="redusertTrygdetid" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Viser hvis bruker har redusert trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sluttpoengtall" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Norske sluttpoengtall</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengAr" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall poengår</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengArf92" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall år med pensjonsprosent 45 (Poengarf92)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengAre91" type="xs:string" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall år med pensjonsprosent 42 (Poengare91)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="forholdstallLevealder" type="st:NonEmptyString">
+                <xs:annotation>
+                    <xs:documentation>Forholdstall ved levealdersjustering. Benyttes for beregning av Kap19 pensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>
