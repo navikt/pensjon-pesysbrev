@@ -3,8 +3,8 @@
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
-           targetNamespace="http://nav.no/dok/pesysbrev/fag/v2/Alderspensjon"
-           xmlns="http://nav.no/dok/pesysbrev/fag/v2/Alderspensjon">
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v3/Alderspensjon"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v3/Alderspensjon">
 
     <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
 
@@ -23,12 +23,12 @@
                     <xs:documentation>Viser hvis pensjon er økt eller redusert i forhold til forrige beregning. Dette er uavhengig av om bruker tar ut pensjon eller ikke</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="andelKap19" type="xs:string" minOccurs="0">
+            <xs:element name="andelKap19" type="xs:string">
                 <xs:annotation>
                     <xs:documentation>Viser hvor stor del av AP2016 som er beregnet etter kapittel 19. Vil være konstant 10 for AP2011 og ikke ha noen verdi for AP1967 og AP2025. Brev vil kun bruke verdien for AP2016</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="andelKap20" type="xs:string" minOccurs="0">
+            <xs:element name="andelKap20" type="xs:string">
                 <xs:annotation>
                     <xs:documentation>Viser hvor stor del av AP2016 som er beregnet etter kapittel 20. Vil være konstant 10 for AP2025 og ikke ha noen verdi for AP1967 og AP2011. Brev vil kun bruke verdien for AP2016</xs:documentation>
                 </xs:annotation>
@@ -48,6 +48,42 @@
                     <xs:documentation>Total pensjon før skatt som sum av alle tilleggene for første beregningsperiode etter virkningsdato for vedtak</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="pensjonstilleggInnvilget" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom pensjonstillegg (kap 19) er innvilget for perioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="erEksportberegnet" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom AP er eksportberegnet. Dvs at det finnes en "hjemmeberegning" og at bruker ikke er på institusjon i perioden.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="garantipensjonInnvilget" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom garantipensjon (kap 20) er innvilget for perioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="garantitilleggInnvilget" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom garantitillegg (kap 20) er innvilget for perioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="godkjentYrkesskade" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom yrkesskade er innvilget for perioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="grunnpensjonErAvkortet" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom grunnpensjonen har blitt avkortet pga EPS tjener mer enn 2G eller mottar pensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="grunnpensjonSats" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Grunnpensjonsats</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+
         </xs:all>
     </xs:complexType>
 

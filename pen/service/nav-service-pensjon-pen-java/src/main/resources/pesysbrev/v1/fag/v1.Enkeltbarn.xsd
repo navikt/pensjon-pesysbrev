@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Enkeltbarn"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Enkeltbarn">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="Enkeltbarn">
+        <xs:all>
+            <xs:element name="fnr" type="st:Identifikator">
+                <xs:annotation>
+                    <xs:documentation>Fødselsnummer, eller D nummer på barnet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="navn" type="st:NonEmptyString">
+                <xs:annotation>
+                    <xs:documentation>Fullt navn på barnet: Fornavn, mellomnavn, etternavn. TPS leverer navn med kun store bokstaver, så det blir omgjort til stor forbokstav og resten små bokstaver per navn. Det tas ikke hensyn til spesielle navneregler slik at feks. "Johan van Gogh" vil bli til "Johan Van Gogh".</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>

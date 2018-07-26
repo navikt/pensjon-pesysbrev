@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Pensjonspoeng"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Pensjonspoeng">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="Pensjonspoeng">
+        <xs:all>
+            <xs:element name="arstall" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Årstall for poengtall</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="pensjonsgivendeinntekt" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Pensjonsgivendeinntekt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="grunnbelopVeiet" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Veiet grunnbeløp</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="pensjonspoeng" type="st:ToDesimaler">
+                <xs:annotation>
+                    <xs:documentation>Pensjonspoengtall for året</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="bruktIBeregningen" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom poengtallet er brukt i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengtallstype" type="PoengtallstypeKode">
+                <xs:annotation>
+                    <xs:documentation>Type av poengtall.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="PoengtallstypeKode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="FPP">
+                <xs:annotation>
+                    <xs:documentation>Framtidig pensjonspoengtall</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="G">
+                <xs:annotation>
+                    <xs:documentation>Omsorg for barn under 6 år</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="H">
+                <xs:annotation>
+                    <xs:documentation>Omsorg for barn over 6 år (uføre)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="IFUT">
+                <xs:annotation>
+                    <xs:documentation>Inntekt før uttak av AFP</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="J">
+                <xs:annotation>
+                    <xs:documentation>Omsorgspoeng små barn</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="K">
+                <xs:annotation>
+                    <xs:documentation>Omsorgspoeng forhøyet hjelpestønad</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="L">
+                <xs:annotation>
+                    <xs:documentation>Omsorgspoeng for pleie av eldre og syke</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="PI">
+                <xs:annotation>
+                    <xs:documentation>Ordinært poengtall</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

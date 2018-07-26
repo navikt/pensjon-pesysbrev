@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:pp="http://nav.no/dok/pesysbrev/fag/v1/PensjonspoengListe"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Poengrekke"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Poengrekke">
+
+    <xs:import schemaLocation="v1.PensjonspoengListe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/PensjonspoengListe"/>
+
+    <xs:complexType name="Poengrekke">
+        <xs:all>
+            <xs:element name="erPopulert" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom det finnes pensjonspoeng</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="inneholderOmsorgspoeng" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom det finnes omsorgspoeng. Dvs pensjonspoeng av type J, K, eller L.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="pensjonspoengListe" type="pp:PensjonspoengListe">
+                <xs:annotation>
+                    <xs:documentation>Liste med opptjente, godskrevne, eller beregnede pensjonspoeng.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>

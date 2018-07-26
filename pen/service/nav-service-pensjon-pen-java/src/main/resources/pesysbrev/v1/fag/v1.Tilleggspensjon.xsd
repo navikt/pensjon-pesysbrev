@@ -27,12 +27,12 @@
                     <xs:documentation>SANN dersom yrkesskade er anvendt i beregningen av tilleggspensjon for avdød av regelmotoren</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="pgaUngeUfore" type="xs:boolean">
+            <xs:element name="pgaUngUfore" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom  ung ufør er tatt med i beregningen av regelmotoren</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="pgaUngeUforeAvdod" type="xs:boolean">
+            <xs:element name="pgaUngUforeAvdod" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom  ung ufør er tatt med i beregningen av tilleggspensjon for avdød av regelmotoren</xs:documentation>
                 </xs:annotation>

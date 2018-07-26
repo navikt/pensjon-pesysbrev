@@ -20,7 +20,7 @@
                     <xs:documentation>Sann hvis uttaksgraden i tidligere beregningsperioder har vært over 0</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="alderspensjonPerManedListe" type="apml:AlderspensjonPerManedListe">
+            <xs:element name="alderspensjonPerManedListe" type="apml:AlderspensjonPerManedListe" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>En liste over elementer av typen AlderspensjonPerManed</xs:documentation>
                 </xs:annotation>
