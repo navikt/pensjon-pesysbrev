@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/InngangOgEksportVurdering"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/InngangOgEksportVurdering">
+
+    <xs:complexType name="InngangOgEksportVurdering">
+        <xs:all>
+            <xs:element name="oppfyltVedSammenleggingKap19" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til sann hvis bruker har inngang etter sammenlegging med avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="oppfyltVedSammenleggingKap20" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til sann hvis bruker har inngang på kapittel 20 etter sammenlegging med avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="eksportTrygdeavtaleEOS" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til sann hvis bruker har eksportrett etter EØS avtale</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="eksportTrygdeavtaleAvtaleland" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Setter til sann hvis bruker har ret til eksport etter trygdeavtale</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="eksportBeregnetUtenGarantipensjon" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til sann hvis rett til eksport av garantipensjon er nei og hjemmeberegning er beregnet med garantipensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="minst20ArTrygdetid" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til usann dersom det er markert i nei i skjermbildet inngang og eksport på om bruker har over 20 års trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>
