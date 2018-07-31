@@ -12,39 +12,49 @@
 
     <xs:complexType name="Krav">
         <xs:all>
-            <xs:element name="mottattDato" type="st:FormatertDato">
+            <xs:element name="mottattDato" type="st:FormatertDato" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Dato søknad ble mottatt</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="virkDatoFom" type="st:FormatertDato">
+            <xs:element name="virkDatoFom" type="st:FormatertDato" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Dato vedtaket iverksettes</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="arsak" type="kravArsaksKode:KravArsaksKode">
+            <xs:element name="arsak" type="kravArsaksKode:KravArsaksKode" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Viser for hvilken årsak bruker har søkt</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="erForstegangsbehandling" type="xs:boolean">
+            <xs:element name="erForstegangsbehandling" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>SANN dersom kravet gjelder en førstegangsbehandling</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="AFPPrivat" type="xs:boolean">
+            <xs:element name="AFPPrivat" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Hvis alderspensjonkravet er markert med at bruker har søkt om AFP Privat settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="erForstegangsbehandletNorgeUtland" type="xs:boolean">
+            <xs:element name="erForstegangsbehandletNorgeUtland" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Hvis kravtype er (krav.kravGjelder) "Førstegangsbehandling Norge/utland" settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="norgeBehandlendeLand" type="xs:boolean">
+            <xs:element name="norgeBehandlendeLand" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Hvis det er huket av JA i kravskjermbildet på "Norge er behandlende land" settes verdien til SANN</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="erMellombehandling" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Hvis kravtypen er (krav.kravGjelder) "Mellombehandling" settes verdien til SANN</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="erSluttbehandlingNorgeUtland" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Hvis kravtypen er (krav.kravGjelder) "Sluttbehandling Norge /Utland" settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:all>
