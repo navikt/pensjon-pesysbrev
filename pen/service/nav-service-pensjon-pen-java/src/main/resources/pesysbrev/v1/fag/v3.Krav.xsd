@@ -57,6 +57,66 @@
                     <xs:documentation>Hvis kravtypen er (krav.kravGjelder) "Sluttbehandling Norge /Utland" settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="kravInitiertAv" type="initiertAvcode" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Fra kodeverk T_K_INITIERT_AV. Eksempel på verdi er BRUKER</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:all>
     </xs:complexType>
+
+    <xs:simpleType name="initiertAvcode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="ADVOKAT">
+                <xs:annotation>
+                    <xs:documentation>Advokat</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ANNET">
+                <xs:annotation>
+                    <xs:documentation>Annet</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BRUKER">
+                <xs:annotation>
+                    <xs:documentation>Bruker</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="INNTKON">
+                <xs:annotation>
+                    <xs:documentation>Inntektskontroll</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="INTERN">
+                <xs:annotation>
+                    <xs:documentation>NAV (maskinelt)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="KONV">
+                <xs:annotation>
+                    <xs:documentation>Konvertert</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="NAV">
+                <xs:annotation>
+                    <xs:documentation>Nav</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SOSIALKONTOR">
+                <xs:annotation>
+                    <xs:documentation>Sosialkontoret</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TIPS">
+                <xs:annotation>
+                    <xs:documentation>Tips</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="VERGE">
+                <xs:annotation>
+                    <xs:documentation>Verge</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
