@@ -4,22 +4,19 @@
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
            xmlns:kravArsaksKode="http://nav.no/dok/pesysbrev/fag/v1/KravArsaksKode"
+           xmlns:kravInitiertAvKode="http://nav.no/dok/pesysbrev/fag/v1/KravInitiertAvKode"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v3/Krav"
            xmlns="http://nav.no/dok/pesysbrev/fag/v3/Krav">
 
     <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
     <xs:import schemaLocation="v1.KravArsaksKode.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/KravArsaksKode"/>
+    <xs:import schemaLocation="v1.KravInitiertAvKode.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/KravInitiertAvKode"/>
 
     <xs:complexType name="Krav">
         <xs:all>
-            <xs:element name="mottattDato" type="st:FormatertDato" minOccurs="0">
+            <xs:element name="AFPPrivat" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Dato søknad ble mottatt</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="virkDatoFom" type="st:FormatertDato" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>Dato vedtaket iverksettes</xs:documentation>
+                    <xs:documentation>Hvis alderspensjonkravet er markert med at bruker har søkt om AFP Privat settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="arsak" type="kravArsaksKode:KravArsaksKode" minOccurs="0">
@@ -32,21 +29,6 @@
                     <xs:documentation>SANN dersom kravet gjelder en førstegangsbehandling</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="AFPPrivat" type="xs:boolean" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>Hvis alderspensjonkravet er markert med at bruker har søkt om AFP Privat settes verdien til SANN</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="erForstegangsbehandletNorgeUtland" type="xs:boolean" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>Hvis kravtype er (krav.kravGjelder) "Førstegangsbehandling Norge/utland" settes verdien til SANN</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="norgeBehandlendeLand" type="xs:boolean" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>Hvis det er huket av JA i kravskjermbildet på "Norge er behandlende land" settes verdien til SANN</xs:documentation>
-                </xs:annotation>
-            </xs:element>
             <xs:element name="erMellombehandling" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Hvis kravtypen er (krav.kravGjelder) "Mellombehandling" settes verdien til SANN</xs:documentation>
@@ -57,66 +39,31 @@
                     <xs:documentation>Hvis kravtypen er (krav.kravGjelder) "Sluttbehandling Norge /Utland" settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="kravInitiertAv" type="initiertAvcode">
+            <xs:element name="erForstegangsbehandletNorgeUtland" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Fra kodeverk T_K_INITIERT_AV. Eksempel på verdi er BRUKER</xs:documentation>
+                    <xs:documentation>Hvis kravtype er (krav.kravGjelder) "Førstegangsbehandling Norge/utland" settes verdien til SANN</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="kravInitiertAv" type="kravInitiertAvKode:KravInitiertAvKode" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Fra kodeverk T_K_INITIERT_AV. Eksempel på verdi er BRUKER.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="mottattDato" type="st:FormatertDato" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Dato søknad ble mottatt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="norgeBehandlendeLand" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Hvis det er huket av JA i kravskjermbildet på "Norge er behandlende land" settes verdien til SANN</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="virkDatoFom" type="st:FormatertDato" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Dato vedtaket iverksettes</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:all>
     </xs:complexType>
-
-    <xs:simpleType name="initiertAvcode">
-        <xs:restriction base="xs:token">
-            <xs:enumeration value="ADVOKAT">
-                <xs:annotation>
-                    <xs:documentation>Advokat</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="ANNET">
-                <xs:annotation>
-                    <xs:documentation>Annet</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="BRUKER">
-                <xs:annotation>
-                    <xs:documentation>Bruker</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="INNTKON">
-                <xs:annotation>
-                    <xs:documentation>Inntektskontroll</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="INTERN">
-                <xs:annotation>
-                    <xs:documentation>NAV (maskinelt)</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="KONV">
-                <xs:annotation>
-                    <xs:documentation>Konvertert</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="NAV">
-                <xs:annotation>
-                    <xs:documentation>Nav</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="SOSIALKONTOR">
-                <xs:annotation>
-                    <xs:documentation>Sosialkontoret</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="TIPS">
-                <xs:annotation>
-                    <xs:documentation>Tips</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="VERGE">
-                <xs:annotation>
-                    <xs:documentation>Verge</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-        </xs:restriction>
-    </xs:simpleType>
 </xs:schema>
