@@ -57,7 +57,7 @@
                     <xs:documentation>Hvis kravtypen er (krav.kravGjelder) "Sluttbehandling Norge /Utland" settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="kravInitiertAv" type="initiertAvcode" minOccurs="0">
+            <xs:element name="kravInitiertAv" type="initiertAvcode">
                 <xs:annotation>
                     <xs:documentation>Fra kodeverk T_K_INITIERT_AV. Eksempel på verdi er BRUKER</xs:documentation>
                 </xs:annotation>
