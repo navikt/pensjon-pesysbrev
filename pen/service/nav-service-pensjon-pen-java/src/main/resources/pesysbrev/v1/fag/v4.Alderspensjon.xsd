@@ -103,7 +103,7 @@
                     <xs:documentation>Hvis brukers alderpensjon er beregnet med ytelses komponenten skjermingstillegg settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="minstenivaPensjonistParInnvilget" type="xs:boolean">
+            <xs:element name="minstenivaPensjonistParInnvilget" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Minstenivåtillegg pensjonsistpar for første beregningsperiode etter virkningsdato for vedtaket.</xs:documentation>
                 </xs:annotation>
