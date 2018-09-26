@@ -2,6 +2,7 @@
 <xs:schema attributeFormDefault="unqualified"
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
            xmlns:vedtaksresultatUtlandListe="http://nav.no/dok/pesysbrev/fag/v1/VedtaksresultatUtlandListe"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/VedtaksresultatUtland"
            xmlns="http://nav.no/dok/pesysbrev/fag/v1/VedtaksresultatUtland">

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/EndretUttaksgrad"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/EndretUttaksgrad">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="EndretUttaksgrad">
+        <xs:all>
+            <xs:element name="restGrunnpensjon" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Restgrunnpensjon fra forrige beregning, benyttes til å fastsette ny grunnpensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="restTilleggspensjon" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Resttilleggspensjon fra forrige beregning, benyttes til å fastsette ny tilleggspensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="restPensjonstillegg" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Restpensjonstillegg fra forrige beregning, benyttes til å fastsette nytt pensjonstillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="pensjonsBeholdning" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Pensjonsbeholdning brukt i beregning, benyttes til å fastsette ny inntektspensjon.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="garantipensjonsBeholdning" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Garantipensjonsbeholdning brukt i beregning, benyttes til å fastsette ny garantipensjon.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>
