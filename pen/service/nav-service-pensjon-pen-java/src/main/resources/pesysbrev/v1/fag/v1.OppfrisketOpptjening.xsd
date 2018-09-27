@@ -25,7 +25,7 @@
                     <xs:documentation>PGi bruker har fått godskrevet opptjening for i siste gyldiggjorte år. Feltet vil hente inn verdi selv om siste gyldige opptjeningsår er mer en 2 år forutt for ønsket virkfom</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="opptjeningTilførtKap20" type="st:EmptyInteger">
+            <xs:element name="opptjeningTilfortKap20" type="st:EmptyInteger">
                 <xs:annotation>
                     <xs:documentation>Ny opptjening tilført fra 01.01. Dersom ny opptjening ikke er godskrevet på tidspunktet vedtaket fattes så vil feltet være uten verdi.</xs:documentation>
                 </xs:annotation>
