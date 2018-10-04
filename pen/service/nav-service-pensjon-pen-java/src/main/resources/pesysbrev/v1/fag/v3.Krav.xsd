@@ -4,13 +4,11 @@
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
            xmlns:kravArsaksKode="http://nav.no/dok/pesysbrev/fag/v1/KravArsaksKode"
-           xmlns:kravInitiertAvKode="http://nav.no/dok/pesysbrev/fag/v1/KravInitiertAvKode"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v3/Krav"
            xmlns="http://nav.no/dok/pesysbrev/fag/v3/Krav">
 
     <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
     <xs:import schemaLocation="v1.KravArsaksKode.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/KravArsaksKode"/>
-    <xs:import schemaLocation="v1.KravInitiertAvKode.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/KravInitiertAvKode"/>
 
     <xs:complexType name="Krav">
         <xs:all>
@@ -49,7 +47,7 @@
                     <xs:documentation>Hvis kravtype er (krav.kravGjelder) "Førstegangsbehandling Norge/utland" settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="kravInitiertAv" type="kravInitiertAvKode:KravInitiertAvKode" minOccurs="0">
+            <xs:element name="kravInitiertAv" type="st:NonEmptyString" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Fra kodeverk T_K_INITIERT_AV. Eksempel på verdi er BRUKER.</xs:documentation>
                 </xs:annotation>
