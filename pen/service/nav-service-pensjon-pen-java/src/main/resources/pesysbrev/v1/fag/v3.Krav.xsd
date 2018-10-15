@@ -22,6 +22,11 @@
                     <xs:documentation>Viser for hvilken årsak bruker har søkt</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="erForeldrelos" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til SANN hvis det i krav-skjermbildet er valgt foreldreløs i nedtrekksliste på type (kravhode.K_KRAV_VELG_T = FORELDRELOS). Er uten verdi kun hvis sakstypen er ulik barnepensjon.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="erForstegangsbehandling" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>SANN dersom kravet gjelder en førstegangsbehandling</xs:documentation>

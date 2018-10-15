@@ -18,6 +18,11 @@
 					<xs:documentation>Fødselsdato til bruker i saken</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="brukerUnder18Ar" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Hvis bruker er under 18 år gammel på dagens dato, settes brukerUnder18Ar = SANN</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="borINorge" type="xs:boolean" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Viser hvis bruker bor i Norge</xs:documentation>
