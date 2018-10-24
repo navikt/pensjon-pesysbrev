@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Ytelseskomponent"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Ytelseskomponent">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:import schemaLocation="v1.YtelseskomponentListe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/YtelseskomponentListe"/>
+
+    <xs:complexType name="Ytelseskomponent">
+        <xs:all>
+            <xs:element name="ytelsesKomponentType" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Type ytelseskomponent som finnes på beregningsperioden.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ytelseskomponentOkt" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Denne verdien settes til SANN hvis ytelseskomponenten har økt fra forrige beregningsperiode og USANN hvis ytelseskomponenten har minket fra forrige beregningsperiode. Tom verdi kun hvis ytelseskomponenten er uendret fra forrige beregningsperiode</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="innvilgetForrigePeriode" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Hvis ytelseskomponenten var innvilget og verdien var > 0 på forrige beregningsperiode settes verdien SANN, ellers ettes USANN</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>
