@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema	attributeFormDefault="unqualified"
+              elementFormDefault="qualified"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/VedleggsListe"
+              xmlns="http://nav.no/dok/pesysbrev/felles/v1/VedleggsListe"
+              xmlns:vedlegg="http://nav.no/dok/pesysbrev/felles/v1/Vedlegg">
+
+    <xs:import schemaLocation="v1.Vedlegg.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/Vedlegg"/>
+
+    <xs:complexType name="VedleggsListe">
+        <xs:annotation>
+            <xs:documentation>En liste over elementer av typen Vedlegg</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="vedlegg" type="vedlegg:Vedlegg" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

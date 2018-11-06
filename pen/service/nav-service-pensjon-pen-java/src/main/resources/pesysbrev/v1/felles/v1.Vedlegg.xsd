@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema	attributeFormDefault="unqualified"
+              elementFormDefault="qualified"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema"
+              targetNamespace="http://nav.no/dok/pesysbrev/felles/v1/Vedlegg"
+              xmlns="http://nav.no/dok/pesysbrev/felles/v1/Vedlegg"
+              xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes">
+
+    <xs:import schemaLocation="v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="Vedlegg">
+        <xs:annotation>
+            <xs:documentation>Informasjon om hvilke vedlegg som blir sendt med i hovedbrevet</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="dokumentTypeId" type="st:NonEmptyString"/>
+            <xs:element name="versjon" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

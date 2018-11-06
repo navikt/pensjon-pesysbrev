@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           xmlns:eessiPensjon="http://nav.no/dok/pesysbrev/felles/v1/EessiPensjon"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/EessiInnvilgetPensjon"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/EessiInnvilgetPensjon">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:import schemaLocation="v1.EessiPensjon.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/EessiPensjon"/>
+
+    <xs:complexType name="EessiInnvilgetPensjon">
+        <xs:annotation>
+            <xs:documentation>Opplysninger om en innvilget pensjon</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="eessiPensjon:EessiPensjon">
+                <xs:sequence>
+                    <xs:element name="datoForsteUtbetaling" type="st:EmptyFormatertDato">
+                        <xs:annotation>
+                            <xs:documentation>Dato for første utbetaling (P1 felt 3.3). Fylles automatisk ut med dato for virkFom på vedtaket.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="hyppighet">
+                        <xs:annotation>
+                            <xs:documentation>Betalingshyppighet (P1 felt 3.4).
+                                Feltet preutfylles med ett av følgende valg:
+                                Yearly
+                                Quarterly
+                                Monthly (12/year)
+                                Monthly (13/year)
+                                Monthly (14/year)
+                                Weekly
+                                Other
+                                Siden AP, UT, BP og GJENL utbetales 12 ganger i året fylles feltet ut med en fast tekst.</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:token">
+                                <xs:enumeration value="Monthly12TimesPerYear"/>
+                                <xs:enumeration value=""/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="bruttobelop" type="st:EmptyInteger">
+                        <xs:annotation>
+                            <xs:documentation>Bruttobeløp (P1 felt 3.4). Fylles automatisk ut med månedlig totalbeløp etter avkortning pga inntekt.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="land" type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>Feltet skal preutfylles med landets to bokstav kode (P1 felt 3.4)</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="valuta" type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation>Feltet skal preutfylles med kode for landets offisielle valuta (P1 felt 3.4)</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="innvilget">
+                        <xs:annotation>
+                            <xs:documentation>Pensjonen er innvilget: (4), (5), (6). (P1 felt 3.5).Preutfylles ikke i denne historien.</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:token">
+                                <xs:enumeration value="4"/>
+                                <xs:enumeration value="5"/>
+                                <xs:enumeration value="6"/>
+                                <xs:enumeration value=""/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="redusert">
+                        <xs:annotation>
+                            <xs:documentation>Pensjonen er redusert: (7), (8). (P1 felt 3.6).Preutfylles ikke i denne historien.</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:token">
+                                <xs:enumeration value="7"/>
+                                <xs:enumeration value="8"/>
+                                <xs:enumeration value=""/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema	attributeFormDefault="unqualified"
+			  elementFormDefault="qualified"
+			  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			  xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+              xmlns:adresseMedLandskode="http://nav.no/dok/pesysbrev/fag/v1/AdresseMedLandskode"
+			  targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Personopplysninger"
+			  xmlns="http://nav.no/dok/pesysbrev/fag/v1/Personopplysninger">
+
+	<xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:import schemaLocation="../fag/v1.AdresseMedLandskode.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/AdresseMedLandskode"/>
+
+	<xs:complexType name="Personopplysninger">
+		<xs:annotation>
+			<xs:documentation>Personopplysnigner som kortfattet sammenfatter en persons navn og adresse.</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="fornavn" type="st:NonEmptyString">
+				<xs:annotation>
+					<xs:documentation>Fornavn</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="etternavn" type="st:NonEmptyString">
+				<xs:annotation>
+					<xs:documentation>Etternavn</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="etternavnVedFodsel" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Etternavn ved fødsel</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="fodselsdato" type="st:FormatertDato">
+				<xs:annotation>
+					<xs:documentation>Fødselsnummer/Dnummer</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="adresse" type="adresseMedLandskode:AdresseMedLandskode">
+				<xs:annotation>
+					<xs:documentation>Kontaktadresse</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+
+</xs:schema>
