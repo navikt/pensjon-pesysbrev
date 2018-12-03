@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/OppfrisketOpptjening"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/OppfrisketOpptjening">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="OppfrisketOpptjening">
+        <xs:all>
+            <xs:element name="sisteGyldigeOpptjeningsAr" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Årstallet for siste år det er gyldiggjort opptjening for. Feltet vil hente inn verdi selv om siste gyldige opptjeningsår er mer en 2 år forutt for virk.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="PGISisteGyldigeOpptjeningsAr" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>PGi bruker har fått godskrevet opptjening for i siste gyldiggjorte år. Feltet vil hente inn verdi selv om siste gyldige opptjeningsår er mer en 2 år forutt for ønsket virkfom</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengtallSisteGyldigeOpptjeningsAr" type="st:EmptyToDesimaler">
+                <xs:annotation>
+                    <xs:documentation>PGi bruker har fått godskrevet opptjening for i siste gyldiggjorte år. Feltet vil hente inn verdi selv om siste gyldige opptjeningsår er mer en 2 år forutt for ønsket virkfom</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="opptjeningTilfortKap20" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Ny opptjening tilført fra 01.01. Dersom ny opptjening ikke er godskrevet på tidspunktet vedtaket fattes så vil feltet være uten verdi.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>

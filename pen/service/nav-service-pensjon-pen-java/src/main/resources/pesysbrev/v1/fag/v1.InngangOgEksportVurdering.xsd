@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/InngangOgEksportVurdering"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/InngangOgEksportVurdering">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="InngangOgEksportVurdering">
+        <xs:all>
+            <xs:element name="oppfyltVedSammenleggingKap19" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til sann hvis det er markert ja på feltet Oppfylt ved sammenlegging kap. 19
+
+                        Settes til usann dersom feltet er markert nei på feltet Oppfylt ved sammenlegging kap. 19
+
+                        Sette til null dersom det verken er satt ja eller nei i feltet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="oppfyltVedSammenleggingKap20" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til sann hvis det er markert ja på feltet Oppfylt ved sammenlegging kap. 20
+
+                        Settes til usann dersom feltet er marker med nei på feltet Oppfylt ved sammenlegging kap. 20
+
+                        Settes til null dersom det verken er satt ja eller nei i feltet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="eksportTrygdeavtaleEOS" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til sann hvis det er markert ja på feltene Eksportrett etter EØS forordning eller trygdeavtaler med EØS-land i kraft etter 01.01.1994 eller Eksportrett etter trygdeavtaler med EØS-land i kraft før 01.01.1994
+
+                        Settes til usann hvis det er huket av nei på feltene Eksportrett etter EØS forordning eller trygdeavtaler med EØS-land i kraft etter 01.01.1994 eller Eksportrett etter trygdeavtaler med EØS-land i kraft før 01.01.1994
+
+                        Settes til null dersom det verken er satt ja eller nei på feltene Eksportrett etter EØS forordning eller trygdeavtaler med EØS-land i kraft etter 01.01.1994 eller Eksportrett etter trygdeavtaler med EØS-land i kraft før 01.01.1994</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="eksportTrygdeavtaleAvtaleland" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Setter til sann hvis det er markert ja på Eksportrett etter ander trygdeavtaler
+
+                        Settes til usann hvis det er markert nei Eksportrett etter andre trygdeavtaler
+
+                        Settes til null dersom vet ikke er satt ja eller nei i feltet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="eksportBeregnetUtenGarantipensjon" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til sann hvis rett til eksport av garantipensjon er nei og hjemmeberegning er beregnet med garantipensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="minst20ArTrygdetid" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til usann dersom det er markert i nei i skjermbildet inngang og eksport på om bruker har over 20 års trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>
