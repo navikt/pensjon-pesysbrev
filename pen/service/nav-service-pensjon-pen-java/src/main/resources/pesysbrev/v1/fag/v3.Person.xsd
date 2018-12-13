@@ -13,32 +13,32 @@
 			<xs:documentation>Informasjon om person/bruker</xs:documentation>
 		</xs:annotation>
 		<xs:all>
-			<xs:element name="fodselsdato" type="st:FormatertDato" minOccurs="0">
+			<xs:element name="fodselsdato" type="st:FormatertDato">
 				<xs:annotation>
 					<xs:documentation>Fødselsdato til bruker i saken</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="brukerUnder18Ar" type="xs:boolean" minOccurs="0">
+			<xs:element name="brukerUnder18Ar" type="st:EmptyBoolean">
 				<xs:annotation>
 					<xs:documentation>Hvis bruker er under 18 år gammel på dagens dato, settes brukerUnder18Ar = SANN</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="borINorge" type="xs:boolean" minOccurs="0">
+			<xs:element name="borINorge" type="xs:boolean">
 				<xs:annotation>
 					<xs:documentation>Viser hvis bruker bor i Norge</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="borIAvtaleland" type="xs:boolean" minOccurs="0">
+			<xs:element name="borIAvtaleland" type="xs:boolean">
 				<xs:annotation>
 					<xs:documentation>Viser hvis bruker bor i et land Norge har trygdeavtale med</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="sivilstand" type="SivilstandTypeKodePerson" minOccurs="0">
+			<xs:element name="sivilstand" type="SivilstandTypeKodePerson">
 				<xs:annotation>
 					<xs:documentation>Brukers sivilstand benyttet i beregningen</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="faktiskBostedsland" type="xs:string" minOccurs="0">
+			<xs:element name="faktiskBostedsland" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Sender over land som er registrert som brukes faktiske bostedsland under personopplysninger</xs:documentation>
 				</xs:annotation>
