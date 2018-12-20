@@ -51,6 +51,8 @@
             <xs:enumeration value="ENKE"/>
             <xs:enumeration value="ENSLIG"/>
             <xs:enumeration value="GIFT"/>
+			<xs:enumeration value="GLAD_EKT"/>
+			<xs:enumeration value="GLAD_PART"/>
             <xs:enumeration value="PARTNER"/>
             <xs:enumeration value="SAMBOER1-5"/>
             <xs:enumeration value="SAMBOER3-2"/>
