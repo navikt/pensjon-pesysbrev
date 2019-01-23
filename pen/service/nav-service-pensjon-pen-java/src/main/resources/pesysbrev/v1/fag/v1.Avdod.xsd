@@ -15,6 +15,11 @@
                     <xs:documentation>Den avdødes fornavn, mellom og etternavn</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="avdodFnr" type="st:NonEmptyString" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Den avdødes fornavn, mellom og etternavn</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="sivilstand" type="st:EmptySivilstandTypeKode" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Sivilstand med bruker ved død</xs:documentation>

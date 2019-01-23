@@ -13,6 +13,11 @@
             <xs:documentation>Informasjon om alderspensjon</xs:documentation>
         </xs:annotation>
         <xs:all>
+            <xs:element name="avdodFlyktningstatusErBrukt" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Viser hvis egen eller avdod sin flykningestatus er brukt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="virkDatoFom" type="st:FormatertDato">
                 <xs:annotation>
                     <xs:documentation>Dato alderspensjon iverksettes</xs:documentation>
@@ -100,7 +105,7 @@
             </xs:element>
             <xs:element name="flyktningstatusErBrukt" type="st:EmptyBoolean" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Viser hvis egen eller avdod sin flykningestatus er brukt. Tom dersom hverken bruker, eller avdod er flyktning, eller dersom AP1967</xs:documentation>
+                    <xs:documentation>Viser hvis egen flykningestatus er brukt. Tom dersom hverken bruker, eller avdod er flyktning, eller dersom AP1967</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="brukersSivilstand" type="st:EmptySivilstandTypeKode" minOccurs="0">
