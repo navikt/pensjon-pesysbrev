@@ -134,6 +134,16 @@
                     <xs:documentation>Gift</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+			<xs:enumeration value="GLAD_EKT">
+				<xs:annotation>
+					<xs:documentation>Ektefelle, men vurdert som enslig</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GLAD_PART">
+				<xs:annotation>
+					<xs:documentation>Partner, men vurdert som enslig</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="PARTNER">
 				<xs:annotation>
 					<xs:documentation>Partner</xs:documentation>

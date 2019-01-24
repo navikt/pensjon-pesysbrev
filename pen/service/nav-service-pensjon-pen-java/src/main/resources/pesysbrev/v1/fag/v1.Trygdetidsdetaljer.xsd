@@ -10,6 +10,7 @@
 
     <xs:complexType name="Trygdetidsdetaljer">
         <xs:all>
+            <xs:element name="anvendtTT" type="st:EmptyInteger">
             <xs:element name="framtidigTTEOS" type="st:EmptyInteger" minOccurs="0">
             <xs:annotation>
                 <xs:documentation>Framtidig trygdetid opptjent i ett, eller flere EØS land oppgitt i måneder</xs:documentation>

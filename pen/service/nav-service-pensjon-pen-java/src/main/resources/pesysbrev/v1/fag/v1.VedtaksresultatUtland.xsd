@@ -12,7 +12,7 @@
 
     <xs:complexType name="VedtaksresultatUtland">
         <xs:all>
-            <xs:element name="antallLandVilkarsprovd" type="xs:int" minOccurs="0">
+            <xs:element name="antallLandVilkarsprovd" type="xs:int">
                 <xs:annotation>
                     <xs:documentation>Viser antall land som er vilkårsprøvd på vedtaket som har status Mottat svar fra utland.</xs:documentation>
                 </xs:annotation>
