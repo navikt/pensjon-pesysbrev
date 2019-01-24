@@ -25,6 +25,16 @@
                     <xs:documentation>Liste med opptjente, godskrevne, eller beregnede pensjonspoeng.</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="inneholderFramtidigPoeng" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom det finnes poengtall av typen FPP.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="inneholderUforehistorikk" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom listen av pensjonspoengListe har innslag av pensjonspoenf der maksUforegradKap19 > 0.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:all>
     </xs:complexType>
 
