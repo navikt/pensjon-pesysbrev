@@ -38,7 +38,7 @@
                     <xs:documentation>Er SANN dersom garantitillegg (kap 20) er innvilget for perioden</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="gjenlevenderettAnvendt" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="gjenlevenderettAnvendt" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom alderspensjonen er beregnet med gjenlevenderett</xs:documentation>
                 </xs:annotation>

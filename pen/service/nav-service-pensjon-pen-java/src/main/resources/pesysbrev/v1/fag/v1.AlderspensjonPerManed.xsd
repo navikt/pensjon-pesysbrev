@@ -13,7 +13,7 @@
             <xs:documentation>Informasjon om alderspensjon</xs:documentation>
         </xs:annotation>
         <xs:all>
-            <xs:element name="avdodFlyktningstatusErBrukt" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="avdodFlyktningstatusErBrukt" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Viser hvis egen eller avdod sin flykningestatus er brukt</xs:documentation>
                 </xs:annotation>
