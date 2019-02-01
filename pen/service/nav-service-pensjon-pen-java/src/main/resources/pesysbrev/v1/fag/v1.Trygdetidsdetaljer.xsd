@@ -10,7 +10,7 @@
 
     <xs:complexType name="Trygdetidsdetaljer">
         <xs:all>
-            <xs:element name="anvendtTT" type="xs:int">
+            <xs:element name="anvendtTT" type="st:EmptyInteger">
                 <xs:annotation>
                     <xs:documentation>Trygdetid anvendt i beregningen angitt i år.</xs:documentation>
                 </xs:annotation>

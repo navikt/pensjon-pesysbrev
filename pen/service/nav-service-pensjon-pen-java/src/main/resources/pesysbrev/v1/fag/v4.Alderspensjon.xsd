@@ -13,107 +13,107 @@
             <xs:documentation>Informasjon om alderspensjon</xs:documentation>
         </xs:annotation>
         <xs:all>
-            <xs:element name="andelKap19" type="xs:string" minOccurs="0">
+            <xs:element name="andelKap19" type="xs:string">
                 <xs:annotation>
                     <xs:documentation>Viser hvor stor del av AP2016 som er beregnet etter kapittel 19. Vil være konstant 10 for AP2011 og ikke ha noen verdi for AP1967 og AP2025. Brev vil kun bruke verdien for AP2016</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="andelKap20" type="xs:string" minOccurs="0">
+            <xs:element name="andelKap20" type="xs:string">
                 <xs:annotation>
                     <xs:documentation>Viser hvor stor del av AP2016 som er beregnet etter kapittel 20. Vil være konstant 10 for AP2025 og ikke ha noen verdi for AP1967 og AP2011. Brev vil kun bruke verdien for AP2016</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="erEksportberegnet" type="xs:boolean" minOccurs="0">
+            <xs:element name="erEksportberegnet" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Er SANN dersom AP er eksportberegnet. Dvs at det finnes en "hjemmeberegning" og at bruker ikke er på institusjon i perioden.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="garantipensjonInnvilget" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="garantipensjonInnvilget" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Er SANN dersom garantipensjon (kap 20) er innvilget for perioden</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="garantitilleggInnvilget" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="garantitilleggInnvilget" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Er SANN dersom garantitillegg (kap 20) er innvilget for perioden</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="godkjentYrkesskade" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="godkjentYrkesskade" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Er SANN dersom yrkesskade er innvilget for perioden</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="grunnpensjonErAvkortet" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="grunnpensjonErAvkortet" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Er SANN dersom grunnpensjonen har blitt avkortet pga EPS tjener mer enn 2G eller mottar pensjon</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="grunnpensjonSats" type="xs:int" minOccurs="0">
+            <xs:element name="grunnpensjonSats" type="xs:int">
                 <xs:annotation>
                     <xs:documentation>Grunnpensjonsats</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="harEndretPensjon" type="xs:boolean" minOccurs="0">
+            <xs:element name="harEndretPensjon" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Viser hvis pensjon er økt eller redusert i forhold til forrige beregning. Dette er uavhengig av om bruker tar ut pensjon eller ikke</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="innvilgetFor67" type="xs:boolean" minOccurs="0">
+            <xs:element name="innvilgetFor67" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Hvis alderspensjon er innvilget og vilkårsprøvd med virk før 67m settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="minstenivaIndividuellInnvilget" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="minstenivaIndividuellInnvilget" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Minstenivåtillegg individuelt for første beregningsperiode etter virkningsdato for vedtak</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="minstenivaPensjonistParInnvilget" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="minstenivaPensjonistParInnvilget" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Minstenivåtillegg pensjonsistpar for første beregningsperiode etter virkningsdato for vedtaket.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="opphortBarnetillegg" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="opphortBarnetillegg" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Feltet settes til sann dersom barnetillegg er opphørt</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="opphortEktefelletillegg" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="opphortEktefelletillegg" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Feltet settes til sann dersom ektefelletillegg er opphørt</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="pensjonstilleggInnvilget" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="pensjonstilleggInnvilget" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Er SANN dersom pensjonstillegg (kap 19) er innvilget for perioden</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="privatAFPErBrukt" type="xs:boolean" minOccurs="0">
+            <xs:element name="privatAFPErBrukt" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Hvis alderspensjon er vilkårsprøvd med AFP Privat livsvarig del settes verdien ti SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="regelverkType" type="regelverkTypeKode" minOccurs="0">
+            <xs:element name="regelverkType" type="regelverkTypeKode">
                 <xs:annotation>
                     <xs:documentation>Viser hvilket regelverk alderspensjon beregnes etter</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="skjermingstilleggInnvilget" type="xs:boolean" minOccurs="0">
+            <xs:element name="skjermingstilleggInnvilget" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Hvis brukers alderpensjon er beregnet med ytelses komponenten skjermingstillegg settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="totalPensjon" type="xs:int" minOccurs="0">
+            <xs:element name="totalPensjon" type="xs:int">
                 <xs:annotation>
                     <xs:documentation>Total pensjon før skatt som sum av alle tilleggene for første beregningsperiode etter virkningsdato for vedtak</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="uforeKombinertMedAlder" type="xs:boolean" minOccurs="0">
+            <xs:element name="uforeKombinertMedAlder" type="xs:boolean">
             <xs:annotation>
                 <xs:documentation>Hvis alderspensjon er innvilget og bruker har en løpende uføresak sette verdien til SANN</xs:documentation>
             </xs:annotation>
             </xs:element>
-            <xs:element name="uttaksgrad" type="st:EmptyInteger" minOccurs="0">
+            <xs:element name="uttaksgrad" type="st:EmptyInteger">
                 <xs:annotation>
                     <xs:documentation>Brukers valgte uttaksgrad på EPS sitt dødstidpunkt</xs:documentation>
                 </xs:annotation>
