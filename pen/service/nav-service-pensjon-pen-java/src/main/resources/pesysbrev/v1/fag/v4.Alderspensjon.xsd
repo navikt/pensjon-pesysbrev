@@ -38,6 +38,11 @@
                     <xs:documentation>Er SANN dersom garantitillegg (kap 20) er innvilget for perioden</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="gjenlevenderettAnvendt" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom alderspensjonen er beregnet med gjenlevenderett</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="godkjentYrkesskade" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Er SANN dersom yrkesskade er innvilget for perioden</xs:documentation>

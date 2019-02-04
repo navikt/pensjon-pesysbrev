@@ -10,6 +10,21 @@
 
     <xs:complexType name="BeregningKap19">
         <xs:all>
+            <xs:element name="sluttpoengtallMedOverkomp" type="st:EmptyToDesimaler" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall sluttpoeng med overkompensasjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sluttpoengtallUtenOverkomp" type="st:EmptyToDesimaler" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall sluttpoeng uten overkompensasjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="framtidigPoengar" type="st:EmptyToDesimaler" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall fremtidige poengår basert på beregningsmetode</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="andel" type="xs:int">
                 <xs:annotation>
                     <xs:documentation>Del av pensjon beregnet etter gamle regler i kap 19</xs:documentation>
