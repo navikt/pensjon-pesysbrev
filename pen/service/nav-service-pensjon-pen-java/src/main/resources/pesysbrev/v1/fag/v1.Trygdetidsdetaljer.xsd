@@ -6,8 +6,7 @@
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Trygdetidsdetaljer"
            xmlns="http://nav.no/dok/pesysbrev/fag/v1/Trygdetidsdetaljer">
 
-    <xs:import schemaLocation="../../../../../../../../../../../Users/D154843/Downloads/pesysbrev01-1.7.15 (1)/pesysbrev01/felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
-
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
     <xs:complexType name="Trygdetidsdetaljer">
         <xs:all>
             <xs:element name="framtidigTTEOS" type="st:EmptyInteger">
