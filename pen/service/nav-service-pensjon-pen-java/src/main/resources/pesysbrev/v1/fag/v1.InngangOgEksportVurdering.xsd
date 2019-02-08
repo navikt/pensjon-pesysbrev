@@ -68,6 +68,7 @@
         <xs:restriction base="xs:token">
             <xs:enumeration value="TPUNGUFOR_ALDER"/>
             <xs:enumeration value="FLYKT_ALDER"/>
+            <xs:enumeration value=""/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>
