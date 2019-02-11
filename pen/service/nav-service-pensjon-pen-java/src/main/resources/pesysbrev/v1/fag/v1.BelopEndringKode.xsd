@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/BelopEndringKode"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/BelopEndringKode">
+
+    <xs:simpleType name="BelopEndringKode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="ENDR_OKT">
+                <xs:annotation>
+                    <xs:documentation>Hvis nettobeløp har økt fra overlappende beregningsperiode på gjeldende vedtak </xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ENDR_RED">
+                <xs:annotation>
+                    <xs:documentation>Hvis nettobeløp har blitt redusert fra overlappende beregningsperiode på gjeldende vedtak</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UENDRET">
+                <xs:annotation>
+                    <xs:documentation>Hvis nettobeløp er uendret fra overlappende beregningsperiode på gjeldende vedtak</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="VET_IKKE">
+                <xs:annotation>
+                    <xs:documentation>Hvis sakstype er AP2016 og det ikke er mulig å se om nettobeløp har økt/blitt redusert eller er uendret på gjeldende vedtak</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

@@ -48,9 +48,9 @@
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="TILSTOT_OPPHORT">
-                <xs:annotation>
-                    <xs:documentation>Opphør av tilstøtendes ytelse</xs:documentation>
-                </xs:annotation>
+            <xs:annotation>
+                <xs:documentation>Opphør av tilstøtendes ytelse</xs:documentation>
+            </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="">
                 <xs:annotation>
