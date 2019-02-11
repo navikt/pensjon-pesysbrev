@@ -10,7 +10,7 @@
 
     <xs:complexType name="InngangOgEksportVurdering">
         <xs:all>
-            <xs:element name="eksportForbud" type="eksportForbudKode" minOccurs="0">
+            <xs:element name="eksportForbud" type="eksportForbudKode">
                 <xs:annotation>
                     <xs:documentation>Verdi som angir unntakstypen for eksportforbud av ytelsen. Tom dersom det ikke finnes eksportforbud</xs:documentation>
                 </xs:annotation>
