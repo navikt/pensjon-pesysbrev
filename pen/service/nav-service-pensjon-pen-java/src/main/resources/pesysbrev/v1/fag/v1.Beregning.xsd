@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Beregning"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Beregning">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="Beregning">
+        <xs:all>
+            <xs:element name="sluttpoengtallMedOverkomp" type="st:EmptyToDesimaler" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Sluttpoengtall med overkompensasjon basert på beregningsmetode</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sluttpoengtallUtenOverkomp" type="st:EmptyToDesimaler" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Regnes ut basert på sluttpoengtall (spt) og sluttpoengtall med overkompensasjon (opt). Tom hvis det ikke finnes sluttpoengtall eller hvis det ikke finnes sluttpoengtall med overkompensasjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="framtidigPoengAr" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall fremtidige poengår basert på beregningsmetode</xs:documentation>
+                </xs:annotation>
+			</xs:element>
+            <xs:element name="trygdetid" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Trygdetid anvendt i beregningen</xs:documentation>
+                </xs:annotation>
+			</xs:element>
+            <xs:element name="redusertTrygdetid" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom bruker har redusert trygdetid (Trygdetid mindre enn 40)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sluttpoengtall" type="st:EmptyToDesimaler" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Sluttpoengtall basert på beregningsmetode</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengAr" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall poengår</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengArf92" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall poengår opptjent før 1992 basert på benyttet beregningsmetode</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengAre91" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Antall poengår opptjent etter 1991 basert på benytttet beregningsmetode</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengArTeller" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Proratabrøk tilleggspensjon for EØS- eller utenlands trygdeavtalerberegning. Teller</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="poengArNevner" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Proratabrøk tilleggspensjon for EØS- eller utenlands trygdeavtalerberegning. Nevner</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType> 
+
+</xs:schema>
