@@ -33,7 +33,7 @@
 					<xs:documentation>Viser hvis bruker bor i et land Norge har trygdeavtale med</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="borIEOS" type="xs:boolean" minOccurs="0">
+			<xs:element name="borIEOS" type="xs:boolean">
 				<xs:annotation>
 					<xs:documentation>SANN dersom bruker er registrert bosatt i et land Norge har en bilateral trygdeavtale med og er et EØS-land. Ellers USANN.</xs:documentation>
 				</xs:annotation>
