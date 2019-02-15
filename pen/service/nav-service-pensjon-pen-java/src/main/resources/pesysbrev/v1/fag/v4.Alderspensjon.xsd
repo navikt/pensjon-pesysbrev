@@ -13,12 +13,12 @@
             <xs:documentation>Informasjon om alderspensjon</xs:documentation>
         </xs:annotation>
         <xs:all>
-            <xs:element name="saertilleggInnvilget" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="saertilleggInnvilget" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Særtillegg innvilget for første beregningsperiode etter virkningsdato for vedtaket</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="tilleggspensjonInnvilget" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="tilleggspensjonInnvilget" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Tilleggspensjon innvilget for første beregningsperiode etter virkningsdato for vedtaket</xs:documentation>
                 </xs:annotation>
@@ -48,7 +48,7 @@
                     <xs:documentation>Er SANN dersom garantitillegg (kap 20) er innvilget for perioden</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="gjenlevenderettAnvendt" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="gjenlevenderettAnvendt" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom alderspensjonen er beregnet med gjenlevenderett</xs:documentation>
                 </xs:annotation>
@@ -124,9 +124,9 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="uforeKombinertMedAlder" type="xs:boolean">
-            <xs:annotation>
-                <xs:documentation>Hvis alderspensjon er innvilget og bruker har en løpende uføresak sette verdien til SANN</xs:documentation>
-            </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Hvis alderspensjon er innvilget og bruker har en løpende uføresak sette verdien til SANN</xs:documentation>
+                </xs:annotation>
             </xs:element>
             <xs:element name="uttaksgrad" type="st:EmptyInteger">
                 <xs:annotation>
