@@ -10,6 +10,11 @@
 
     <xs:complexType name="InngangOgEksportVurdering">
         <xs:all>
+            <xs:element name="eksportForbud" type="eksportForbudKode">
+                <xs:annotation>
+                    <xs:documentation>Verdi som angir unntakstypen for eksportforbud av ytelsen. Tom dersom det ikke finnes eksportforbud</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="oppfyltVedSammenleggingKap19" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Settes til sann hvis det er markert ja på feltet Oppfylt ved sammenlegging kap. 19
@@ -58,4 +63,12 @@
             </xs:element>
         </xs:all>
     </xs:complexType>
+
+    <xs:simpleType name="eksportForbudKode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="TPUNGUFOR_ALDER"/>
+            <xs:enumeration value="FLYKT_ALDER"/>
+            <xs:enumeration value=""/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
