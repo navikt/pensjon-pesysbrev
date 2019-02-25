@@ -10,6 +10,11 @@
 
     <xs:complexType name="InngangOgEksportVurdering">
         <xs:all>
+            <xs:element name="eksportUngUforeUngDod" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Verdi som angir om innvilget garantert tilleggspensjon til ung ufør/død skal eksporteres</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="eksportForbud" type="eksportForbudKode">
                 <xs:annotation>
                     <xs:documentation>Verdi som angir unntakstypen for eksportforbud av ytelsen. Tom dersom det ikke finnes eksportforbud</xs:documentation>
