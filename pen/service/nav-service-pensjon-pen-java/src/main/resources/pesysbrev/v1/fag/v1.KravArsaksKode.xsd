@@ -12,6 +12,11 @@
                     <xs:documentation>Bruker søker om å endre uttaksgrad av alderspensjon</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="EKSPORT">
+                <xs:annotation>
+                    <xs:documentation>Eksport</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="EPS_ENDRET_INNTEKT">
                 <xs:annotation>
                     <xs:documentation>Inntekt til tilstøtende er endret </xs:documentation>
