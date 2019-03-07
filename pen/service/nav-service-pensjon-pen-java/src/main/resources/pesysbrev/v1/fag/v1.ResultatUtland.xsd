@@ -10,7 +10,7 @@
 
     <xs:complexType name="ResultatUtland">
         <xs:all>
-            <xs:element name="landNavn" type="st:NonEmptyString" minOccurs="0">
+            <xs:element name="landNavn" type="st:NonEmptyString">
                 <xs:annotation>
                     <xs:documentation>Land som er tilknyttet kravlinjen til bruker.</xs:documentation>
                 </xs:annotation>

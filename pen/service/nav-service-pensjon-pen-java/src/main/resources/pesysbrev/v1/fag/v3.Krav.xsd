@@ -12,57 +12,57 @@
 
     <xs:complexType name="Krav">
         <xs:all>
-            <xs:element name="AFPPrivat" type="xs:boolean" minOccurs="0">
+            <xs:element name="AFPPrivat" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Hvis alderspensjonkravet er markert med at bruker har søkt om AFP Privat settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="arsak" type="kravArsaksKode:KravArsaksKode" minOccurs="0">
+            <xs:element name="arsak" type="kravArsaksKode:KravArsaksKode">
                 <xs:annotation>
                     <xs:documentation>Viser for hvilken årsak bruker har søkt</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="erForeldrelos" type="st:EmptyBoolean" minOccurs="0">
+            <xs:element name="erForeldrelos" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Settes til SANN hvis det i krav-skjermbildet er valgt foreldreløs i nedtrekksliste på type (kravhode.K_KRAV_VELG_T = FORELDRELOS). Er uten verdi kun hvis sakstypen er ulik barnepensjon.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="erForstegangsbehandling" type="xs:boolean" minOccurs="0">
+            <xs:element name="erForstegangsbehandling" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>SANN dersom kravet gjelder en førstegangsbehandling</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="erMellombehandling" type="xs:boolean" minOccurs="0">
+            <xs:element name="erMellombehandling" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Hvis kravtypen er (krav.kravGjelder) "Mellombehandling" settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="erSluttbehandlingNorgeUtland" type="xs:boolean" minOccurs="0">
+            <xs:element name="erSluttbehandlingNorgeUtland" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Hvis kravtypen er (krav.kravGjelder) "Sluttbehandling Norge /Utland" settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="erForstegangsbehandletNorgeUtland" type="xs:boolean" minOccurs="0">
+            <xs:element name="erForstegangsbehandletNorgeUtland" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Hvis kravtype er (krav.kravGjelder) "Førstegangsbehandling Norge/utland" settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="kravInitiertAv" type="st:NonEmptyString" minOccurs="0">
+            <xs:element name="kravInitiertAv" type="st:NonEmptyString">
                 <xs:annotation>
                     <xs:documentation>Fra kodeverk T_K_INITIERT_AV. Eksempel på verdi er BRUKER.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="mottattDato" type="st:FormatertDato" minOccurs="0">
+            <xs:element name="mottattDato" type="st:FormatertDato">
                 <xs:annotation>
                     <xs:documentation>Dato søknad ble mottatt</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="norgeBehandlendeLand" type="xs:boolean" minOccurs="0">
+            <xs:element name="norgeBehandlendeLand" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Hvis det er huket av JA i kravskjermbildet på "Norge er behandlende land" settes verdien til SANN</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="virkDatoFom" type="st:FormatertDato" minOccurs="0">
+            <xs:element name="virkDatoFom" type="st:FormatertDato">
                 <xs:annotation>
                     <xs:documentation>Dato vedtaket iverksettes</xs:documentation>
                 </xs:annotation>

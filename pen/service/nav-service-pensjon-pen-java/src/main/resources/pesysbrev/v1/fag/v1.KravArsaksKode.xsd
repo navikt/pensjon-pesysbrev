@@ -37,6 +37,16 @@
                     <xs:documentation>Institusjonsopphold på bruker/tilstøtende</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="INNVANDRET">
+                <xs:annotation>
+                    <xs:documentation> ?? </xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UTVANDRET">
+                <xs:annotation>
+                    <xs:documentation>Institusjonsopphold på bruker/tilstøtende</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="SIVILSTANDSENDRING">
                 <xs:annotation>
                     <xs:documentation>Sivilstandsendring</xs:documentation>

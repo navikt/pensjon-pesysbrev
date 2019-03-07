@@ -2,19 +2,32 @@
 <xs:schema attributeFormDefault="unqualified"
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v2/Institusjonsopphold"
            xmlns="http://nav.no/dok/pesysbrev/fag/v2/Institusjonsopphold">
 
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
     <xs:complexType name="Institusjonsopphold">
         <xs:all>
-            <xs:element name="helseinstitusjon" type="xs:boolean">
+            <xs:element name="ensligPgaInst" type="st:EmptyBoolean">
                 <xs:annotation>
-                    <xs:documentation>Er SANN dersom bruker har hatt opphold på helseinstitusjon i beregningsperioden</xs:documentation>
+                    <xs:documentation>Flagg som beskriver om bruker er beregnet som enslig pga bruker eller eps oppholder seg på institusjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="epsPaInstitusjon" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Flagg som indikerer om eps er på institusjon</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="fengsel" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>Er SANN dersom bruker har hatt opphold i fengsel i beregningsperioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="helseinstitusjon" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Er SANN dersom bruker har hatt opphold på helseinstitusjon i beregningsperioden</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="aldersEllerSykehjem" type="xs:boolean" minOccurs="0">
