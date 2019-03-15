@@ -13,6 +13,16 @@
             <xs:documentation>Informasjon om alderspensjon</xs:documentation>
         </xs:annotation>
         <xs:all>
+            <xs:element name="saertilleggInnvilget" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Særtillegg innvilget for første beregningsperiode etter virkningsdato for vedtaket</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="tilleggspensjonInnvilget" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Tilleggspensjon innvilget for første beregningsperiode etter virkningsdato for vedtaket</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="andelKap19" type="xs:string">
                 <xs:annotation>
                     <xs:documentation>Viser hvor stor del av AP2016 som er beregnet etter kapittel 19. Vil være konstant 10 for AP2011 og ikke ha noen verdi for AP1967 og AP2025. Brev vil kun bruke verdien for AP2016</xs:documentation>
@@ -36,6 +46,11 @@
             <xs:element name="garantitilleggInnvilget" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Er SANN dersom garantitillegg (kap 20) er innvilget for perioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="gjenlevenderettAnvendt" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom alderspensjonen er beregnet med gjenlevenderett</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="godkjentYrkesskade" type="st:EmptyBoolean">
@@ -109,9 +124,9 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="uforeKombinertMedAlder" type="xs:boolean">
-            <xs:annotation>
-                <xs:documentation>Hvis alderspensjon er innvilget og bruker har en løpende uføresak sette verdien til SANN</xs:documentation>
-            </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Hvis alderspensjon er innvilget og bruker har en løpende uføresak sette verdien til SANN</xs:documentation>
+                </xs:annotation>
             </xs:element>
             <xs:element name="uttaksgrad" type="st:EmptyInteger">
                 <xs:annotation>
