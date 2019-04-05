@@ -10,7 +10,7 @@
 
     <xs:complexType name="YrkesskadeDetaljer">
         <xs:all>
-            <xs:element name="yrkesskadeUforegradKap19" type="xs:int">
+            <xs:element name="yrkesskadeUforegrad" type="xs:int">
                 <xs:annotation>
                     <xs:documentation/>
                 </xs:annotation>
