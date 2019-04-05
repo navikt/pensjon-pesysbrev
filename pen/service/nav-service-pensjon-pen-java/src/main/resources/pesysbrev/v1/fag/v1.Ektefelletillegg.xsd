@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Ektefelletillegg"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Ektefelletillegg">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="Ektefelletillegg">
+        <xs:all>
+            <xs:element name="innvilgetEktefelletillegg" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Angir om det er innvilget ektefelletillegg eller ikke</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="avkortningsaarsak" type="avkortningsaarsakKode">
+                <xs:annotation>
+                    <xs:documentation>Årsaken til at ekrefelletillegget blir redusert</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="erEndret" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Angir om ektefelletillegget har endret beløp</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="avkortningsaarsakKode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="BRUKER_EKTEF_INNT">
+            <xs:annotation>
+                <xs:documentation>Forsørgingstillegget er redusert på bakgrunn av inntekten til bruker og ektefelle</xs:documentation>
+            </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BRUKER_INNT">
+                <xs:annotation>
+                    <xs:documentation>Forsørgingstillegget er redusert på bakgrunn av inntekten til bruker</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EKTEF_INNT">
+                <xs:annotation>
+                    <xs:documentation>Forsørgingstillegget er redusert på bakgrunn av inntekten til ektefelle</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+                <xs:annotation>
+                    <xs:documentation>Tomt verdi er også gyldig</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
