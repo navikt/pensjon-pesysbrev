@@ -12,14 +12,14 @@
                     <xs:documentation>angir om det er innvilget barnetillegg særkullsbarn eller ikke</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="InnvilgetBarnetilleggFB" type="xs:boolean">
+            <xs:element name="innvilgetBarnetilleggFB" type="xs:boolean">
                 <xs:annotation>
                     <xs:documentation>angir om det er innvilget barnetillegg fellesbarn eller ikke</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="erEndret" type="xs:boolean">
                 <xs:annotation>
-                    <xs:documentation>angir om det er innvilget barnetillegg fellesbarn eller ikke</xs:documentation>
+                    <xs:documentation>angir om minst et barnetillegg har endret belop</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:all>
