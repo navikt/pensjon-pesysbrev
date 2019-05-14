@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Aldersovergang67ar"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Aldersovergang67ar">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="Aldersovergang67ar">
+        <xs:all>
+            <xs:element name="ytelseForAldersovergang" type="YtelseForAldersovergangKode">
+                <xs:annotation>
+                    <xs:documentation>Hvilken ytelse bruker mottar før fylte 67 år, eventuelt Ingen Ytelse</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="YtelseForAldersovergangKode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="INGEN_YT">
+                <xs:annotation>
+                    <xs:documentation>Ingen ytelse</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_GRAD">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd og gradering</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_AP_GRAD">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd, alderspensjon og gradering</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FAM_PL">
+                <xs:annotation>
+                    <xs:documentation>Familiepleier</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
+
+
