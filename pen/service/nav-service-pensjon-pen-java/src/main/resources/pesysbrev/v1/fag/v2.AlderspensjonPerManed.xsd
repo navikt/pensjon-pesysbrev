@@ -140,7 +140,9 @@
             </xs:element>
             <xs:element name="beregnetEtter" type="BeregnetEtterTypeKode" minOccurs="0">
                 <xs:annotation>
-                    <xs:documentation>Kan ha enten "egen", eller "avdod" avhengig om egne, eller avdod sin trygdetid, eller flyktningestatus er brukt i beregningen. Tom dersom AP1967</xs:documentation>
+                    <xs:documentation>Kan ha enten "egen", eller "avdod" avhengig om egne, eller avdod sin trygdetid, eller flyktningestatus er brukt i beregningen. Tom dersom
+                        AP1967
+                    </xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="fullTrygdetid" type="xs:boolean" minOccurs="0">
