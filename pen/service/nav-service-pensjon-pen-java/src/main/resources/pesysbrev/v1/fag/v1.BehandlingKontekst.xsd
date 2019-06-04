@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/BehandlingKontekst"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/BehandlingKontekst">
+
+    <xs:complexType name="BehandlingKontekst">
+        <xs:all>
+            <xs:element name="kontekstType" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Informasjon om hvilken batch som kjører (BPEN015 eller BPEN056)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>
