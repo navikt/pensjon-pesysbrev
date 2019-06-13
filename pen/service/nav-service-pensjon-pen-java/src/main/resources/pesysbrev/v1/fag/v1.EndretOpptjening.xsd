@@ -3,16 +3,14 @@
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjening"
-           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
            xmlns="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjening"
            xmlns:endretOpptjeningsarListe="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjeningsarListe">
 
     <xs:import schemaLocation="v1.EndretOpptjeningsarListe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjeningsarListe"/>
-    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
 
     <xs:complexType name="EndretOpptjening">
         <xs:sequence>
-            <xs:element name="sisteGyldigeOpptjeningsar" type="st:EmptyInteger" minOccurs="0">
+            <xs:element name="sisteGyldigeOpptjeningsar" type="xs:int" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Årstallet for siste år det er gyldiggjort opptjening for. Feltet vil hente inn verdi selv om siste gyldige opptjeningsår er mer en 2 år forutt for virk. Tom dersom sisteGyldigeOpptjeningsAr ikke er satt.</xs:documentation>
                 </xs:annotation>
