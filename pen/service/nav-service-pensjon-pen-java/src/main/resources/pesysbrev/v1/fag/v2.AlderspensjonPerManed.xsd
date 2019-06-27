@@ -3,8 +3,8 @@
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
-           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManed"
-           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManed">
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v2/AlderspensjonPerManed"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v2/AlderspensjonPerManed">
 
     <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
 
@@ -13,6 +13,51 @@
             <xs:documentation>Informasjon om alderspensjon</xs:documentation>
         </xs:annotation>
         <xs:all>
+            <xs:element name="barnetilleggSB" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Totalt nettobeløpet av barnetillegg særkullsbarn</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="barnetilleggFB" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Totalt nettobeløpet av barnetillegg fellesbarn</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ektefelletillegg" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Nettobeløpet av ektefelletillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="inntektBruktIavkortningFB" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Samlet inntekt brukt i avkortning av barnetillegg fellesbarn</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="inntektBruktIavkortningSB" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Samlet inntekt brukt i avkortning av barnetillegg særkullsbarn</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="inntektBruktIavkortningET" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Samlet inntekt brukt i avkortning av ektefelletillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fribelopFB" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Fribeløpet for barnetillegg fellesbarn</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fribelopSB" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Fribeløpet for barnetillegg særkullsbarn</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fribelopET" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Fribeløpet for ektefelletillegget</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="avdodFlyktningstatusErBrukt" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Viser hvis egen eller avdod sin flykningestatus er brukt</xs:documentation>

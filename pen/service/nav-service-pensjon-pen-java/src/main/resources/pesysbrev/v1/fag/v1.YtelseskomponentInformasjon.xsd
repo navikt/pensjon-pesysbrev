@@ -7,24 +7,23 @@
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/YtelseskomponentInformasjon"
            xmlns="http://nav.no/dok/pesysbrev/fag/v1/YtelseskomponentInformasjon">
 
-    <xs:import schemaLocation="v1.YtelseskomponentListe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/YtelseskomponentListe"/>
+<xs:import schemaLocation="v1.YtelseskomponentListe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/YtelseskomponentListe"/>
     <xs:import schemaLocation="v1.BelopEndringKode.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/BelopEndringKode"/>
 
-    <xs:complexType name="YtelseskomponentInformasjon">
-        <xs:all>
-            <xs:element name="YtelseskomponentListe" type="ytelseskomponentListe:YtelseskomponentListe">
-                <xs:annotation>
-                    <xs:documentation>Type ytelseskomponent som finnes på beregningsperioden.</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="belopEndring" type="belopEndringKode:BelopEndringKode">
-                <xs:annotation>
-                    <xs:documentation>Hvis nettobeløp har økt fra overlappende beregningsperiode på gjeldende vedtak settes verdien til string "ENDR_OKT"
-                        Hvis nettobeløp har blitt redusert fra overlappende beregningsperiode på gjeldende vedtak settes verdien til string "ENDR_RED"
-                        Hvis nettobeløp er uendret fra overlappende beregningsperiode på gjeldende vedtak settes verdien til string "UENDRET"
-                        Hvis sakstype er AP2016 og det ikke er mulig å se om nettobeløp har økt/blitt redusert eller er uendret på gjeldende vedtak settes verdien til "VET_IKKE"</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-        </xs:all>
-    </xs:complexType>
+<xs:complexType name="YtelseskomponentInformasjon">
+    <xs:all>
+        <xs:element name="YtelseskomponentListe" type="ytelseskomponentListe:YtelseskomponentListe">
+            <xs:annotation>
+                <xs:documentation>Type ytelseskomponent som finnes på beregningsperioden.</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+        <xs:element name="belopEndring" type="belopEndringKode:BelopEndringKode">
+            <xs:annotation>
+                <xs:documentation>Hvis nettobeløp har økt fra overlappende beregningsperiode på gjeldende vedtak settes verdien til string "ENDR_OKT"
+                    Hvis nettobeløp har blitt redusert fra overlappende beregningsperiode på gjeldende vedtak settes verdien til string "ENDR_RED"
+                    Hvis nettobeløp er uendret fra overlappende beregningsperiode på gjeldende vedtak settes verdien til string "UENDRET"</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:all>
+</xs:complexType>
 </xs:schema>
