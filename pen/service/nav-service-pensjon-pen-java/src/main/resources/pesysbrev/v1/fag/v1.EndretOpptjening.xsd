@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           xmlns:endretOpptjeningsListe="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjeningsListe"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjening"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjening">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:import schemaLocation="v1.EndretOpptjeningsListe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjeningsListe"/>
+
+    <xs:complexType name="EndretOpptjening">
+        <xs:all>
+            <xs:element name="sisteGyldigeOpptjeningsar" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Årstallet for siste år det er gyldiggjort opptjening for. Feltet vil hente inn verdi selv om siste gyldige opptjeningsår er mer en 2 år forutt for virk. Tom dersom sisteGyldigeOpptjeningsAr ikke er satt.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="endretOpptjeningsListe" type="endretOpptjeningsListe:EndretOpptjeningsListe" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Årene skal vises i stigende rekkefølge, med det tidligste året først og det seneste året sist. Det skal settes en tom liste hvis endretOpptjeningsarListe er tom.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="antallArEndretOpptjening" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Antall år det er endret opptjening på - altså skal det være samme antallet som i liste endretOpptjeningsarListe.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>

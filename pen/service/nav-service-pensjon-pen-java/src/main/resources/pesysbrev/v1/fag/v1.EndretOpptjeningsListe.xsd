@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:endretOpptjeningsar="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjeningsar"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjeningsListe"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjeningsListe">
+
+    <xs:import schemaLocation="v1.EndretOpptjeningsar.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjeningsar"/>
+
+    <xs:complexType name="EndretOpptjeningsListe">
+        <xs:sequence>
+            <xs:element name="endretOpptjeningsar" type="endretOpptjeningsar:EndretOpptjeningsar" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Element med årstall for endret opptjeningsår</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
