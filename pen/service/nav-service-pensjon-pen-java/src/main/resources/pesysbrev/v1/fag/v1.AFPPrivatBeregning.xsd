@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AFPPrivatBeregning"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AFPPrivatBeregning">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="AFPPrivatBeregning">
+        <xs:annotation>
+            <xs:documentation>Informasjon tilhørende beregning av AFPprivat</xs:documentation>
+        </xs:annotation>
+        <xs:all>
+
+            <xs:element name="datoFom" type="st:FormatertDato">
+                <xs:annotation>
+                    <xs:documentation>Første virk dato for beregningsperioden</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="datoTom" type="st:EmptyFormatertDato">
+                <xs:annotation>
+                    <xs:documentation>Siste dato beregningsperioden er gyldig</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="totalPensjon" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Totalpensjon per måned for AFP Privat, etter avkortning og før skatt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="afpLivsvarigInnvilget" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Angir om AFP livsvarig del (AFP_LIVSVARIG) er innvilget og netto>0 </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="afpLivsvarigNetto" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Nettobeløp for ytelseskomponenten AFP_LIVSVARIG</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="kronetilleggInnvilget" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Angir om AFP kronetillegg (AFP_KRONETILLEGG) er innvilget og netto>0 </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="kronetilleggNetto" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Nettobeløp for ytelseskomponenten AFP_KRONETILLEGG</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="komptilleggInnvilget" type="st:EmptyBoolean">
+                <xs:annotation>
+                <xs:documentation>Angir om AFP kompensasjonstillegg (AFP_KOMP_TILLEGG) er innvilget og netto>0 </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="komptilleggNetto" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Nettobeløp for ytelseskomponenten AFP_KOMP_TILLEGG</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>
