@@ -37,9 +37,14 @@
                     <xs:documentation>Alderspensjon</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-			<xs:enumeration value="AFP">
+            <xs:enumeration value="AFP">
                 <xs:annotation>
                     <xs:documentation>AFP</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AFP_PRIVAT">
+                <xs:annotation>
+                    <xs:documentation>AFP Privat</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
         </xs:restriction>
