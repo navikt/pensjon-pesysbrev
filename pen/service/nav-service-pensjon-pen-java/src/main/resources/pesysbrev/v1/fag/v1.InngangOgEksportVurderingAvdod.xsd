@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/InngangOgEksportVurderingAvdod"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/InngangOgEksportVurderingAvdod">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="InngangOgEksportVurderingAvdod">
+        <xs:all>
+            <xs:element name="eksportForbud" type="eksportforbudKode" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Verdi som angir unntakstypen for eksportforbud av ytelsen. Tom dersom det ikke finnes eksportforbud</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="eksportForbudUngUforeUngDod" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Verdi som angir om innvilget garantert tilleggspensjon til ung ufør/død skal eksporteres</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="minst20ArTrygdetidKap20" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til usann dersom det er markert i nei i skjermbildet inngang og eksport på om bruker har over 20 års trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="minst20ArBotidKap19" type="st:EmptyBoolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Settes til usann dersom det er markert i nei i skjermbildet inngang og eksport på om bruker har over 20 års trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="eksportforbudKode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="FLYKT_ALDER"/>
+            <xs:enumeration value="TPUNGUFOR_ALDER"/>
+            <xs:enumeration value="UFOR25_ALDER"/>
+            <xs:enumeration value="DOD26_ALDER"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
