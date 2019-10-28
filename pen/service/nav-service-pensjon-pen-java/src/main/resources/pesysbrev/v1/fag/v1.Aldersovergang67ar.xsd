@@ -24,19 +24,9 @@
                     <xs:documentation>Avkortet gjenlevendepensjon</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="GJP_AVKORT_UTV">
-                <xs:annotation>
-                    <xs:documentation>Avkortet gjenlevendepensjon og utvandret</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
             <xs:enumeration value="GJP_FULL">
                 <xs:annotation>
                     <xs:documentation>Full gjenlevendepensjon</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="GJP_FULL_UTV">
-                <xs:annotation>
-                    <xs:documentation>Full gjenlevendepensjon utvandret</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="INGEN_YT">
