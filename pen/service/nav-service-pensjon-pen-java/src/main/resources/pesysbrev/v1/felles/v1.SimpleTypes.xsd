@@ -164,6 +164,16 @@
                     <xs:documentation>Samboer</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="SEPARERT">
+                <xs:annotation>
+                    <xs:documentation>Separert fra ektefelle</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SEPARERT_PARTNER">
+                <xs:annotation>
+                    <xs:documentation>Separert fra partner</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
 			<xs:enumeration value="UKJENT">
 				<xs:annotation>
 					<xs:documentation>Ukjent</xs:documentation>
@@ -202,18 +212,18 @@
     </xs:simpleType>
 
     <!-- Nye elementer P1 - usikker på hvor de skal ligge
-	<xs:simpleType name="VurderingersperiodeKode">
-		<xs:annotation>
-			<xs:documentation>Vurderingsperiode (starter den datoen samlet melding ble mottat)</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:token">
-			<xs:enumeration value="6UkerFraMottattP1">
-				<xs:annotation>
-					<xs:documentation>Seks uker fra mottat p1 blankett</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-		</xs:restriction>
-	</xs:simpleType>
+    <xs:simpleType name="VurderingersperiodeKode">
+        <xs:annotation>
+            <xs:documentation>Vurderingsperiode (starter den datoen samlet melding ble mottat)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="6UkerFraMottattP1">
+                <xs:annotation>
+                    <xs:documentation>Seks uker fra mottat p1 blankett</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
     -->
 
 </xs:schema>

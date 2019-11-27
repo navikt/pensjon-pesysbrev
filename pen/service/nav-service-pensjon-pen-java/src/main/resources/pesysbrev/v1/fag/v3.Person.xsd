@@ -61,6 +61,8 @@
             <xs:enumeration value="PARTNER"/>
             <xs:enumeration value="SAMBOER1-5"/>
             <xs:enumeration value="SAMBOER3-2"/>
+            <xs:enumeration value="SEPARERT"/>
+            <xs:enumeration value="SEPARERT_PARTNER"/>
             <xs:enumeration value=""/>
         </xs:restriction>
     </xs:simpleType>
