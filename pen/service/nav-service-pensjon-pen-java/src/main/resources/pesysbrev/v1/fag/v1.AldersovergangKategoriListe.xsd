@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:aldersovergangKategori="http://nav.no/dok/pesysbrev/fag/v1/AldersovergangKategori"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AldersovergangKategoriListe"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AldersovergangKategoriListe">
+
+    <xs:import schemaLocation="v1.AldersovergangKategori.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/AldersovergangKategori"/>
+
+    <xs:complexType name="AldersovergangKategoriListe">
+        <xs:sequence>
+            <xs:element name="aldersovergangKategori" type="aldersovergangKategori:AldersovergangKategori" maxOccurs="unbounded" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Kategori for aldersovergang</xs:documentation>
+				</xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>
+
+
