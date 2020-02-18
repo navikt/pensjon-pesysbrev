@@ -90,6 +90,16 @@
                     <xs:documentation>Forholdstall ved levealdersjustering. Benyttes for beregning av Kap19 pensjon</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="uforegradVed67" type="xs:int" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Uføregrad på det tidspunktet bruker går over til alderspensjon ved 67m. Angis som heltall i prosent. Dette feltet er kun mulig å populere hvis bruker er innvilget skjermingstillegg (jf ftrl § 19-9a)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="skjermingsgrad" type="st:ToDesimaler" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Prosentsatsen benyttet under utregning av skjermingstillegget. Angis som desimaltall med to desimaler i prosent. Dette feltet er kun mulig å populere hvis bruker er innvilget skjermingstillegg (jf ftrl § 19-9a)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:all>
     </xs:complexType> 
 
