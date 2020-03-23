@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AvslagsbegrunnelseFT"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AvslagsbegrunnelseFT">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="AvslagsbegrunnelseFT">
+        <xs:all>
+            <xs:element name="ektefelletilleggAvslatt" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Flagg for om ektefelletillegg er avslått</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="begrunnelseET" type="begrunnelseTypeET">
+                <xs:annotation>
+                    <xs:documentation>Avslagsbegrunnelse type for ektefelletillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="barnetilleggAvslatt" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Flagg for om barnetillegg er avslått</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="begrunnelseBT" type="begrunnelseTypeBT">
+                <xs:annotation>
+                    <xs:documentation>Avslagsbegrunnelse type for barnetillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="begrunnelseTypeET">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="BRUKER_IKKE_HEL_AP">
+                    <xs:annotation>
+                        <xs:documentation>Har ikke 100% AP</xs:documentation>
+                    </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BRUKER_UNDER_67M">
+                    <xs:annotation>
+                        <xs:documentation>Bruker er under 67 år</xs:documentation>
+                    </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_HAR_RETT_TIL_AP">
+                    <xs:annotation>
+                        <xs:documentation>Ektefelle 100% AP rett</xs:documentation>
+                    </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_HAR_YTELSE">
+                    <xs:annotation>
+                        <xs:documentation>Tilstøtende har AP/UP/AFP</xs:documentation>
+                    </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_INNT_OVER_1G">
+                <xs:annotation>
+                    <xs:documentation>Ektefelles inntekt er over 1G</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_OVER_67M">
+                <xs:annotation>
+                    <xs:documentation>Eketefelle er ikke under 67 år</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_OVER67M_AP_RETT">
+                <xs:annotation>
+                    <xs:documentation>Ektefelle er over 67 år</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_SAMBOER_3_2">
+                <xs:annotation>
+                    <xs:documentation>Tilstøtende er §3-2 samboer</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_UNDER_60_AFP">
+                <xs:annotation>
+                    <xs:documentation>Tilstøtende er under 60 år</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ET_GITT_TIL_ANNEN">
+                <xs:annotation>
+                    <xs:documentation>Forsørget av endre</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ET_KREVER_100_AP">
+                <xs:annotation>
+                    <xs:documentation>Ikke 100% AP/UP/AFP</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="HOVEDYTELSE_AVSLAG">
+                <xs:annotation>
+                    <xs:documentation>Hovedytelsen er avslått</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MANGLER_EPS">
+                <xs:annotation>
+                    <xs:documentation>Ingen tilstøtende</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+                <xs:annotation>
+                    <xs:documentation>Blank/ingen begrunnelse type</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="begrunnelseTypeBT">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="BT_KREVER_100_INNV">
+                <xs:annotation>
+                    <xs:documentation>Har ikke 100% AP</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BT_GITT_TIL_ANNEN">
+                <xs:annotation>
+                    <xs:documentation>Barn forsørget av andre</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BT_MINST_67">
+                    <xs:annotation>
+                        <xs:documentation>Bruker er under 67 år</xs:documentation>
+                    </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BT_INNT_OVER_1G">
+                    <xs:annotation>
+                        <xs:documentation>Barnets inntekt er over 1G</xs:documentation>
+                    </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="HOVEDYTELSE_AVSLAG">
+                    <xs:annotation>
+                        <xs:documentation>Hovedytelsen er avslått</xs:documentation>
+                    </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BT_OVER_18">
+                    <xs:annotation>
+                        <xs:documentation>Barn over 18 år</xs:documentation>
+                    </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+                    <xs:annotation>
+                        <xs:documentation>Blank/ingen begrunnelse type</xs:documentation>
+                    </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
