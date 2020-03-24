@@ -17,7 +17,7 @@
             </xs:element>
             <xs:element name="begrunnelseET" type="begrunnelseTypeET">
                 <xs:annotation>
-                    <xs:documentation>Avslagsbegrunnelse type for ektefelletillegg</xs:documentation>
+                    <xs:documentation>Avslagsbegrunnelsestype for ektefelletillegg</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="barnetilleggAvslatt" type="xs:boolean">
@@ -27,7 +27,7 @@
             </xs:element>
             <xs:element name="begrunnelseBT" type="begrunnelseTypeBT">
                 <xs:annotation>
-                    <xs:documentation>Avslagsbegrunnelse type for barnetillegg</xs:documentation>
+                    <xs:documentation>Avslagsbegrunnelsestype for barnetillegg</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:all>
@@ -60,11 +60,6 @@
                     <xs:documentation>Ektefelles inntekt er over 1G</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="EPS_OVER_67M">
-                <xs:annotation>
-                    <xs:documentation>Eketefelle er ikke under 67 år</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
             <xs:enumeration value="EPS_OVER67M_AP_RETT">
                 <xs:annotation>
                     <xs:documentation>Ektefelle er over 67 år</xs:documentation>
@@ -82,7 +77,7 @@
             </xs:enumeration>
             <xs:enumeration value="ET_GITT_TIL_ANNEN">
                 <xs:annotation>
-                    <xs:documentation>Forsørget av endre</xs:documentation>
+                    <xs:documentation>Forsørget av andre</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="ET_KREVER_100_AP">
@@ -102,7 +97,7 @@
             </xs:enumeration>
             <xs:enumeration value="">
                 <xs:annotation>
-                    <xs:documentation>Blank/ingen begrunnelse type</xs:documentation>
+                    <xs:documentation>Tom/ingen begrunnelsestype</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
         </xs:restriction>
@@ -142,7 +137,7 @@
             </xs:enumeration>
             <xs:enumeration value="">
                     <xs:annotation>
-                        <xs:documentation>Blank/ingen begrunnelse type</xs:documentation>
+                        <xs:documentation>Tom/ingen begrunnelsestype</xs:documentation>
                     </xs:annotation>
             </xs:enumeration>
         </xs:restriction>
