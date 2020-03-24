@@ -2,6 +2,7 @@
 <xs:schema attributeFormDefault="unqualified"
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Ektefelletillegg"
            xmlns="http://nav.no/dok/pesysbrev/fag/v1/Ektefelletillegg">
 
@@ -30,9 +31,9 @@
     <xs:simpleType name="avkortningsaarsakKode">
         <xs:restriction base="xs:token">
             <xs:enumeration value="BRUKER_EKTEF_INNT">
-                <xs:annotation>
-                    <xs:documentation>Forsørgingstillegget er redusert på bakgrunn av inntekten til bruker og ektefelle</xs:documentation>
-                </xs:annotation>
+            <xs:annotation>
+                <xs:documentation>Forsørgingstillegget er redusert på bakgrunn av inntekten til bruker og ektefelle</xs:documentation>
+            </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="BRUKER_INNT">
                 <xs:annotation>
