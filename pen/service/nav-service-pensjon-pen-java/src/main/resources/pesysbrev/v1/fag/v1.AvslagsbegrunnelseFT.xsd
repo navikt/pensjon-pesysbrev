@@ -35,29 +35,44 @@
 
     <xs:simpleType name="begrunnelseTypeET">
         <xs:restriction base="xs:token">
+            <xs:enumeration value="BRUKER_FLYTTET_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>Bruker har flyttet til et ikke-avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="BRUKER_IKKE_HEL_AP">
-                    <xs:annotation>
-                        <xs:documentation>Har ikke 100% AP</xs:documentation>
-                    </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Har ikke 100% AP</xs:documentation>
+                </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="BRUKER_UNDER_67M">
-                    <xs:annotation>
-                        <xs:documentation>Bruker er under 67 år</xs:documentation>
-                    </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Bruker er under 67 år</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_FLYTTET_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>EPS har flyttet til et ikke-avtaleland</xs:documentation>
+                </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="EPS_HAR_RETT_TIL_AP">
-                    <xs:annotation>
-                        <xs:documentation>Ektefelle 100% AP rett</xs:documentation>
-                    </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Ektefelle 100% AP rett</xs:documentation>
+                </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="EPS_HAR_YTELSE">
-                    <xs:annotation>
-                        <xs:documentation>Tilstøtende har AP/UP/AFP</xs:documentation>
-                    </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Tilstøtende har AP/UP/AFP</xs:documentation>
+                </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="EPS_INNT_OVER_1G">
                 <xs:annotation>
                     <xs:documentation>Ektefelles inntekt er over 1G</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_OPPH_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>EPS har oppholdt seg mer enn 90 dager i ikke-avtaleland</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="EPS_OVER67M_AP_RETT">
@@ -105,6 +120,21 @@
 
     <xs:simpleType name="begrunnelseTypeBT">
         <xs:restriction base="xs:token">
+            <xs:enumeration value="BARN_FLYTTET_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>Barn har flyttet til et ikke-avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BARN_OPPH_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>Barn har oppholdt seg mer enn 90 dager i ikke-avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BRUKER_FLYTTET_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>Bruker har flyttet til et ikke-avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="BT_KREVER_100_INNV">
                 <xs:annotation>
                     <xs:documentation>Har ikke 100% AP</xs:documentation>
@@ -116,29 +146,29 @@
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="BT_MINST_67">
-                    <xs:annotation>
-                        <xs:documentation>Bruker er under 67 år</xs:documentation>
-                    </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Bruker er under 67 år</xs:documentation>
+                </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="BT_INNT_OVER_1G">
-                    <xs:annotation>
-                        <xs:documentation>Barnets inntekt er over 1G</xs:documentation>
-                    </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Barnets inntekt er over 1G</xs:documentation>
+                </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="HOVEDYTELSE_AVSLAG">
-                    <xs:annotation>
-                        <xs:documentation>Hovedytelsen er avslått</xs:documentation>
-                    </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Hovedytelsen er avslått</xs:documentation>
+                </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="BT_OVER_18">
-                    <xs:annotation>
-                        <xs:documentation>Barn over 18 år</xs:documentation>
-                    </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Barn over 18 år</xs:documentation>
+                </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="">
-                    <xs:annotation>
-                        <xs:documentation>Tom/ingen begrunnelsestype</xs:documentation>
-                    </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Tom/ingen begrunnelsestype</xs:documentation>
+                </xs:annotation>
             </xs:enumeration>
         </xs:restriction>
     </xs:simpleType>
