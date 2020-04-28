@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/OpphorsbegrunnelseFT"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/OpphorsbegrunnelseFT">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="OpphorsbegrunnelseFT">
+        <xs:all>
+            <xs:element name="ektefelletilleggOpphort" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Flagg for om ektefelletillegg er opphørt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="begrunnelseET" type="begrunnelseTypeET">
+                <xs:annotation>
+                    <xs:documentation>Opphørsbegrunnelsestype for ektefelletillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="barnetilleggOpphort" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Flagg for om barnetillegg er opphørt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="begrunnelseBT" type="begrunnelseTypeBT">
+                <xs:annotation>
+                    <xs:documentation>Opphørsbegrunnelsestype for barnetillegg</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="begrunnelseTypeET">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="BRUKER_FLYTTET_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>Bruker har flyttet til et ikke-avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_FLYTTET_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>EPS har flyttet til et ikke-avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EPS_OPPH_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>EPS har oppholdt seg mer enn 90 dager i ikke-avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+                <xs:annotation>
+                    <xs:documentation>Tom/ingen begrunnelsestype</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="begrunnelseTypeBT">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="BARN_FLYTTET_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>Barn har flyttet til et ikke-avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BARN_OPPH_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>Barn har oppholdt seg mer enn 90 dager i ikke-avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BRUKER_FLYTTET_IKKE_AVT_LAND">
+                <xs:annotation>
+                    <xs:documentation>Bruker har flyttet til et ikke-avtaleland</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+                <xs:annotation>
+                    <xs:documentation>Tom/ingen begrunnelsestype</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
