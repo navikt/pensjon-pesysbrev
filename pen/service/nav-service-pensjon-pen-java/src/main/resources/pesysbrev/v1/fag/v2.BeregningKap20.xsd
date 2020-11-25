@@ -5,9 +5,7 @@
            xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v2/BeregningKap20"
            xmlns="http://nav.no/dok/pesysbrev/fag/v2/BeregningKap20">
-
     <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
-
     <xs:complexType name="BeregningKap20">
         <xs:all>
             <xs:element name="andel" type="xs:int">
@@ -40,7 +38,11 @@
                     <xs:documentation>Pensjonsbeholdning før første uttak</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="nyOpptjening" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Oppteningsgrunnlag tilvekst for inntektsaar</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:all>
     </xs:complexType>
-
 </xs:schema>
