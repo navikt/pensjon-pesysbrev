@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           xmlns:vl="http://nav.no/dok/pesysbrev/fag/v1/Vedtak"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v2/Barnepensjon"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v2/Barnepensjon">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+	<xs:import schemaLocation="./v1.Vedtak.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/Vedtak"/>
+
+    <xs:complexType name="BarnePensjon">
+    	<xs:all>
+    		<xs:element name="begrunnelse" type="vl:vedtaksBegrunnelseKode"/>
+    		<xs:element name="persjonInformasjon" type="PersjonInformasjon"/>
+    		<xs:element name="grunnlag" type="GrunnlagForBegrunnelse">
+    		</xs:element>
+    	</xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="PersjonInformasjon">
+    	<xs:all>
+    		<xs:element name="faktiskBostedsland" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Sender over land som er registrert som brukes faktiske bostedsland under personopplysninger</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+    	</xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="GrunnlagForBegrunnelse">
+    	<xs:all>
+    		<xs:element name="avdodMorAntallArOpptjeningOver1g" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Sender over antall år avdød mor har hatt pensjonspoeng > 0</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="avdodFarAntallArOpptjeningOver1g" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Sender over antall år avdød far har hatt pensjonspoeng > 0</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="avdodMorBoddArbeidetUtland" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Settes til SANN hvis det er huket av på at avdød mor har bodd/arbeidet i utlandet i kravskjermbildet (BODD_ARB_UTL_MOR = SANN på kravhodet)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="avdodFarBoddArbeidetUtland" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Settes til SANN hvis det er huket av på at avdød far har bodd/arbeidet i utlandet i kravskjermbildet (BODD_ARB_UTL_FAR = SANNpå kravhodet)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="avdodMorVurderTrygdeavtale" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Settes til SANN hvis det er huket av på at trygdeavtale for avdød mor skal vurderes (VUR_TRYGDEAV_MOR = SANN på kravhode)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="avdodFarVurderTrygdeavtale" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Settes til SANN hvis det er huket av på at trygdeavtale for avdød far skal vurderes(VUR_TRYGDEAV_FAR= SANN på kravhode)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="brukerUnder18ArVedVirk" type="st:EmptyBoolean">
+                <xs:annotation>
+                    <xs:documentation>Settes til SANN hvis bruker er under 18 år på virkningstidspunktet til kravet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+    	</xs:all>
+    </xs:complexType>
+
+    
+</xs:schema>
