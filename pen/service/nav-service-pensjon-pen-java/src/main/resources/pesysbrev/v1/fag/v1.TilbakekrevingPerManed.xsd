@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/TilbakekrevingPerManed"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/TilbakekrevingPerManed">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="TilbakekrevingPerManed">
+        <xs:all>
+            <xs:element name="bruttoTilbakekrevingManed" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Bruttobeløp som kreves tilbake </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="feilutbetalingManed" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Beløp som er feilutbetalt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="kontering" type="KonteringManedType">
+                <xs:annotation>
+                    <xs:documentation>Ytelsen med feilutbetaling</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="maned" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Måned med feilutbetaling</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="nettoTilbakekrevingManedUtenRente" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Beløp nettotilbakekreving uten renter</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="resultatManed" type="ResultatManedType">
+                <xs:annotation>
+                    <xs:documentation>Resultat av saksbehandling, kan være </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="skattManed" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Beløp fradrag før skatt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="KonteringManedType">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="8_5_1_T">
+                <xs:annotation>
+                    <xs:documentation>§8-5-1-tillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AAP">
+                <xs:annotation>
+                    <xs:documentation>Arbeidsavklaringspenger</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AFP_KOMP_TILLEGG">
+                <xs:annotation>
+                    <xs:documentation>AFP kompensasjonstillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AFP_KRONETILLEGG">
+                <xs:annotation>
+                    <xs:documentation>AFP kronetillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AFP_LIVSVARIG">
+                <xs:annotation>
+                    <xs:documentation>AFP livsvarig del</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AFP_T">
+                <xs:annotation>
+                    <xs:documentation>AFP-tillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ANNET">
+                <xs:annotation>
+                    <xs:documentation>Annet</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AP_GJT">
+                <xs:annotation>
+                    <xs:documentation>Gjenlevendetillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BARNETILSYN">
+                <xs:annotation>
+                    <xs:documentation>Barnetilsyn</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BT">
+                <xs:annotation>
+                    <xs:documentation>Barnetillegg (felles- og særkullsbarn</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ET">
+                <xs:annotation>
+                    <xs:documentation>Ektefelletillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FAM_T">
+                <xs:annotation>
+                    <xs:documentation>Familietillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FAST_UTGIFT_T">
+                <xs:annotation>
+                    <xs:documentation>Tillegg faste utgifter</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FEILKONTO">
+                <xs:annotation>
+                    <xs:documentation>Feilkonto</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GAP">
+                <xs:annotation>
+                    <xs:documentation>Garantipenjon</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GARANTITILLEGG">
+                <xs:annotation>
+                    <xs:documentation>Garantitillegg EØS/nordisk konvensjon</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GAT">
+                <xs:annotation>
+                    <xs:documentation>Garantitillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GP">
+                <xs:annotation>
+                    <xs:documentation>Grunnpensjon</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="HJELP_BIDRAG">
+                <xs:annotation>
+                    <xs:documentation>Hjelpeløshetsbidrag</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="HJELP_I_HUS">
+                <xs:annotation>
+                    <xs:documentation>Tillegg til help i huset</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="IP">
+                <xs:annotation>
+                    <xs:documentation>Inntektspensjon</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="JUSTERINGSKONTO">
+                <xs:annotation>
+                    <xs:documentation>Justeringskonto</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="KRIG_GY">
+                <xs:annotation>
+                    <xs:documentation>Krigspensjon og gammel yrkesskade</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MENDEL">
+                <xs:annotation>
+                    <xs:documentation>Mén-del</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MIN_NIVA_TILL_INDV">
+                <xs:annotation>
+                    <xs:documentation>Minstenivåtillegg pensjonistpar</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MIN_NIVA_TILL_PPAR">
+                <xs:annotation>
+                    <xs:documentation>Minstenivåtillegg pensjonistpar</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="MISK">
+                <xs:annotation>
+                    <xs:documentation>Militær skadekur</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="PT">
+                <xs:annotation>
+                    <xs:documentation>Pensjonstillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SISK">
+                <xs:annotation>
+                    <xs:documentation>Sivil skadekur</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SKATT">
+                <xs:annotation>
+                    <xs:documentation>Forskuddstrekk skatt</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SKATT_F_GP">
+                <xs:annotation>
+                    <xs:documentation>Skattefri grunnpensjon</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SKATT_F_T">
+                <xs:annotation>
+                    <xs:documentation>Forskuddstrekk skatt</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SKATT_F_UT_ORDINER">
+                <xs:annotation>
+                    <xs:documentation>Skattefri uføretrygd ordinær</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SKATT_PALEGG">
+                <xs:annotation>
+                    <xs:documentation>Påleggstrekk skatt</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SKJERMT">
+                <xs:annotation>
+                    <xs:documentation>Skjermingstillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="SP">
+                <xs:annotation>
+                    <xs:documentation>Sykepenger</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ST">
+                <xs:annotation>
+                    <xs:documentation>Særtillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TFB">
+                <xs:annotation>
+                    <xs:documentation>Tilskudd til flytteutgifter</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TILSKOTT_FLYTTEUTG">
+                <xs:annotation>
+                    <xs:documentation>Tilskudd til flytteutgifter</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TJENESTEPENSJON">
+                <xs:annotation>
+                    <xs:documentation>Tjenestepensjon</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TP">
+                <xs:annotation>
+                    <xs:documentation>Tilleggspensjon</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TREKK">
+                <xs:annotation>
+                    <xs:documentation>Trekk</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="TSB">
+                <xs:annotation>
+                    <xs:documentation>Barnetillegg særkullsbarn</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UFORETILLEGG_AP">
+                <xs:annotation>
+                    <xs:documentation>Uføretillegg til alderspensjon</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UTD_STONAD">
+                <xs:annotation>
+                    <xs:documentation>Utdanningsstønad</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_AAP">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd motregning AAP</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_ET">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd ektefelletillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_FAST_UTGIFT_T">
+                <xs:annotation>
+                    <xs:documentation>Dekning av faste utgifter inst. opph.</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_GJT">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd gjenlevendetillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_GT_NORDISK">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd garantitillegg Nordisk konvensjon</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_ORDINER">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_SP">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd motregning SP</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_TFB">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd barnetillegg felles barn</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UT_TSB">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd barnetillegg særkullsbarn</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="VT">
+                <xs:annotation>
+                    <xs:documentation>Ventetillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ResultatManedType">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="DELVIS_TILBAKEKREV">
+                <xs:annotation>
+                    <xs:documentation>Delvis tilbakekreving</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FEILREGISTRERT">
+                <xs:annotation>
+                    <xs:documentation>Feilregistrert</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FORELDRET">
+                <xs:annotation>
+                    <xs:documentation>Foreldret</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FULL_TILBAKEKREV">
+                <xs:annotation>
+                    <xs:documentation>Full tilbakekreving</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="INGEN_TILBAKEKREV">
+                <xs:annotation>
+                    <xs:documentation>Ingen tilbakekreving</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
