@@ -153,7 +153,7 @@
                     <xs:documentation>Feilregistrert</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="FORELDRET">
+            <xs:enumeration value="FORELDET">
                 <xs:annotation>
                     <xs:documentation>Foreldret</xs:documentation>
                 </xs:annotation>
