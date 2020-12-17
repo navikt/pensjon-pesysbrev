@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/TilbakekrevingTotal"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/TilbakekrevingTotal"
+           xmlns:ta="http://nav.no/dok/pesysbrev/fag/v1/TilbakekrevingPerArListe">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:import schemaLocation="v1.TilbakekrevingPerArListe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/TilbakekrevingPerArListe"/>
+	<xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+	
+    <xs:complexType name="TilbakekrevingTotal">
+        <xs:all>
+            <xs:element name="bruttoTilbakekrevingTotal" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Bruttobeløp som kreves tilbakebetalt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="feilutbetalingTotal" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Totalbeløp som er feilutbetalt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="hjemmel" type="HjemmelType">
+                <xs:annotation>
+                    <xs:documentation>Hjemmel for tilbakekreving</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="nettoTilbakekrevingTotalUtenRente" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Nettobeløp uten rente som kreves tilbakebetalt</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+			<xs:element name="periodeFom" type="st:FormatertDato">
+                <xs:annotation>
+                    <xs:documentation>start periode for tilbakekreving</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="periodeTom" type="st:FormatertDato">
+                <xs:annotation>
+                    <xs:documentation>Slutt perdiode for tilbakekreving</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="renterEtter2217" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>????</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="rentetilleggTotal" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Totalbeløp rentetillegg som innkreves</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="resultatTotal" type="ResultatTotalType">
+                <xs:annotation>
+                    <xs:documentation>Resultat av vurderingen om tilbakebetaling</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="skattTotal" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Totalbeløp fradrag for skatt som innkreves</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sumTilInnkreving" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Sum beløp som innkreves</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="tilbakekrevingPerArListe" type="ta:TilbakekrevingPerArListe">
+                <xs:annotation>
+                    <xs:documentation>TilbakekrevingPerArListe</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+    
+    <xs:simpleType name="HjemmelType">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="22-15">
+                <xs:annotation>
+                    <xs:documentation>§ 22-15 5. ledd</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22-15-1-1">
+                <xs:annotation>
+                    <xs:documentation>§ 22-15 1. ledd, 1. punktum</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22-15-1-2">
+                <xs:annotation>
+                    <xs:documentation>§ 22-15 1. ledd 2. punktum</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22-15-1-2f">
+                <xs:annotation>
+                    <xs:documentation>§ 22-15 1. ledd, 2. punktum (forsett)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22-15-1-2u">
+                <xs:annotation>
+                    <xs:documentation>§ 22-15 1. ledd, 2. punktum (uaktsomt)</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22-15-1-3">
+                <xs:annotation>
+                    <xs:documentation>§ 22-15 1. ledd, 3. punktum</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22-15-6">
+                <xs:annotation>
+                    <xs:documentation>§ 22-15 6. ledd</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22-16">
+                <xs:annotation>
+                    <xs:documentation>§ 22-16</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="22-17a">
+                <xs:annotation>
+                    <xs:documentation>§ 22-17a</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="AFP">
+                <xs:annotation>
+                    <xs:documentation>AFP-etteroppgjør</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ANNET">
+                <xs:annotation>
+                    <xs:documentation>Annet</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="ULOVFESTET">
+                <xs:annotation>
+                    <xs:documentation>Ulovfestet</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="ResultatTotalType">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="DELVIS_TILBAKEKREV">
+                <xs:annotation>
+                    <xs:documentation>Delvis tilbakekreving</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FEILREGISTRERT">
+                <xs:annotation>
+                    <xs:documentation>Feilregistrert</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FORELDET">
+                <xs:annotation>
+                    <xs:documentation>Foreldret</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FULL_TILBAKEKREV">
+                <xs:annotation>
+                    <xs:documentation>Full tilbakekreving</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="INGEN_TILBAKEKREV">
+                <xs:annotation>
+                    <xs:documentation>Ingen tilbakekreving</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
