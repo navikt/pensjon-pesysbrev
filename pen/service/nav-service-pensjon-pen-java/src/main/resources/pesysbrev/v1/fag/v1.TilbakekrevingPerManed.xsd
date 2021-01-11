@@ -34,7 +34,7 @@
                     <xs:documentation>Beløp nettotilbakekreving uten renter</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="resultatManed" type="ResultatManedType">
+            <xs:element name="resultatManed" type="ResultatManedType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Resultat av saksbehandling, kan være </xs:documentation>
                 </xs:annotation>
