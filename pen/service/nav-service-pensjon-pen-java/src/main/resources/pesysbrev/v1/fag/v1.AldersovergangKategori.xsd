@@ -39,6 +39,11 @@
                     <xs:documentation>ET67</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="UT_67">
+                <xs:annotation>
+                    <xs:documentation>UT_67</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
         </xs:restriction>
     </xs:simpleType>
 
