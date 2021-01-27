@@ -7,14 +7,9 @@
 
     <xs:simpleType name="KravArsaksKode">
         <xs:restriction base="xs:token">
-            <xs:enumeration value="ALDERSOVERGANG">
+            <xs:enumeration value="UTTAKSGRAD">
                 <xs:annotation>
-                    <xs:documentation>Innvilget endring i alderspensjon ved aldersovergang</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="EKSPORT">
-                <xs:annotation>
-                    <xs:documentation>Eksport</xs:documentation>
+                    <xs:documentation>Bruker søker om å endre uttaksgrad av alderspensjon</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="EPS_ENDRET_INNTEKT">
@@ -44,7 +39,12 @@
             </xs:enumeration>
             <xs:enumeration value="INNVANDRET">
                 <xs:annotation>
-                    <xs:documentation>Bruker har flyttet til Norge</xs:documentation>
+                    <xs:documentation> ?? </xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UTVANDRET">
+                <xs:annotation>
+                    <xs:documentation>Institusjonsopphold på bruker/tilstøtende</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="SIVILSTANDSENDRING">
@@ -61,16 +61,6 @@
             <xs:annotation>
                 <xs:documentation>Opphør av tilstøtendes ytelse</xs:documentation>
             </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="UTTAKSGRAD">
-                <xs:annotation>
-                    <xs:documentation>Bruker søker om å endre uttaksgrad av alderspensjon</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
-            <xs:enumeration value="UTVANDRET">
-                <xs:annotation>
-                    <xs:documentation>Bruker har flyttet fra Norge</xs:documentation>
-                </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="">
                 <xs:annotation>
