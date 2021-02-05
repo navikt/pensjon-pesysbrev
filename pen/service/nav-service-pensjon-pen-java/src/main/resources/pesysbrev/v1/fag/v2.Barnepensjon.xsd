@@ -3,35 +3,14 @@
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
-           xmlns:vl="http://nav.no/dok/pesysbrev/fag/v1/Vedtak"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v2/Barnepensjon"
            xmlns="http://nav.no/dok/pesysbrev/fag/v2/Barnepensjon">
 
     <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
-	<xs:import schemaLocation="./v1.Vedtak.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/Vedtak"/>
 
-    <xs:complexType name="BarnePensjon">
-    	<xs:all>
-    		<xs:element name="begrunnelse" type="vl:vedtaksBegrunnelseKode"/>
-    		<xs:element name="persjonInformasjon" type="PersjonInformasjon"/>
-    		<xs:element name="grunnlag" type="GrunnlagForBegrunnelse">
-    		</xs:element>
-    	</xs:all>
-    </xs:complexType>
-    
-    <xs:complexType name="PersjonInformasjon">
-    	<xs:all>
-    		<xs:element name="faktiskBostedsland" type="xs:string">
-				<xs:annotation>
-					<xs:documentation>Sender over land som er registrert som brukes faktiske bostedsland under personopplysninger</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-    	</xs:all>
-    </xs:complexType>
-    
-    <xs:complexType name="GrunnlagForBegrunnelse">
-    	<xs:all>
-    		<xs:element name="avdodMorAntallArOpptjeningOver1g" type="st:EmptyInteger">
+    <xs:complexType name="Barnepensjon">
+        <xs:all>
+            <xs:element name="avdodMorAntallArOpptjeningOver1g" type="st:EmptyInteger">
                 <xs:annotation>
                     <xs:documentation>Sender over antall år avdød mor har hatt pensjonspoeng > 0</xs:documentation>
                 </xs:annotation>
@@ -66,8 +45,77 @@
                     <xs:documentation>Settes til SANN hvis bruker er under 18 år på virkningstidspunktet til kravet</xs:documentation>
                 </xs:annotation>
             </xs:element>
-    	</xs:all>
+            <xs:element name="begrunnelse" type="begrunnelseKode">
+                <xs:annotation>
+                    <xs:documentation>avslags- og opphørsbegrunnelseskoder</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
     </xs:complexType>
 
-    
+    <xs:simpleType name="begrunnelseKode">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="ANNET">
+                <xs:annotation>
+                    <xs:documentation>Annen avslagsbegrunnelse</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BARN_OVER_18">
+                <xs:annotation>
+                    <xs:documentation>Barnet er over 18 år</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BARN_OVER_18_IKKE_UTD_KRAV">
+                <xs:annotation>
+                    <xs:documentation>Barnet er over 18 år og utdanningskrav er ikke oppfylt</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BARN_OVER_20">
+                <xs:annotation>
+                    <xs:documentation>Barnet er over 20/21 år</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BARN_INNT_OVER_2G">
+                <xs:annotation>
+                    <xs:documentation>Barnet har inntekt over 2G</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="EKSPORT_FORBUD">
+                <xs:annotation>
+                    <xs:documentation>Eksportforbud av barnepensjon</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="IKKE_DODSATTEST">
+                <xs:annotation>
+                    <xs:documentation>Ikke godkjent dødsattest</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UNDER_1_AR_TT">
+                <xs:annotation>
+                    <xs:documentation>Under ett års trygdtid medlemskap</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UNDER_3_AR_TT">
+                <xs:annotation>
+                    <xs:documentation>Under 3 års trygdetid medlemskap</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UNDER_5_AR_TT">
+                <xs:annotation>
+                    <xs:documentation>Under 5 års trygdetid medlemskap</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UNDER_20_AR_BOTID">
+                <xs:annotation>
+                    <xs:documentation>Under 20 års botid</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="">
+                <xs:annotation>
+                    <xs:documentation>Tom verdi er også gyldig</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
 </xs:schema>
