@@ -100,6 +100,11 @@
                     <xs:documentation>Ikke 100% AP/UP/AFP</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="FT_ETTER_2022">
+                <xs:annotation>
+                    <xs:documentation>Virkningstidspunkt for fremsetting av krav for forsøgingstillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="HOVEDYTELSE_AVSLAG">
                 <xs:annotation>
                     <xs:documentation>Hovedytelsen er avslått</xs:documentation>
@@ -155,14 +160,19 @@
                     <xs:documentation>Barnets inntekt er over 1G</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
-            <xs:enumeration value="HOVEDYTELSE_AVSLAG">
-                <xs:annotation>
-                    <xs:documentation>Hovedytelsen er avslått</xs:documentation>
-                </xs:annotation>
-            </xs:enumeration>
             <xs:enumeration value="BT_OVER_18">
                 <xs:annotation>
                     <xs:documentation>Barn over 18 år</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="FT_ETTER_2022">
+                <xs:annotation>
+                    <xs:documentation>Virkningstidspunkt for fremsetting av krav for forsøgingstillegg</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="HOVEDYTELSE_AVSLAG">
+                <xs:annotation>
+                    <xs:documentation>Hovedytelsen er avslått</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="">
