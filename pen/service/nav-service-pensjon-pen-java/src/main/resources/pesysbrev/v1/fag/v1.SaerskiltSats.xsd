@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/SaerskiltSats"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/SaerskiltSats">
+
+    <xs:complexType name="SaerskiltSats">
+        <xs:all>
+            <xs:element name="saerskiltSatsErBrukt" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>SANN dersom </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>
