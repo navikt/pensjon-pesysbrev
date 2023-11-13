@@ -7,16 +7,16 @@
            xmlns="http://nav.no/dok/pesysbrev/fag/v1/TrygdetidsListe">
 
 
-    <xs:import schemaLocation="v1.Trygdetid.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/Trygdetid"/>
+<xs:import schemaLocation="v1.Trygdetid.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/Trygdetid"/>
 
-    <xs:complexType name="TrygdetidsListe">
-        <xs:sequence>
-            <xs:element name="trygdetid" type="tr:Trygdetid" maxOccurs="unbounded">
-                <xs:annotation>
-                    <xs:documentation>En liste over elementer av typen Trygdetid</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
+<xs:complexType name="TrygdetidsListe">
+    <xs:sequence>
+        <xs:element name="trygdetid" type="tr:Trygdetid" maxOccurs="unbounded">
+            <xs:annotation>
+                <xs:documentation>En liste over elementer av typen Trygdetid</xs:documentation>
+            </xs:annotation>
+        </xs:element>
+    </xs:sequence>
+</xs:complexType>
 
 </xs:schema>

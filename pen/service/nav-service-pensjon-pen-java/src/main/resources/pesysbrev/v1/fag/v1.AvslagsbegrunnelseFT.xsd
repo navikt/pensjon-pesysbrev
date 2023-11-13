@@ -41,14 +41,14 @@
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="BRUKER_IKKE_HEL_AP">
-                <xs:annotation>
-                    <xs:documentation>Har ikke 100% AP</xs:documentation>
-                </xs:annotation>
+                    <xs:annotation>
+                        <xs:documentation>Har ikke 100% AP</xs:documentation>
+                    </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="BRUKER_UNDER_67M">
-                <xs:annotation>
-                    <xs:documentation>Bruker er under 67 år</xs:documentation>
-                </xs:annotation>
+                    <xs:annotation>
+                        <xs:documentation>Bruker er under 67 år</xs:documentation>
+                    </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="EPS_FLYTTET_IKKE_AVT_LAND">
                 <xs:annotation>
@@ -56,14 +56,14 @@
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="EPS_HAR_RETT_TIL_AP">
-                <xs:annotation>
-                    <xs:documentation>Ektefelle 100% AP rett</xs:documentation>
-                </xs:annotation>
+                    <xs:annotation>
+                        <xs:documentation>Ektefelle 100% AP rett</xs:documentation>
+                    </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="EPS_HAR_YTELSE">
-                <xs:annotation>
-                    <xs:documentation>Tilstøtende har AP/UP/AFP</xs:documentation>
-                </xs:annotation>
+                    <xs:annotation>
+                        <xs:documentation>Tilstøtende har AP/UP/AFP</xs:documentation>
+                    </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="EPS_INNT_OVER_1G">
                 <xs:annotation>
@@ -151,14 +151,14 @@
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="BT_MINST_67">
-                <xs:annotation>
-                    <xs:documentation>Bruker er under 67 år</xs:documentation>
-                </xs:annotation>
+                    <xs:annotation>
+                        <xs:documentation>Bruker er under 67 år</xs:documentation>
+                    </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="BT_INNT_OVER_1G">
-                <xs:annotation>
-                    <xs:documentation>Barnets inntekt er over 1G</xs:documentation>
-                </xs:annotation>
+                    <xs:annotation>
+                        <xs:documentation>Barnets inntekt er over 1G</xs:documentation>
+                    </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="BT_OVER_18">
                 <xs:annotation>
@@ -171,14 +171,14 @@
                 </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="HOVEDYTELSE_AVSLAG">
-                <xs:annotation>
-                    <xs:documentation>Hovedytelsen er avslått</xs:documentation>
-                </xs:annotation>
+                    <xs:annotation>
+                        <xs:documentation>Hovedytelsen er avslått</xs:documentation>
+                    </xs:annotation>
             </xs:enumeration>
             <xs:enumeration value="">
-                <xs:annotation>
-                    <xs:documentation>Tom/ingen begrunnelsestype</xs:documentation>
-                </xs:annotation>
+                    <xs:annotation>
+                        <xs:documentation>Tom/ingen begrunnelsestype</xs:documentation>
+                    </xs:annotation>
             </xs:enumeration>
         </xs:restriction>
     </xs:simpleType>

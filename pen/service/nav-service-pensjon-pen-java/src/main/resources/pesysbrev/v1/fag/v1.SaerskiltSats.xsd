@@ -9,7 +9,7 @@
         <xs:all>
             <xs:element name="saerskiltSatsErBrukt" type="xs:boolean">
                 <xs:annotation>
-                    <xs:documentation>SANN dersom </xs:documentation>
+                    <xs:documentation>SANN dersom bruker forsørger en EPS som er over 60 år </xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:all>

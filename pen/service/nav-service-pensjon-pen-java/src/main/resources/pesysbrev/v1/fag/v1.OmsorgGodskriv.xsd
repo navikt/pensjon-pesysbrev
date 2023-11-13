@@ -11,7 +11,7 @@
         <xs:all>
             <xs:element name="arInnvilgetOmsorgspoeng" type="xs:int">
                 <xs:annotation>
-                    <xs:documentation>Året det beregnes godskriving av omsorgspoeng for brukeren. Settes av BPEN030 lik kjøreåret for batchen.</xs:documentation>
+                    <xs:documentation>Året det beregnes godskriving av omsorgspoeng for brukeren. Settes av BPEN011 lik kjøreåret for batchen.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="arEgenerklaeringOmsorgspoeng" type="xs:int">

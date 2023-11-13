@@ -10,9 +10,9 @@
     <xs:complexType name="AldersovergangKategori">
         <xs:all>
             <xs:element name="kategori" type="AldersovergangKategoriKode">
-                <xs:annotation>
-                    <xs:documentation>Kategori for aldersovergang</xs:documentation>
-                </xs:annotation>
+            <xs:annotation>
+                <xs:documentation>Kategori for aldersovergang</xs:documentation>
+            </xs:annotation>
             </xs:element>
         </xs:all>
     </xs:complexType>
@@ -48,3 +48,5 @@
     </xs:simpleType>
 
 </xs:schema>
+
+

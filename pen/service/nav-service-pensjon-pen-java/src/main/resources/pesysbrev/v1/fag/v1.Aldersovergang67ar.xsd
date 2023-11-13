@@ -10,9 +10,9 @@
     <xs:complexType name="Aldersovergang67ar">
         <xs:all>
             <xs:element name="ytelseForAldersovergang" type="YtelseForAldersovergangKode">
-                <xs:annotation>
-                    <xs:documentation>Hvilken ytelse bruker mottar før fylte 67 år, eventuelt Ingen Ytelse</xs:documentation>
-                </xs:annotation>
+            <xs:annotation>
+                <xs:documentation>Hvilken ytelse bruker mottar før fylte 67 år, eventuelt Ingen Ytelse</xs:documentation>
+            </xs:annotation>
             </xs:element>
         </xs:all>
     </xs:complexType>

@@ -46,13 +46,13 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="begrunnelse" type="begrunnelseKode">
-                <xs:annotation>
-                    <xs:documentation>avslags- og opphørsbegrunnelseskoder</xs:documentation>
-                </xs:annotation>
+                    <xs:annotation>
+                        <xs:documentation>avslags- og opphørsbegrunnelseskoder</xs:documentation>
+                    </xs:annotation>
             </xs:element>
         </xs:all>
     </xs:complexType>
-
+    
     <xs:simpleType name="begrunnelseKode">
         <xs:restriction base="xs:token">
             <xs:enumeration value="ANNET">

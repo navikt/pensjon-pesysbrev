@@ -11,14 +11,14 @@
     <xs:complexType name="Trygdetidsdetaljer">
         <xs:all>
             <xs:element name="framtidigTTEOS" type="st:EmptyInteger">
-                <xs:annotation>
-                    <xs:documentation>Framtidig trygdetid opptjent i ett, eller flere EØS land oppgitt i måneder</xs:documentation>
-                </xs:annotation>
+            <xs:annotation>
+                <xs:documentation>Framtidig trygdetid opptjent i ett, eller flere EØS land oppgitt i måneder</xs:documentation>
+            </xs:annotation>
             </xs:element>
             <xs:element name="framtidigTTBilateral" type="st:EmptyInteger">
-                <xs:annotation>
-                    <xs:documentation>Framtidig trygdetid i et annet avtaleland i antall måneder</xs:documentation>
-                </xs:annotation>
+            <xs:annotation>
+                <xs:documentation>Framtidig trygdetid i et annet avtaleland i antall måneder</xs:documentation>
+            </xs:annotation>
             </xs:element>
             <xs:element name="anvendtTT" type="st:EmptyInteger">
                 <xs:annotation>

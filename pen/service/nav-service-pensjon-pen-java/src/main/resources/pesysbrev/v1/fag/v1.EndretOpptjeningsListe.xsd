@@ -7,6 +7,7 @@
            xmlns="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjeningsListe">
 
     <xs:import schemaLocation="v1.EndretOpptjeningsar.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/EndretOpptjeningsar"/>
+	
 
     <xs:complexType name="EndretOpptjeningsListe">
         <xs:sequence>

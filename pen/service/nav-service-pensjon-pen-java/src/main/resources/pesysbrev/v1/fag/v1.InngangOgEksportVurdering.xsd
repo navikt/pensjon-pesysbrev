@@ -38,24 +38,24 @@
                         Settes til null dersom det verken er satt ja eller nei i feltet</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="oppfyltVedSammenleggingFemArKap19" type="st:EmptyBoolean" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>Settes til sann hvis det er markert ja på feltet Oppfylt ved sammenlegging kap. 19
+			<xs:element name="oppfyltVedSammenleggingFemArKap19" type="st:EmptyBoolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Settes til sann hvis det er markert ja på feltet Oppfylt ved sammenlegging kap. 19
 
-                        Settes til usann dersom feltet er markert nei på feltet Oppfylt ved sammenlegging kap. 19
+						Settes til usann dersom feltet er markert nei på feltet Oppfylt ved sammenlegging kap. 19
 
-                        Sette til null dersom det verken er satt ja eller nei i feltet</xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element name="oppfyltVedSammenleggingFemArKap20" type="st:EmptyBoolean" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>Settes til sann hvis det er markert ja på feltet Oppfylt ved sammenlegging kap. 20
+						Sette til null dersom det verken er satt ja eller nei i feltet</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="oppfyltVedSammenleggingFemArKap20" type="st:EmptyBoolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Settes til sann hvis det er markert ja på feltet Oppfylt ved sammenlegging kap. 20
 
-                        Settes til usann dersom feltet er marker med nei på feltet Oppfylt ved sammenlegging kap. 20
+						Settes til usann dersom feltet er marker med nei på feltet Oppfylt ved sammenlegging kap. 20
 
-                        Settes til null dersom det verken er satt ja eller nei i feltet</xs:documentation>
-                </xs:annotation>
-            </xs:element>
+						Settes til null dersom det verken er satt ja eller nei i feltet</xs:documentation>
+				</xs:annotation>
+			</xs:element>
             <xs:element name="eksportTrygdeavtaleEOS" type="st:EmptyBoolean">
                 <xs:annotation>
                     <xs:documentation>Settes til sann hvis det er markert ja på feltene Eksportrett etter EØS forordning eller trygdeavtaler med EØS-land i kraft etter 01.01.1994 eller Eksportrett etter trygdeavtaler med EØS-land i kraft før 01.01.1994

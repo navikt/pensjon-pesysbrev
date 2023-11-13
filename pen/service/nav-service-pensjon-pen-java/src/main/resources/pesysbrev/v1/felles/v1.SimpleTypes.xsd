@@ -211,19 +211,35 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <!-- Nye elementer P1 - usikker på hvor de skal ligge
-    <xs:simpleType name="VurderingersperiodeKode">
-        <xs:annotation>
-            <xs:documentation>Vurderingsperiode (starter den datoen samlet melding ble mottat)</xs:documentation>
-        </xs:annotation>
+    <xs:simpleType name="MetodeGJTKap19Kode">
         <xs:restriction base="xs:token">
-            <xs:enumeration value="6UkerFraMottattP1">
+            <xs:enumeration value="REFERANSEBELOP">
                 <xs:annotation>
-                    <xs:documentation>Seks uker fra mottat p1 blankett</xs:documentation>
+                    <xs:documentation>Referansebeløpet har vært fastsatt etter endringene i etterlattereformen trer i kraft 01.01.2024. beregnet etter 01.01.2024 som et nytt gjenlevendetillegg eller reberegnet ved eksport</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="VIDEREFOR">
+                <xs:annotation>
+                    <xs:documentation>Referansebeløpet har vært fastsatt før endringene i etterlattereformen trer i kraft 01.01.2024</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value=""/>
         </xs:restriction>
     </xs:simpleType>
+
+    <!-- Nye elementer P1 - usikker på hvor de skal ligge
+	<xs:simpleType name="VurderingersperiodeKode">
+		<xs:annotation>
+			<xs:documentation>Vurderingsperiode (starter den datoen samlet melding ble mottat)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="6UkerFraMottattP1">
+				<xs:annotation>
+					<xs:documentation>Seks uker fra mottat p1 blankett</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
     -->
 
 </xs:schema>

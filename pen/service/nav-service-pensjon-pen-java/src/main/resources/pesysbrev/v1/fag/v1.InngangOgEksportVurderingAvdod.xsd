@@ -15,16 +15,19 @@
                     <xs:documentation>Verdi som angir unntakstypen for eksportforbud av ytelsen. Tom dersom det ikke finnes eksportforbud</xs:documentation>
                 </xs:annotation>
             </xs:element>
+			
             <xs:element name="eksportForbudUngUforeUngDod" type="st:EmptyBoolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Verdi som angir om innvilget garantert tilleggspensjon til ung ufør/død skal eksporteres</xs:documentation>
                 </xs:annotation>
             </xs:element>
+			
             <xs:element name="minst20ArTrygdetidKap20" type="st:EmptyBoolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Settes til usann dersom det er markert i nei i skjermbildet inngang og eksport på om bruker har over 20 års trygdetid</xs:documentation>
                 </xs:annotation>
             </xs:element>
+			
             <xs:element name="minst20ArBotidKap19" type="st:EmptyBoolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Settes til usann dersom det er markert i nei i skjermbildet inngang og eksport på om bruker har over 20 års trygdetid</xs:documentation>

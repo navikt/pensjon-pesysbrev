@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/GJTkap19"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/GJTkap19">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="GJTkap19">
+        <xs:all>
+            <xs:element name="referansebelop" type="st:EmptyInteger">
+            <xs:annotation>
+                <xs:documentation>Referansebeløpet er beregnet som differansen mellom alderspensjon med gjenlevenderett og alderspensjon uten gjenlevenderett. Referansebeløpet kan være empty. Empty dersom AP1967</xs:documentation>
+            </xs:annotation>
+            </xs:element>
+            <xs:element name="metode" type="st:MetodeGJTKap19Kode">
+                <xs:annotation>
+                    <xs:documentation>Beskrive om referansebeløpet har vært fastsatt før endringene i etterlattereformen trer i kraft 01.01.2024 (VIDEREFOR), eller om det er beregnet etter 01.01.2024 som et nytt gjenlevendetillegg eller reberegnet ved eksport (REFERANSEBELOP). Empty dersom AP1967.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="apKap19medGJR" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Beskrive beregningen av hele kap19 gjort med gjenlevenderett. Kan være empty</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="apKap19utenGJR" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Beskrive beregningen av hele kap19 gjort uten gjenlevenderett. Kan være empty</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>
