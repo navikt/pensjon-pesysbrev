@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManedAP2025"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManedAP2025">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="AlderspensjonPerManed">
+        <xs:annotation>
+            <xs:documentation>Informasjon om alderspensjon</xs:documentation>
+        </xs:annotation>
+        <xs:all>
+            <xs:element name="fullTrygdetid" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Viser hvis egen, eller avdod hadde full trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="garantipensjon" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Garantipensjon beregnet etter kapittel 20. Tom dersom garantipensjon ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="inntektspensjon" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Inntektspensjon beregnet etter kapittel 20. Tom dersom inntetekspensjon ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="minstenivaIndividuell" type="st:EmptyInteger" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Minstenivåtillegg individuelt. Tom dersom minstenivå for individuell ikke er med i beregningen</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="totalPensjon" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Total pensjon før skatt som sum av alle tilleggene</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="virkDatoFom" type="st:FormatertDato">
+                <xs:annotation>
+                    <xs:documentation>Dato alderspensjon iverksettes</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="virkDatoTom" type="st:EmptyFormatertDato">
+                <xs:annotation>
+                    <xs:documentation>Tom dersom dette er løpende pensjon</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>
