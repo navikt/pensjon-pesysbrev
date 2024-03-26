@@ -63,7 +63,7 @@
                     <xs:documentation>Er SANN dersom grunnpensjonen har blitt avkortet pga EPS tjener mer enn 2G eller mottar pensjon</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="grunnpensjonSats" type="xs:int">
+            <xs:element name="grunnpensjonSats" type="xs:int" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Grunnpensjonsats</xs:documentation>
                 </xs:annotation>
@@ -124,9 +124,9 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="uforeKombinertMedAlder" type="xs:boolean">
-            <xs:annotation>
-                <xs:documentation>Hvis alderspensjon er innvilget og bruker har en løpende uføresak sette verdien til SANN</xs:documentation>
-            </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Hvis alderspensjon er innvilget og bruker har en løpende uføresak sette verdien til SANN</xs:documentation>
+                </xs:annotation>
             </xs:element>
             <xs:element name="uttaksgrad" type="st:EmptyInteger">
                 <xs:annotation>
