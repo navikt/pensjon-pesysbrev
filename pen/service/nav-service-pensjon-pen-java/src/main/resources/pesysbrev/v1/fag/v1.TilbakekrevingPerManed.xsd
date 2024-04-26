@@ -134,6 +134,11 @@
                     <xs:documentation>Garantitillegg</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="AP_GJT_KAP19">
+                <xs:annotation>
+                    <xs:documentation>Gjenlevendetillegg etter kapittel 19</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="GP">
                 <xs:annotation>
                     <xs:documentation>Grunnpensjon</xs:documentation>
