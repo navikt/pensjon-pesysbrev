@@ -95,6 +95,11 @@
                     <xs:documentation>Trygdetid under 3 år</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="UNDER_5_AR_TT">
+                <xs:annotation>
+                    <xs:documentation>Trygdetid under 5 år</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="UNDER_20_AR_BO">
                 <xs:annotation>
                     <xs:documentation>§19-3 ikke oppfylt</xs:documentation>

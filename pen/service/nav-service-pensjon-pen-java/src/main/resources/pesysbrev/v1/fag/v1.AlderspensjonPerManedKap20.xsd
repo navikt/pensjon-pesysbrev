@@ -3,8 +3,8 @@
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
-           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManedAP2025"
-           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManedAP2025">
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManedKap20"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/AlderspensjonPerManedKap20">
 
     <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
 
@@ -13,6 +13,11 @@
             <xs:documentation>Informasjon om alderspensjon</xs:documentation>
         </xs:annotation>
         <xs:all>
+            <xs:element name="brukersSivilstand" type="st:EmptySivilstandTypeKode" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Brukes sivilstand benyttet i beregningen. Kan være GIFT, PARTNER, SAMBOER1_5, SAMBOER3_2, ENKE, ENSLIG, , GLAD_EKTE, SEPARERT. Kan også være tom</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="fullTrygdetid" type="xs:boolean" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Viser hvis egen, eller avdod hadde full trygdetid</xs:documentation>

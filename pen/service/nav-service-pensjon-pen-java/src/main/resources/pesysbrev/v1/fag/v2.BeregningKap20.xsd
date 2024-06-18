@@ -32,7 +32,8 @@
             </xs:element>
             <xs:element name="delingstallLevealder" type="st:ToDesimaler">
                 <xs:annotation>
-                    <xs:documentation>Delingstall ved levealdersjustering. Benyttes for beregning av Kap20 pensjon</xs:documentation>
+                    <xs:documentation>Delingstallet fastsettes endelig innen 1. juli i det året et årskull fyller 61 år. Delingstallene blir ikke endret etter at de er fastsatt.
+                        Delingstallet brukes til å dele pensjonsbeholdningen for å beregne årlig pensjon. Delingstallet brukes også når opptjeningen er såpass lav at garantipensjonen trer inn.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="beholdningForForsteUttak" type="st:EmptyInteger">

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Garantipensjon"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Garantipensjon">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="Garantipensjon">
+        <xs:all>
+            <xs:element name="beholdningForForsteUttak" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Størrelsen på garantipensjonen omregnes til en garantipensjonsbeholdning før første uttak.
+                        Beholdningen blir beregnet ved å ta delingstallet ved 67 år for det aktuelle årskullet og gange med satsen brukeren har rett til.
+                        Du må ha fyllt 67 år for å ha rett til garantipensjon.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="beholdningEtterUttak" type="xs:int">
+            <xs:annotation>
+                <xs:documentation>Garantipensjonsbeholdning etter et uttak</xs:documentation>
+            </xs:annotation>
+            </xs:element>
+            <xs:element name="bruttoPerManed" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Garantipensjon bruttobeløp per maned</xs:documentation>
+                </xs:annotation>
+			</xs:element>
+            <xs:element name="fradragPerManed" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Fradragsbeløp som trekkes fra bruttobeløpet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="nettoUtbetaltPerManed" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Garantipensjon nettobeløp utbetalt per måned</xs:documentation>
+                </xs:annotation>
+			</xs:element>
+            <xs:element name="bruttoPerAr" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Garantipensjon bruttobeløp per år</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="fradragPerAr" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Fradragsbeløp som trekkes fra bruttobeløpet</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="nettoUtbetaltPerAr" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Garantipensjon nettobeløp utbetalt per år</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="garantipensjonSatsPerAr" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Garantipensjon gis etter to satser:
+                    Ordinær sats garantipensjon - hvis bruker lever sammen med ektefelle/samboer som
+                        mottar uføretrygd, alderspensjon, avtalefested pensjon i offentlig sektor eller gammel avtalefestet pensjon i privat sektor
+                        eller har en årlig inntekt, inkludert kaptialinntekt, som er større enn to ganger grunnbeløpet.
+                    Høy sats garantipensjon - hvis bruker er enslig, eller har ektefelle/samboer som har inntekt under 2G, og som ikke har pensjon.
+                    Satsene settes 1. mai årlig.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="delingstalletVed67Ar" type="st:ToDesimaler">
+                <xs:annotation>
+                    <xs:documentation>Delingstallet forteller hvor mange år en person i årskullet kan forvente å leve etter å ha gått av med pensjon.
+                        Tallet settes ved 67 år og endres ikke.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType> 
+
+</xs:schema>

@@ -134,9 +134,9 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="uforeKombinertMedAlder" type="xs:boolean">
-                <xs:annotation>
-                    <xs:documentation>Hvis alderspensjon er innvilget og bruker har en løpende uføresak sette verdien til SANN</xs:documentation>
-                </xs:annotation>
+            <xs:annotation>
+                <xs:documentation>Hvis alderspensjon er innvilget og bruker har en løpende uføresak sette verdien til SANN</xs:documentation>
+            </xs:annotation>
             </xs:element>
             <xs:element name="uttaksgrad" type="st:EmptyInteger">
                 <xs:annotation>

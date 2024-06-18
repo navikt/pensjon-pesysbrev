@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/VilkarsVedtak"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/VilkarsVedtak">
+
+    <xs:complexType name="VilkarsVedtak">
+        <xs:all>
+            <xs:element name="avslattKapittel19" type="xs:boolean" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Verdien hentes ut kun hvis regelverkstype: AP2016 (N_REG_G_N_OPPTJ)</xs:documentation>
+                </xs:annotation>
+			</xs:element>
+            <xs:element name="avslattGarantipensjon" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Verdien hentes ut kun hvis regelverkstypen er: AP2016 (N_REG_G_N_OPPTJ) eller AP2025 (N_REG_N_OPPTJ)</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType> 
+
+</xs:schema>
