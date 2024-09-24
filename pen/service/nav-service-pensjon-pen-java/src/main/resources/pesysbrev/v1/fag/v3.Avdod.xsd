@@ -17,7 +17,7 @@
             </xs:element>
             <xs:element name="avdodFnr" type="st:NonEmptyString">
                 <xs:annotation>
-                    <xs:documentation>Den avdødes fornavn, mellom og etternavn</xs:documentation>
+                    <xs:documentation>Den avdødes fødselsnummer</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="dodForDesember2023" type="xs:boolean">

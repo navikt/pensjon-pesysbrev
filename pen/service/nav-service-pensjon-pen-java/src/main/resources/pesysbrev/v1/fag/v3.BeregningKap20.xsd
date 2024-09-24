@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v3/BeregningKap20"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v3/BeregningKap20">
+
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+
+    <xs:complexType name="BeregningKap20">
+        <xs:all>
+            <xs:element name="andel" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Del av pensjon beregnet etter nye regler i kap 20</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="beholdning" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Pensjonsbeholdning</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="beholdningForForsteUttak" type="st:EmptyInteger">
+                <xs:annotation>
+                    <xs:documentation>Pensjonsbeholdning før første uttak</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="delingstall67" type="st:ToDesimaler">
+                <xs:annotation>
+                    <xs:documentation>Delingstallet forteller hvor mange år en person i årskullet kan forvente å leve etter å ha gått av med pensjon.
+                        Tallet settes ved 67 år og endres ikke.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="delingstallLevealder" type="st:ToDesimaler">
+                <xs:annotation>
+                    <xs:documentation>Delingstallet fastsettes endelig innen 1. juli i det året et årskull fyller 61 år. Delingstallene blir ikke endret etter at de er fastsatt.
+                        Delingstallet brukes til å dele pensjonsbeholdningen for å beregne årlig pensjon. Delingstallet brukes også når opptjeningen er såpass lav at garantipensjonen trer inn.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="nyOpptjening" type="st:EmptyInteger"  minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Oppteningsgrunnlag tilvekst for inntektsaar</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="redusertTrygdetid" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Viser hvis bruker har redusert trygdetid</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="trygdetid" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>Trygdetid beregnet etter kapittel 20</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>
