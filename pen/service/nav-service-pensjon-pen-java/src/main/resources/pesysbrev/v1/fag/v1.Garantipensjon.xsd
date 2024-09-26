@@ -5,9 +5,7 @@
            xmlns:st="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Garantipensjon"
            xmlns="http://nav.no/dok/pesysbrev/fag/v1/Garantipensjon">
-
     <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
-
     <xs:complexType name="Garantipensjon">
         <xs:all>
             <xs:element name="beholdningForForsteUttak" type="xs:int">
@@ -18,15 +16,15 @@
                 </xs:annotation>
             </xs:element>
             <xs:element name="beholdningEtterUttak" type="xs:int">
-            <xs:annotation>
-                <xs:documentation>Garantipensjonsbeholdning etter et uttak</xs:documentation>
-            </xs:annotation>
+                <xs:annotation>
+                    <xs:documentation>Garantipensjonsbeholdning etter et uttak</xs:documentation>
+                </xs:annotation>
             </xs:element>
             <xs:element name="bruttoPerManed" type="st:EmptyInteger">
                 <xs:annotation>
                     <xs:documentation>Garantipensjon bruttobeløp per maned</xs:documentation>
                 </xs:annotation>
-			</xs:element>
+            </xs:element>
             <xs:element name="fradragPerManed" type="st:EmptyInteger">
                 <xs:annotation>
                     <xs:documentation>Fradragsbeløp som trekkes fra bruttobeløpet</xs:documentation>
@@ -36,7 +34,7 @@
                 <xs:annotation>
                     <xs:documentation>Garantipensjon nettobeløp utbetalt per måned</xs:documentation>
                 </xs:annotation>
-			</xs:element>
+            </xs:element>
             <xs:element name="bruttoPerAr" type="st:EmptyInteger">
                 <xs:annotation>
                     <xs:documentation>Garantipensjon bruttobeløp per år</xs:documentation>
@@ -52,14 +50,19 @@
                     <xs:documentation>Garantipensjon nettobeløp utbetalt per år</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="satsType" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Feltet settes med enten "HOY" eller "ORDINAER" sats gitt at brukeren har en garantipensjonsbeholdning. Videre informasjon om garantipensjonSats finnes under.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="garantipensjonSatsPerAr" type="xs:int">
                 <xs:annotation>
                     <xs:documentation>Garantipensjon gis etter to satser:
-                    Ordinær sats garantipensjon - hvis bruker lever sammen med ektefelle/samboer som
+                        Ordinær sats garantipensjon - hvis bruker lever sammen med ektefelle/samboer som
                         mottar uføretrygd, alderspensjon, avtalefested pensjon i offentlig sektor eller gammel avtalefestet pensjon i privat sektor
                         eller har en årlig inntekt, inkludert kaptialinntekt, som er større enn to ganger grunnbeløpet.
-                    Høy sats garantipensjon - hvis bruker er enslig, eller har ektefelle/samboer som har inntekt under 2G, og som ikke har pensjon.
-                    Satsene settes 1. mai årlig.</xs:documentation>
+                        Høy sats garantipensjon - hvis bruker er enslig, eller har ektefelle/samboer som har inntekt under 2G, og som ikke har pensjon.
+                        Satsene settes 1. mai årlig.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="delingstalletVed67Ar" type="st:ToDesimaler">
@@ -69,6 +72,5 @@
                 </xs:annotation>
             </xs:element>
         </xs:all>
-    </xs:complexType> 
-
+    </xs:complexType>
 </xs:schema>
