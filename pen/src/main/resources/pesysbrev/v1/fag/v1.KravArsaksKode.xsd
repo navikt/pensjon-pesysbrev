@@ -52,6 +52,11 @@
                     <xs:documentation>Sivilstandsendring</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="TILST_DOD">
+                <xs:annotation>
+                    <xs:documentation>Tilstøtende sin sak er endret</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="TILSTOT_ENDR_YTELSE">
                 <xs:annotation>
                     <xs:documentation>Tilstøtende sin sak er endret</xs:documentation>
