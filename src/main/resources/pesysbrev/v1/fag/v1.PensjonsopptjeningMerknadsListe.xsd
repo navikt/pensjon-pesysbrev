@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/PensjonsopptjeningMerknadsListe"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/PensjonsopptjeningMerknadsListe">
+    <xs:import schemaLocation="../felles/v1.SimpleTypes.xsd" namespace="http://nav.no/dok/pesysbrev/felles/v1/SimpleTypes"/>
+    <xs:complexType name="PensjonsopptjeningMerknadsListe">
+        <xs:sequence>
+            <xs:element name="merknadType" type="MerknadType"  maxOccurs="unbounded" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>En liste over gyldige typer inntektsgrunnlag som har betydning for opptjening</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="MerknadType">
+        <xs:restriction base="xs:token">
+            <xs:enumeration value="DAGPENGER">
+                <xs:annotation>
+                    <xs:documentation>Dagpenger inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="OMSORGSOPPTJENING">
+                <xs:annotation>
+                    <xs:documentation>Omsorgsopptjening</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="UFORE">
+                <xs:annotation>
+                    <xs:documentation>Uføretrygd inntekt</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="GRUNNBELOEP_7_1">
+                <xs:annotation>
+                    <xs:documentation>Pensjonsgivende inntekt begrenset til 7,1 G</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
