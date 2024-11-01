@@ -1,0 +1,45 @@
+name: Release (Github Package Registry)
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  revision:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+    outputs:
+      revision: ${{ steps.revision.outputs.revision }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Calculate revision
+        id: revision
+        shell: bash
+        run: |
+          TIME=$(TZ="Europe/Oslo" date +%Y.%m.%d-%H.%M)
+          COMMIT=$(git rev-parse --short=12 HEAD)
+          echo "revision=$TIME-$COMMIT" >> $GITHUB_OUTPUT
+
+  release-javax:
+    needs: revision
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      packages: "write"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '8'
+
+      - name: Deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REVISION: ${{ needs.revision.outputs.revision }}
+        shell: bash
+        run: |
+          mvn -Drevision="${REVISION}" source:jar deploy
