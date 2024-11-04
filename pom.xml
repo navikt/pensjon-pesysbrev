@@ -36,34 +36,113 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <revision>1.0.0-SNAPSHOT</revision>
+
+        <jaxb-plugins.version>3.0.2</jaxb-plugins.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.xml.bind</groupId>
-            <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>2.3.3</version>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
+    <profiles>
+        <profile>
+            <id>javax</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.15.3</version>
-                <executions>
-                    <execution>
-                        <id>generate-pesysbrev</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <phase>generate-sources</phase>
+            <properties>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.source>1.8</maven.compiler.source>
+            </properties>
+
+            <dependencies>
+                <dependency>
+                    <groupId>jakarta.xml.bind</groupId>
+                    <artifactId>jakarta.xml.bind-api</artifactId>
+                    <version>2.3.3</version>
+                    <scope>provided</scope>
+                    <optional>true</optional>
+                </dependency>
+            </dependencies>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jvnet.jaxb2.maven2</groupId>
+                        <artifactId>maven-jaxb2-plugin</artifactId>
+                        <version>0.15.3</version>
+                        <executions>
+                            <execution>
+                                <id>generate-pesysbrev</id>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                                <phase>generate-sources</phase>
+                                <configuration>
+                                    <schemaDirectory>${project.basedir}/src/main/resources/pesysbrev/v1</schemaDirectory>
+                                    <generateDirectory>${project.build.directory}/generated-sources/pesysbrev</generateDirectory>
+                                    <schemaIncludes>
+                                        <include>fag/*.xsd</include>
+                                        <include>felles/*.xsd</include>
+                                    </schemaIncludes>
+                                    <extension>true</extension>
+                                    <args>
+                                        <arg>-Xfluent-api</arg>
+                                    </args>
+                                    <encoding>UTF-8</encoding>
+                                    <plugins>
+                                        <plugin>
+                                            <groupId>org.jvnet.jaxb2_commons</groupId>
+                                            <artifactId>jaxb2-basics</artifactId>
+                                            <version>0.13.1</version>
+                                        </plugin>
+                                        <plugin>
+                                            <groupId>org.jvnet.jaxb2_commons</groupId>
+                                            <artifactId>jaxb2-basics-annotate</artifactId>
+                                            <version>1.1.0</version>
+                                        </plugin>
+                                        <plugin>
+                                            <groupId>org.glassfish.jaxb</groupId>
+                                            <artifactId>jaxb-xjc</artifactId>
+                                            <version>2.3.9</version>
+                                        </plugin>
+                                        <plugin>
+                                            <groupId>net.java.dev.jaxb2-commons</groupId>
+                                            <artifactId>jaxb-fluent-api</artifactId>
+                                            <version>2.1.8</version>
+                                        </plugin>
+                                    </plugins>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>jakarta</id>
+
+            <properties>
+                <maven.compiler.target>17</maven.compiler.target>
+                <maven.compiler.source>17</maven.compiler.source>
+            </properties>
+
+            <dependencies>
+                <dependency>
+                    <groupId>jakarta.xml.bind</groupId>
+                    <artifactId>jakarta.xml.bind-api</artifactId>
+                    <version>4.0.2</version>
+                    <scope>provided</scope>
+                    <optional>true</optional>
+                </dependency>
+            </dependencies>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jvnet.jaxb</groupId>
+                        <artifactId>jaxb-maven-plugin</artifactId>
+                        <version>${jaxb-plugins.version}</version>
                         <configuration>
                             <schemaDirectory>${project.basedir}/src/main/resources/pesysbrev/v1</schemaDirectory>
-                            <generateDirectory>${project.build.directory}/generated-sources/pesysbrev</generateDirectory>
                             <schemaIncludes>
                                 <include>fag/*.xsd</include>
                                 <include>felles/*.xsd</include>
@@ -72,22 +151,17 @@
                             <args>
                                 <arg>-Xfluent-api</arg>
                             </args>
-                            <encoding>UTF-8</encoding>
+                            <encoding>${project.build.sourceEncoding}</encoding>
                             <plugins>
                                 <plugin>
-                                    <groupId>org.jvnet.jaxb2_commons</groupId>
-                                    <artifactId>jaxb2-basics</artifactId>
-                                    <version>0.13.1</version>
+                                    <groupId>org.jvnet.jaxb</groupId>
+                                    <artifactId>jaxb-plugins</artifactId>
+                                    <version>${jaxb-plugins.version}</version>
                                 </plugin>
                                 <plugin>
-                                    <groupId>org.jvnet.jaxb2_commons</groupId>
-                                    <artifactId>jaxb2-basics-annotate</artifactId>
-                                    <version>1.1.0</version>
-                                </plugin>
-                                <plugin>
-                                    <groupId>org.glassfish.jaxb</groupId>
-                                    <artifactId>jaxb-xjc</artifactId>
-                                    <version>2.3.9</version>
+                                    <groupId>org.jvnet.jaxb</groupId>
+                                    <artifactId>jaxb-plugin-annotate</artifactId>
+                                    <version>${jaxb-plugins.version}</version>
                                 </plugin>
                                 <plugin>
                                     <groupId>net.java.dev.jaxb2-commons</groupId>
@@ -96,9 +170,17 @@
                                 </plugin>
                             </plugins>
                         </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+                        <executions>
+                            <execution>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
