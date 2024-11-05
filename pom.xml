@@ -37,7 +37,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <revision>1.0.0-SNAPSHOT</revision>
 
-        <jaxb-plugins.version>3.0.2</jaxb-plugins.version>
+        <jaxb-plugins.version>4.0.8</jaxb-plugins.version>
     </properties>
 
     <profiles>
