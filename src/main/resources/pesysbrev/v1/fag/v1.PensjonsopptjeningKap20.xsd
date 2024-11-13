@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/PensjonsopptjeningKap20"
+           targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/PensjonsopptjeningKap20"
+           xmlns:po="http://nav.no/dok/pesysbrev/fag/v1/PensjonsopptjeningKap20Liste">
+
+    <xs:import schemaLocation="v1.PensjonsopptjeningKap20Liste.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/PensjonsopptjeningKap20Liste"/>
+
+    <xs:complexType name="PensjonsopptjeningKap20">
+        <xs:all>
+            <xs:element name="pensjonsopptjening" type="po:PensjonsopptjeningKap20Liste">
+                <xs:annotation>
+                    <xs:documentation>En liste med pensjonsopptjening etter kapittel 20</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="harMerknadType" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Indikator for om det finnes minst en inntektsgrunnlag merknadstype for et inntektsår</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>
+

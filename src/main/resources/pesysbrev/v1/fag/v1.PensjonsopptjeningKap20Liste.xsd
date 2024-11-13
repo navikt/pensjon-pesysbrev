@@ -5,7 +5,9 @@
            xmlns="http://nav.no/dok/pesysbrev/fag/v1/PensjonsopptjeningKap20Liste"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/PensjonsopptjeningKap20Liste"
            xmlns:po="http://nav.no/dok/pesysbrev/fag/v1/Pensjonsopptjening">
+
     <xs:import schemaLocation="v1.Pensjonsopptjening.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/Pensjonsopptjening"/>
+
     <xs:complexType name="PensjonsopptjeningKap20Liste">
         <xs:sequence>
             <xs:element name="pensjonsopptjening" type="po:Pensjonsopptjening"  maxOccurs="unbounded" minOccurs="0">

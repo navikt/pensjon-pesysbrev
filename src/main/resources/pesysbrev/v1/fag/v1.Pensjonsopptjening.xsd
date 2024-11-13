@@ -3,10 +3,7 @@
            elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://nav.no/dok/pesysbrev/fag/v1/Pensjonsopptjening"
-           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Pensjonsopptjening"
-           xmlns:pml="http://nav.no/dok/pesysbrev/fag/v1/PensjonsopptjeningMerknadsListe">
-
-    <xs:import schemaLocation="v1.PensjonsopptjeningMerknadsListe.xsd" namespace="http://nav.no/dok/pesysbrev/fag/v1/PensjonsopptjeningMerknadsListe"/>
+           xmlns="http://nav.no/dok/pesysbrev/fag/v1/Pensjonsopptjening">
 
     <xs:complexType name="Pensjonsopptjening">
         <xs:all>
@@ -25,9 +22,9 @@
                     <xs:documentation>Gjennomsnittlig grunnbeløp kr beløp</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="pensjonsopptjeningMerknadsListe" type="pml:PensjonsopptjeningMerknadsListe" minOccurs="0">
+            <xs:element name="merknadType" type="xs:string">
                 <xs:annotation>
-                    <xs:documentation>En liste over merknadstyper for inntektsgrunnlag som har betydning for opptjening</xs:documentation>
+                    <xs:documentation>Inntektsgrunnlag merknadstyper som har betydning for inntektsopptjening</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:all>
