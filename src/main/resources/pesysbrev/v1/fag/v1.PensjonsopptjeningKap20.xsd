@@ -20,6 +20,36 @@
                     <xs:documentation>Indikator for om det finnes minst en inntektsgrunnlag merknadstype for et inntektsår</xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="harDagpenger" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Kun innvilget etter regelverkstype dagpenger</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="harOmsorgsopptjeningFOM2010" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Innslag med omsorgsopptjening fom 2010</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="harOmsorgsopptjeningTOM2009" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Innslag med omsorgsopptjening tom 2009</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="harUforepensjon" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Kun innvilget etter regelverkstype uførepensjon. Ytelsen opphørte 31.12.2014</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="harUforepensjonKonvertertTilUforetrygd" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Innvilget uførepensjon konvertert til uføretrygd fra 01.01.2015. Hvis "true", så er harUforepensjon = "false" og harUforetrygd = "false"</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="harUforetrygd" type="xs:boolean">
+                <xs:annotation>
+                    <xs:documentation>Kun innvilget etter regelverkstype uføretrygd</xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:all>
     </xs:complexType>
 </xs:schema>
