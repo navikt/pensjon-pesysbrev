@@ -101,7 +101,7 @@
                                         <plugin>
                                             <groupId>org.glassfish.jaxb</groupId>
                                             <artifactId>jaxb-xjc</artifactId>
-                                            <version>2.3.9</version>
+                                            <version>4.0.5</version>
                                         </plugin>
                                         <plugin>
                                             <groupId>net.java.dev.jaxb2-commons</groupId>
