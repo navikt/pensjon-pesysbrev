@@ -10,7 +10,7 @@
 
     <xs:complexType name="BeregningKap19">
         <xs:all>
-            <xs:element name="forholdstall67Soeker" type="st:ToDesimaler" minOccurs="0">
+            <xs:element name="forholdstall67Soeker" type="st:TreDesimaler" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Forholdstallet ved 67 år for beregning av skjermingstillegg i alderspensjon Kap19</xs:documentation>
                 </xs:annotation>
