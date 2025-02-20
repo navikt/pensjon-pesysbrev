@@ -17,6 +17,11 @@
                     <xs:documentation>Eksport</xs:documentation>
                 </xs:annotation>
             </xs:enumeration>
+            <xs:enumeration value="ENDRET_OPPTJENING">
+                <xs:annotation>
+                    <xs:documentation>Opptjeningsgrunnlag er endret</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
             <xs:enumeration value="EPS_ENDRET_INNTEKT">
                 <xs:annotation>
                     <xs:documentation>Inntekt til tilstøtende er endret </xs:documentation>
